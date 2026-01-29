@@ -1,0 +1,18 @@
+﻿using DatabaseDVLD;
+using System.Data;
+
+namespace BusinessDVLD
+{
+    public class ManageTestTypesServices
+    {
+        IManageTestTypesRepository _manageTestTypes;
+        public ManageTestTypesServices(IManageTestTypesRepository testTypes)
+        {
+            _manageTestTypes = testTypes;
+
+
+        }
+        public DataTable GetAll() => _manageTestTypes.GetAll();
+        public bool Upgrade(TestDTO testDTO) => _manageTestTypes.Update(testDTO.ToEntity());
+    }
+}

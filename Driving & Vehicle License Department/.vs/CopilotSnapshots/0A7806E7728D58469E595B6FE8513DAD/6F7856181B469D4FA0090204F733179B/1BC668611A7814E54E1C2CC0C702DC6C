@@ -1,0 +1,37 @@
+﻿using DatabaseDVLD;
+
+namespace BusinessDVLD
+{
+    public static class ServiceFactory
+    {
+        public static IPersonServices CreatePersonServices()
+        {
+            return new PersonServices(new PersonRepository());
+        }
+
+        public static ICountryServices CreateCountryServices()
+        {
+            return new CountryServices(new CountryRepository());
+        }
+
+        public static IUserServices CreateUserServices()
+        {
+            return new UserServices(new UserRepository());
+        }
+
+
+        public static IApplicationTypesServices CreateApplicationTypesServices()
+        {
+            return new  ApplicationTypesServices ( new ApplicationTypesRepository() );
+
+        }
+
+        //ManageTestTypesServices
+        public static IManageTestTypesServices CreateManageTestTypesServices()
+        {
+            return new  Mana (new ManageTestTypes());
+
+        }
+
+    }
+}
