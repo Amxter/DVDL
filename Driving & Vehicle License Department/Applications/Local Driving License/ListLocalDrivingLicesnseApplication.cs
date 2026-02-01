@@ -1,4 +1,5 @@
 ﻿using BusinessDVLD;
+using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
 {
@@ -16,10 +19,10 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
 
         ILDLApplicationServices _ldlApplicationServices;
         DataTable _dataTable;
-        public ListLocalDrivingLicenseApplication()
+        public ListLocalDrivingLicenseApplication(ILDLApplicationServices ldlApplicationServices )
         {
             InitializeComponent();
-            _ldlApplicationServices = ServiceFactory.CreateLDLApplicationServices();
+            _ldlApplicationServices = ldlApplicationServices ;
             _loadData();
         }
         private int GetSelectedLocalDrivingLicenseApplicationID()
@@ -49,10 +52,11 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         }
         private void btnAddNewApplication_Click(object sender, EventArgs e)
         {
+            var frm = Program.Container.Resolve<AddUpdateLocalDrivingLicenseApplication>(
+new ParameterOverride("LDLApplicationID", -1)
+);
+            frm.ShowDialog();
 
-
-            AddUpdateLocalDrivingLicenseApplication addUpdateLocalDrivingLicenseApplication = new AddUpdateLocalDrivingLicenseApplication(-1);
-            addUpdateLocalDrivingLicenseApplication.ShowDialog();
             _loadData();
         }
         private void ScheduleTestsMenue_Click(object sender, EventArgs e)
@@ -69,8 +73,10 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                 return;
             }
 
-            AddUpdateLocalDrivingLicenseApplication addUpdateLocalDrivingLicenseApplication = new AddUpdateLocalDrivingLicenseApplication(SelectedColumn);
-            addUpdateLocalDrivingLicenseApplication.ShowDialog();
+            var frm = Program.Container.Resolve<AddUpdateLocalDrivingLicenseApplication>(
+new ParameterOverride("LDLApplicationID", SelectedColumn)
+);
+            frm.ShowDialog();
             _loadData();
         }
         private void DeleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)

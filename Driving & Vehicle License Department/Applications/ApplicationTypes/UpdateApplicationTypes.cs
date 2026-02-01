@@ -16,27 +16,27 @@ namespace Driving___Vehicle_License_Department.Applications.ApplicationTypes
     {
         IApplicationTypesServices _services;
 
-        int _ID;
-        private void Initialize(DataRow dataRow)
+        int _applicationTypeID;
+        private void LoadApplicationType(int applicationTypeID)
         {
-            _ID = Convert.ToInt32(dataRow["ApplicationTypeID"]);
-            lblApplicationTypeID.Text = _ID.ToString();
-            txtTitle.Text = dataRow["ApplicationTypeTitle"].ToString();
-            txtFees.Text = dataRow["ApplicationFees"].ToString();
+
+            ApplicationTypesDTO applicationTypesDTO = _services.GetApplication(applicationTypeID);
+            lblApplicationTypeID.Text = applicationTypesDTO.ID.ToString();
+            txtTitle.Text = applicationTypesDTO.Title.ToString();
+            txtFees.Text = applicationTypesDTO.Fees.ToString();
 
         }
-        public UpdateApplicationTypes(DataRow dataRow)
+        public UpdateApplicationTypes(int applicationTypeID, IApplicationTypesServices services )
         {
             InitializeComponent();
-            Initialize(dataRow);
-            _services = ServiceFactory.CreateApplicationTypesServices();
+            _applicationTypeID = applicationTypeID;
+            LoadApplicationType(_applicationTypeID);
+            _services = services ;
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
             if (sender is TextBox Temp)
@@ -70,7 +70,7 @@ namespace Driving___Vehicle_License_Department.Applications.ApplicationTypes
 
                 ApplicationTypesDTO dTO = new ApplicationTypesDTO
                 {
-                    ID = _ID,
+                    ID = _applicationTypeID,
                     Fees = Convert.ToDouble(txtFees.Text),
                     Title = txtTitle.Text
 

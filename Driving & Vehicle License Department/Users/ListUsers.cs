@@ -1,5 +1,7 @@
 ﻿using BusinessDVLD;
+using DatabaseDVLD;
 using Driving___Vehicle_License_Department.Users;
+using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department
 {
@@ -26,11 +30,11 @@ namespace Driving___Vehicle_License_Department
             dgvUsers.Columns[3].Width = 100;
             dgvUsers.Columns[4].Width = 100;
         }
-        public ListUsers()
+        public ListUsers(IUserServices userServices)
         {
             InitializeComponent();
 
-            _userServices = ServiceFactory.CreateUserServices();
+            _userServices = userServices;
             _loadUsers();
          
         }
@@ -94,10 +98,11 @@ namespace Driving___Vehicle_License_Department
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AddUpdateUser addUpdateUser = new AddUpdateUser(-1);
-           // addUpdateUser.MdiParent = this.MdiParent;
-            addUpdateUser.ShowDialog();
+            var frm = Program.Container.Resolve<AddUpdateUser>(
+    new ParameterOverride("userId", -1 ));
 
+            frm.ShowDialog();
+ 
             _loadUsers();
         }
 
@@ -135,17 +140,21 @@ namespace Driving___Vehicle_License_Department
         }
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddUpdateUser addUpdate = new AddUpdateUser(-1);
-            addUpdate.ShowDialog();
+            var frm = Program.Container.Resolve<AddUpdateUser>(
+    new ParameterOverride("userId", -1));
+
+            frm.ShowDialog();
             _loadUsers(); 
         }
 
         private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-             
-            AddUpdateUser addUpdate = new AddUpdateUser(_getSelectedUserID());
-            addUpdate.ShowDialog();
+            var frm = Program.Container.Resolve<AddUpdateUser>(
+new ParameterOverride("userId", _getSelectedUserID()));
+
+            frm.ShowDialog();
+
             _loadUsers();
         }
 
@@ -159,8 +168,12 @@ namespace Driving___Vehicle_License_Department
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePassword changePassword = new ChangePassword(_getSelectedUserID());
-            changePassword.ShowDialog();
+
+            var frm = Program.Container.Resolve<ChangePassword>(
+new ParameterOverride("user", _getSelectedUserID() ));
+
+            frm.ShowDialog();
+ 
 
         }
     }

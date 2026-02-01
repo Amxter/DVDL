@@ -1,4 +1,4 @@
-using DatabaseDVLD;
+﻿using DatabaseDVLD;
 
 namespace BusinessDVLD
 {
@@ -34,17 +34,19 @@ namespace BusinessDVLD
 
         public static ILDLApplicationServices CreateLDLApplicationServices()
         {
-            return new LDlApplicationServices( new LDLApplicationRepository() );
+            return new LDlApplicationServices(new LDLApplicationRepository());
         }
 
         public static ILicenseClassServices CreateLicenseClassServices()
         {
-            return new LicenseClassServices( new LicenseClassRepository() );
+            return new LicenseClassServices(new LicenseClassRepository());
         }
 
         public static IApplicationServices CreateApplicationServices()
         {
-            return new ApplicationServices( new ApplicationRepository() );
+            return new ApplicationServices(new ApplicationRepository());
         }
     }
 }
+
+

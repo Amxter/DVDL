@@ -1,6 +1,10 @@
 ﻿using BusinessDVLD;
+using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
+using PresentationDVLD;
 using System;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
 {
@@ -15,14 +19,21 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         enum Mode { Add  , Update  }
         Mode _mode;
         ApplicationDTO _applicationDTO;
-        int _LDLApplicationID; 
-        public AddUpdateLocalDrivingLicenseApplication(int LDLApplicationID )
+        int _LDLApplicationID;
+
+        public AddUpdateLocalDrivingLicenseApplication(int LDLApplicationID , 
+            ILicenseClassServices licenseClassServices ,
+            ILDLApplicationServices  ldlApplicationServices ,
+           IApplicationTypesServices applicationTypesServices ,
+           IUserServices userServices ,
+           IPersonServices personServices ) 
         {
             InitializeComponent();
-            _licenseClassServices = ServiceFactory.CreateLicenseClassServices();
-            _ldlApplicationServices = ServiceFactory.CreateLDLApplicationServices();
-            _userServices = ServiceFactory.CreateUserServices();
-            _applicationTypesServices = ServiceFactory.CreateApplicationTypesServices();
+           
+            _licenseClassServices = licenseClassServices;
+            _ldlApplicationServices = ldlApplicationServices;
+            _applicationTypesServices = applicationTypesServices;
+            _userServices = userServices;
             _LDLApplicationID = LDLApplicationID;
             _LoadLicenseClasses();
             cbLicenseClass.SelectedIndex = 2;
@@ -38,7 +49,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                  _UpdateMode();
             }
 
-
+                 
 
         }
         private void _UpdateMode()
@@ -82,7 +93,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         {
         
         }
-        private void Update()
+        private void _Update()
         {
             bool isUpdate = _ldlApplicationServices.Update(new LDLApplicationDTO
             {
@@ -149,7 +160,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                 }
                 else if (_mode == Mode.Update)
                 {
-                     Update();
+                     _Update();
                 }
 
             }

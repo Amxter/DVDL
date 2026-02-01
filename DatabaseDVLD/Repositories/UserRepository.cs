@@ -7,6 +7,12 @@ namespace DatabaseDVLD
 {
     public class UserRepository : IUserRepository
     {
+        private readonly ILogger _logger;
+
+        public UserRepository( )
+        {
+            _logger = new FileLogger();
+        }
         public int Add(User user)
         {
             user.UserID = -1;
@@ -40,10 +46,11 @@ namespace DatabaseDVLD
                         user.UserID = Convert.ToInt32(result);
 
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        _logger.Error("Error while adding user", ex);
                     }
+  
 
 
 
@@ -85,10 +92,11 @@ namespace DatabaseDVLD
                             IsUpdate = true;
 
                     }
-                    catch
-                    {
-                        IsUpdate = false;
+                    catch (Exception ex)
+                    {IsUpdate = false;
+                        _logger.Error("Error while update user", ex);
                     }
+           
                 }
             }
 
@@ -110,10 +118,11 @@ namespace DatabaseDVLD
                         if (result != 0)
                             isDelete = true;
                     }
-                    catch
-                    {
-                        isDelete = false;
+                    catch (Exception ex)
+                    { isDelete = false;
+                        _logger.Error("Error while delete user", ex);
                     }
+  
                 }
             }
             return isDelete;
@@ -143,11 +152,11 @@ namespace DatabaseDVLD
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    {dataTable = new DataTable();
+                        _logger.Error("Error while get all user", ex);
                     }
+   
                 }
             }
             return dataTable;
@@ -200,10 +209,11 @@ namespace DatabaseDVLD
 
                         }
                     }
-                    catch
-                    {
-                        user = null;
+                    catch (Exception ex)
+                    { user = null;
+                        _logger.Error("Error while get user by ID", ex);
                     }
+ 
                 }
             }
 
@@ -281,10 +291,11 @@ namespace DatabaseDVLD
 
                         }
                     }
-                    catch
-                    {
-                        user = null;
+                    catch (Exception ex)
+                    { user = null;
+                        _logger.Error("Error while Is Exists By User Name", ex);
                     }
+         
                 }
             }
 

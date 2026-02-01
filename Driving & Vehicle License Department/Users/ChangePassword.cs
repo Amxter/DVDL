@@ -18,13 +18,13 @@ namespace Driving___Vehicle_License_Department.Users
         bool _IsNewPasswordMatch;
 
         IUserServices _userServices;
-        public ChangePassword(int user)
+        public ChangePassword(IUserServices userServices , int user)
         {
             InitializeComponent();
             ucUserCard1.LoaderData(user);
             _IsCurrentUserCorrect = false;
             _IsNewPasswordMatch = false;
-            _userServices = ServiceFactory.CreateUserServices();
+            _userServices = userServices ;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -1,4 +1,9 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+﻿using Driving___Vehicle_License_Department.People.User_Controls;
+using PresentationDVLD;
+using System.Windows.Forms;
+using Unity;
+
+namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
 {
     partial class AddUpdateLocalDrivingLicenseApplication
     {
@@ -97,7 +102,7 @@
             // filterPerson1
             // 
             this.filterPerson1.FilterEnabled = true;
-            this.filterPerson1.Location = new System.Drawing.Point(-1, 6);
+            this.filterPerson1.Location = new System.Drawing.Point(4, 6);
             this.filterPerson1.Name = "filterPerson1";
             this.filterPerson1.ShowAddPerson = true;
             this.filterPerson1.Size = new System.Drawing.Size(846, 441);

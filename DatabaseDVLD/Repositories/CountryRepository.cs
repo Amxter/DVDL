@@ -1,10 +1,19 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DatabaseDVLD
 {
     public class CountryRepository : ICountryRepository
     {
+
+        private readonly ILogger _logger;
+
+        public CountryRepository( )
+        {
+            _logger = new FileLogger();
+        }
+
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
@@ -27,11 +36,11 @@ namespace DatabaseDVLD
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    { dataTable = new DataTable();
+                        _logger.Error("Error while get all countries", ex);
                     }
+ 
                 }
             }
             return dataTable;
@@ -59,10 +68,11 @@ namespace DatabaseDVLD
                             countryName = result.ToString();
                         }
                     }
-                    catch
-                    {
-                        countryName = string.Empty;
+                    catch (Exception ex)
+                    { countryName = string.Empty;
+                        _logger.Error("Error while get country name by ID", ex);
                     }
+    
                 }
             }
             return countryName;

@@ -7,9 +7,6 @@ namespace BusinessDVLD
     public class PersonServices : IPersonServices
     {
         IPersonRepository _personRepository;
-
-
-
         public PersonServices(IPersonRepository repository)
         {
 
@@ -17,7 +14,6 @@ namespace BusinessDVLD
 
 
         }
-  
         public int Add(PersonDTO dTO) => _personRepository.Add(dTO.ToEntity());
         public bool Delete(int personID) => _personRepository.Delete(personID);
         public bool IsExistsByID(int personID) => _personRepository.IsExistsByID(personID);

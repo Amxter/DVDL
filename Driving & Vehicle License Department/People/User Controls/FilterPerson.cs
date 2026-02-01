@@ -1,4 +1,5 @@
 ﻿using BusinessDVLD;
+using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace Driving___Vehicle_License_Department.People.User_Controls
 {
@@ -20,7 +22,7 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
         {
             get
             {
-
+                
                 return ucDetailsPerson1.PersonID;
             }
         }
@@ -75,15 +77,15 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
         {
             if (cbFilter.Text == "PersonID" && txbSearch.Text != "")
             {
-                ucDetailsPerson1.LoadPersonDetails(Convert.ToInt32(txbSearch.Text.Trim()));
+               ucDetailsPerson1.LoadPersonDetails(Convert.ToInt32(txbSearch.Text.Trim()));
                 if (OnPersonSelected != null && _filterEnabled)
-                    OnPersonSelected(ucDetailsPerson1.PersonID);
+                OnPersonSelected(ucDetailsPerson1.PersonID);
 
             }
             else if (cbFilter.Text == "NationalNo"&& txbSearch.Text != "")
             {
 
-                ucDetailsPerson1.LoadPersonDetails(txbSearch.Text.Trim());
+                 ucDetailsPerson1.LoadPersonDetails(txbSearch.Text.Trim());
                 if (OnPersonSelected != null && _filterEnabled)
                     OnPersonSelected(ucDetailsPerson1.PersonID);
             }
@@ -95,7 +97,6 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
             txbSearch.Text = personID.ToString();
 
         }
-
         public void FilterPersonByID(int personID)
         {
             ucDetailsPerson1.LoadPersonDetails(personID);
@@ -104,9 +105,9 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            AddAndUpdatePerson addPerson = new AddAndUpdatePerson();
-            addPerson.OnDataSent += _LoadInfoAfterAddPerson;
-            addPerson.ShowDialog();
+            var frm = Program.Container.Resolve<AddAndUpdatePerson>();
+            frm.OnDataSent += _LoadInfoAfterAddPerson;
+            frm.ShowDialog();
             txbSearch.Focus();
         }
         private void FilterPerson_Load(object sender, EventArgs e)

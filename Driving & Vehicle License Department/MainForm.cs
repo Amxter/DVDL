@@ -1,5 +1,6 @@
 ﻿using BusinessDVLD;
 using Driving___Vehicle_License_Department;
+using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
 using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
 using Driving___Vehicle_License_Department.Users;
@@ -12,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace PresentationDVLD
 {
@@ -28,9 +31,11 @@ namespace PresentationDVLD
 
         private void peToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PeopleManagement peopleManagement = new PeopleManagement();
-            peopleManagement.MdiParent = this;
-            peopleManagement.Show();
+
+            var frm = Program.Container.Resolve<PeopleManagement>();
+      
+            frm.ShowDialog();
+ 
 
         }
 
@@ -41,15 +46,20 @@ namespace PresentationDVLD
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListUsers listUsers = new ListUsers();
-            listUsers.MdiParent = this;
-            listUsers.Show(); 
+            var frm = Program.Container.Resolve<ListUsers>();
+
+
+            frm.Show();
+ 
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePassword changePassword = new ChangePassword(CurrentUser.LoggedInUser.UserID);
-            changePassword.ShowDialog();
+            var frm = Program.Container.Resolve<ChangePassword>(
+new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
+
+            frm.ShowDialog();
+ 
 
         }
 
@@ -78,33 +88,43 @@ namespace PresentationDVLD
 
         private void applicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ApplicationTypes applicationTypes = new ApplicationTypes();
+            var applicationTypes = Program.Container.Resolve<ApplicationTypes>() ;
             applicationTypes.ShowDialog();
         }
 
         private void maToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageTestTypes manageTestTypes = new ManageTestTypes();
-            manageTestTypes.ShowDialog();
+
+            var frm = Program.Container.Resolve<ManageTestTypes>();
+
+
+            frm.ShowDialog();
+ 
         }
 
  
 
         private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddUpdateLocalDrivingLicenseApplication addUpdateLocalDrivingLicenseApplication = new AddUpdateLocalDrivingLicenseApplication(-1);
-            addUpdateLocalDrivingLicenseApplication.MdiParent = this;
-            addUpdateLocalDrivingLicenseApplication.Show();
+            var frm = Program.Container.Resolve<AddUpdateLocalDrivingLicenseApplication>(
+           new ParameterOverride("LDLApplicationID", -1)
+             );
+         //   frm.MdiParent = this;
+            frm.ShowDialog();
+
+           
+     
         }
 
         private void localDrivingLicenseApllicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
 
+            var frm = Program.Container.Resolve<ListLocalDrivingLicenseApplication>();
+           // frm.MdiParent = this;
+            frm.ShowDialog();
 
-            ListLocalDrivingLicenseApplication listLocalDrivingLicenseApplication = new ListLocalDrivingLicenseApplication();
-            listLocalDrivingLicenseApplication.MdiParent = this;
-            listLocalDrivingLicenseApplication.Show();
+
         }
     }
 }

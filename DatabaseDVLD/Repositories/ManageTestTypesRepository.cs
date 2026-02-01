@@ -1,10 +1,18 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DatabaseDVLD
 {
     public class ManageTestTypesRepository : IManageTestTypesRepository  
     {
+        private readonly ILogger _logger;
+
+        public ManageTestTypesRepository( )
+        {
+            _logger = new FileLogger();
+        }
+
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
@@ -31,11 +39,11 @@ namespace DatabaseDVLD
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    { dataTable = new DataTable();
+                        _logger.Error("Error while get all manage test types", ex);
                     }
+      
                 }
             }
             return dataTable;
@@ -72,10 +80,12 @@ namespace DatabaseDVLD
                             IsUpdate = true;
 
                     }
-                    catch
-                    {
-                        IsUpdate = false;
+                    catch (Exception ex)
+                    {IsUpdate = false;
+                        
+                        _logger.Error("Error while update manage test types", ex);
                     }
+ 
                 }
             }
 

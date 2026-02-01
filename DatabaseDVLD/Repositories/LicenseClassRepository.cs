@@ -1,10 +1,19 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DatabaseDVLD
 {
     public class LicenseClassRepository : ILicenseClassRepository
     {
+
+        private readonly ILogger _logger;
+
+        public LicenseClassRepository( )
+        {
+            _logger = new FileLogger();
+        }
+ 
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
@@ -33,11 +42,11 @@ namespace DatabaseDVLD
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    {dataTable = new DataTable();
+                        _logger.Error("Error while get all license class", ex);
                     }
+    
                 }
             }
             return dataTable;

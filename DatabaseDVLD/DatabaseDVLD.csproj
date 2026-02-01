@@ -59,6 +59,8 @@
     <Compile Include="interfaces\ILDLApplicationRepository.cs" />
     <Compile Include="Entities\LDLApplication.cs" />
     <Compile Include="interfaces\ILicenseClassRepository.cs" />
+    <Compile Include="interfaces\ILogger.cs" />
+    <Compile Include="Repositories\FileLogger.cs" />
     <Compile Include="Repositories\LDLApplicationRepository.cs" />
     <Compile Include="Repositories\LicenseClassRepository.cs" />
     <Compile Include="Repositories\ManageTestTypesRepository.cs" />

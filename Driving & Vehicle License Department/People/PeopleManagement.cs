@@ -3,6 +3,8 @@ using Driving___Vehicle_License_Department;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 
 namespace PresentationDVLD
@@ -32,11 +34,11 @@ namespace PresentationDVLD
             labCountRecords.Text = $"Records # {dgvPeople.Rows.Count}";
             
         }
-        public PeopleManagement()
+        public PeopleManagement(IPersonServices personServices , ICountryServices countryServices )
         {
             InitializeComponent();
-            _personServices = ServiceFactory.CreatePersonServices();
-            _countryServices = ServiceFactory.CreateCountryServices();
+            _personServices = personServices;
+            _countryServices = countryServices ;
             _LoadPeopleData();
             dgvPeople.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -214,16 +216,19 @@ namespace PresentationDVLD
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddAndUpdatePerson addAndUpdate = new AddAndUpdatePerson();
-            addAndUpdate.OnDataSent += LoadPeopleData; 
-            addAndUpdate.ShowDialog();
-           // _LoadPeopleData();
+            var frm = Program.Container.Resolve<AddAndUpdatePerson>();
+            frm.OnDataSent += LoadPeopleData;
+            frm.ShowDialog();
+ 
+           _LoadPeopleData();
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddAndUpdatePerson addAndUpdate = new AddAndUpdatePerson();
-            addAndUpdate.ShowDialog();
+            var frm = Program.Container.Resolve<AddAndUpdatePerson>();
+           
+            frm.ShowDialog();
+ 
             _LoadPeopleData();
         }
 
@@ -237,8 +242,13 @@ namespace PresentationDVLD
             int personID = GetSelectedPersonID(); 
             if (personID != -1)
             {
-                AddAndUpdatePerson addAndUpdate = new AddAndUpdatePerson(personID);
-                addAndUpdate.ShowDialog();
+
+                var frm = Program.Container.Resolve<AddAndUpdatePerson>(
+                    new ParameterOverride("ID", personID) );
+               
+                frm.ShowDialog();
+               
+                
                 _LoadPeopleData();
             }
 

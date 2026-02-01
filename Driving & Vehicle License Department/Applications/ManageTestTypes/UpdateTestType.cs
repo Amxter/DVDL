@@ -31,6 +31,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
         {
             InitializeComponent();
             _manageTestTypesServices = ServiceFactory.CreateManageTestTypesServices();
+          
             Initial(dataRow);
         }
 

@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Login
 {
-    public partial class LoginScreen : GeneralForm 
+    public partial class LoginScreen : GeneralForm
     {
 
         IUserServices _userServices;
-        public LoginScreen()
+        public LoginScreen(IUserServices  userServices)
         {
             InitializeComponent();
-            _userServices = ServiceFactory.CreateUserServices();
+            _userServices = userServices ;
         }
         private void SavePasswordAndUserNameInFile(bool isSave)
         {

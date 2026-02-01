@@ -70,8 +70,8 @@
     <Compile Include="Services\PersonServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTransferObject\UserDTO.cs" />
-    <Compile Include="Services\ServiceFactory.cs" />
     <Compile Include="DataTransferObject\TestDTO.cs" />
+    <Compile Include="Services\ServiceFactory.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,10 +27,10 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
             lblRecordsCount.Text = dgvTestTypes.RowCount.ToString();
 
         }
-        public ManageTestTypes()
+        public ManageTestTypes(IManageTestTypesServices manageTestTypes)
         {
             InitializeComponent();
-            _manageTestTypes = ServiceFactory.CreateManageTestTypesServices();
+            _manageTestTypes = manageTestTypes ;
             loadData();
         }
         private void btnClose_Click(object sender, EventArgs e)

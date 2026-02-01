@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -6,6 +7,13 @@ namespace DatabaseDVLD
 {
     public class ApplicationTypesRepository : IApplicationTypesRepository
     {
+        private readonly ILogger _logger;
+
+        public ApplicationTypesRepository( )
+        {
+            _logger = new FileLogger();
+        }
+
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
@@ -31,11 +39,11 @@ namespace DatabaseDVLD
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    { dataTable = new DataTable();
+                        _logger.Error("Error while get all application types", ex);
                     }
+  
                 }
             }
             return dataTable;
@@ -70,10 +78,11 @@ namespace DatabaseDVLD
                             IsUpdate = true;
 
                     }
-                    catch
-                    {
-                        IsUpdate = false;
+                    catch (Exception ex)
+                    { IsUpdate = false;
+                        _logger.Error("Error while update application types", ex);
                     }
+               
                 }
             }
 
@@ -105,12 +114,12 @@ namespace DatabaseDVLD
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        applicationTypes = null;
-
-
+                         applicationTypes = null;
+                        _logger.Error("Error while get application types by Title", ex);
                     }
+ 
                 }
             }
             return applicationTypes;
@@ -140,12 +149,12 @@ namespace DatabaseDVLD
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        applicationTypes = null;
-
-
+                     applicationTypes = null;
+                        _logger.Error("Error while get application types by ID", ex);
                     }
+ 
                 }
             }
             return applicationTypes;

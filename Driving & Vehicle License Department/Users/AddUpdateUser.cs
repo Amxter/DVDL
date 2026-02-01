@@ -1,7 +1,11 @@
 ﻿using BusinessDVLD;
+using Driving___Vehicle_License_Department.Applications;
+using Driving___Vehicle_License_Department.People.User_Controls;
+using PresentationDVLD;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Unity;
 
 namespace Driving___Vehicle_License_Department.Users
 {
@@ -49,10 +53,10 @@ namespace Driving___Vehicle_License_Department.Users
                 this.Close();
             }
         }
-        public AddUpdateUser(int userId)
+        public AddUpdateUser(IUserServices userServices , IPersonServices personServices,int userId)
         {
             InitializeComponent();
-            _userServices = ServiceFactory.CreateUserServices();
+            _userServices = userServices ;
 
   
             _isValidUserName = false;
@@ -75,6 +79,7 @@ namespace Driving___Vehicle_License_Department.Users
                 this.Text = "Update User";
                 _InitialUpdateMode();
             }
+            
         }
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
@@ -93,7 +98,7 @@ namespace Driving___Vehicle_License_Department.Users
             }
 
         }
-        private void InsertsLoginInfo()
+         private void InsertsLoginInfo()
         {
             tpLoginInfo.Enabled = true;
             btnSave.Enabled = true;
@@ -274,7 +279,7 @@ namespace Driving___Vehicle_License_Department.Users
         }
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-
+           
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
 
@@ -286,6 +291,11 @@ namespace Driving___Vehicle_License_Department.Users
 
             }
             matchPasswords();
+        }
+
+        private void AddUpdateUser_Load(object sender, EventArgs e)
+        {
+ 
         }
     }
 }

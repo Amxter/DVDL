@@ -6,6 +6,13 @@ namespace DatabaseDVLD
 {
     public class LDLApplicationRepository : ILDLApplicationRepository
     {
+        private readonly ILogger _logger;
+
+        public LDLApplicationRepository( )
+        {
+            _logger = new FileLogger();
+        }
+
         public int Add(LDLApplication application)
         {
 
@@ -34,9 +41,9 @@ INSERT INTO [dbo].[LocalDrivingLicenseApplications]
                         application.LocalDrivingLicenseApplicationID = Convert.ToInt32(result);
 
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        _logger.Error("Error while adding LDLApplication", ex);
                     }
 
 
@@ -78,10 +85,11 @@ UPDATE [dbo].[LocalDrivingLicenseApplications]
                             IsUpdate = true;
 
                     }
-                    catch
-                    {
-                        IsUpdate = false;
+                    catch (Exception ex)
+                    {IsUpdate = false;
+                        _logger.Error("Error while update LDLApplication", ex);
                     }
+      
                 }
             }
 
@@ -112,72 +120,85 @@ UPDATE [dbo].[LocalDrivingLicenseApplications]
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    { dataTable = new DataTable();
+                        _logger.Error("Error while get all LDLapplication", ex);
                     }
+        
                 }
             }
             return dataTable;
         }
         public LDLApplication GetByID(int localDrivingLicenseApplicationID)
         {
-            LDLApplication lDLApplication = new LDLApplication();
+            LDLApplication ldl = null;
 
-            lDLApplication.LocalDrivingLicenseApplicationID = localDrivingLicenseApplicationID;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            string query = @"
+SELECT 
+    l.LocalDrivingLicenseApplicationID,
+    l.LicenseClassID,
+    l.ApplicationID,
+
+    a.ApplicationID AS App_ApplicationID,
+    a.ApplicantPersonID,
+    a.ApplicationDate,
+    a.ApplicationTypeID,
+    a.ApplicationStatus,
+    a.LastStatusDate,
+    a.PaidFees,
+    a.CreatedByUserID
+FROM LocalDrivingLicenseApplications l
+INNER JOIN Applications a ON a.ApplicationID = l.ApplicationID
+WHERE l.LocalDrivingLicenseApplicationID = @ID;
+";
+
+            try
             {
-
-                string query = "Select * from LocalDrivingLicenseApplications  Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID ";
-
-
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlConnection connection = new SqlConnection(DatabaseSittings.connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.Add("@ID", SqlDbType.Int).Value = localDrivingLicenseApplicationID;
 
-                    cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", lDLApplication.LocalDrivingLicenseApplicationID);
+                    connection.Open();
 
-
-                    try
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-
-                        conn.Open();
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (reader.Read())
+                            // ابنِ Application من نفس الـ reader
+                            var app = new Application
                             {
+                                ApplicationID = Convert.ToInt32(reader["App_ApplicationID"]),
+                                ApplicantPersonID = Convert.ToInt32(reader["ApplicantPersonID"]),
+                                ApplicationDate = Convert.ToDateTime(reader["ApplicationDate"]),
+                                ApplicationTypeID = Convert.ToInt32(reader["ApplicationTypeID"]),
+                                ApplicationStatus = Convert.ToInt32(reader["ApplicationStatus"]),
+                                LastStatusDate = Convert.ToDateTime(reader["LastStatusDate"]),
+                                PaidFees = Convert.ToDouble(reader["PaidFees"]),
+                                CreatedByUserID = Convert.ToInt32(reader["CreatedByUserID"])
+                            };
 
-                                ApplicationRepository applicationRepository = new ApplicationRepository();
-                                Application application = applicationRepository.GetByApplicationID(Convert.ToInt32(reader["ApplicationID"]));
-
-                                lDLApplication = new LDLApplication
-                                {
-                                    Application = application,
-                                    LicenseClassID = Convert.ToInt32(reader["LicenseClassID"]),
-                                };
-                            }
-                            else
+                            // ابنِ LDLApplication
+                            ldl = new LDLApplication
                             {
-
-                                lDLApplication = null;
-
-                            }
-
-
-
-
+                                LocalDrivingLicenseApplicationID = Convert.ToInt32(reader["LocalDrivingLicenseApplicationID"]),
+                                LicenseClassID = Convert.ToInt32(reader["LicenseClassID"]),
+                                Application = app
+                            };
                         }
-                    }
-                    catch
-                    {
-                        lDLApplication = null;
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                // لا تبلع الخطأ بصمت (أقل شيء Debug)
+                System.Diagnostics.Debug.WriteLine($"[LDLApplicationRepository.GetByID] {ex}");
+                // أو ارجع null مثل أسلوبك الحالي
+            }
 
-            return lDLApplication;
+            return ldl;
         }
+
         public bool IsExistsApplicationByUsernameAndLicenseClass(int PersonID, int LicenseClassID)
         {
 

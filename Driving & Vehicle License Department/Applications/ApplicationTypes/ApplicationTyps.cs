@@ -1,5 +1,6 @@
 ﻿using BusinessDVLD;
 using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
+using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department
 {
@@ -16,11 +19,11 @@ namespace Driving___Vehicle_License_Department
     {
 
         IApplicationTypesServices _services;
-        public ApplicationTypes()
+        public ApplicationTypes(IApplicationTypesServices services )
         {
             InitializeComponent();
 
-            _services = ServiceFactory.CreateApplicationTypesServices();
+            _services = services ;
             LoadApplications();
         }
 
@@ -42,12 +45,14 @@ namespace Driving___Vehicle_License_Department
         }
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int id = (int)dgvApplicationTypes.CurrentRow
+              .Cells["ApplicationTypeID"].Value;
 
-            DataGridViewRow dgvRow = dgvApplicationTypes.SelectedRows[0];
-            DataRow dataRow = ((DataRowView)dgvRow.DataBoundItem).Row;
 
-            UpdateApplicationTypes updateApplicationTypes = new UpdateApplicationTypes(dataRow);
-                updateApplicationTypes.ShowDialog();
+            var frm = Program.Container.Resolve<UpdateApplicationTypes>(
+                new ParameterOverride("applicationTypeId", id)
+            );
+            frm.ShowDialog();
             LoadApplications();
         }
     }

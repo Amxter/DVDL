@@ -6,6 +6,13 @@ namespace DatabaseDVLD
 {
     public class PersonRepository : IPersonRepository
     {
+        private readonly ILogger _logger;
+
+        public PersonRepository( )
+        {
+            _logger = new FileLogger();
+        }
+
         public int Add(Person person)
         {
             person.PersonID = -1;
@@ -122,10 +129,11 @@ SELECT SCOPE_IDENTITY();
                             IsUpdate = true;
 
                     }
-                    catch
-                    {
-                        IsUpdate = false;
+                    catch (Exception ex)
+                    { IsUpdate = false;
+                        _logger.Error("Error while update person", ex);
                     }
+  
                 }
             }
 
@@ -152,11 +160,11 @@ SELECT SCOPE_IDENTITY();
                             isDelete = true;
 
                     }
-                    catch
-                    {
-
-                        isDelete = false;
+                    catch (Exception ex)
+                    {isDelete = false;
+                        _logger.Error("Error while delete person", ex);
                     }
+         
                 }
             }
 
@@ -193,11 +201,11 @@ FROM     People INNER JOIN
                             dataTable.Load(reader);
                         }
                     }
-                    catch
-                    {
-                        dataTable = new DataTable();
-
+                    catch (Exception ex)
+                    {dataTable = new DataTable();
+                        _logger.Error("Error while get all person", ex);
                     }
+  
                 }
             }
             return dataTable;
@@ -259,10 +267,11 @@ FROM     People INNER JOIN
 
                         }
                     }
-                    catch
-                    {
-                        person = null;
+                    catch (Exception ex)
+                    { person = null;
+                        _logger.Error("Error while get by person ID ", ex);
                     }
+  
                 }
             }
 
@@ -368,10 +377,11 @@ FROM     People INNER JOIN
 
                         }
                     }
-                    catch
-                    {
-                        person = null;
+                    catch (Exception ex)
+                    { person = null;
+                        _logger.Error("Error while get by national No", ex);
                     }
+    
                 }
             }
 

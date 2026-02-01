@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Data.SqlClient;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DatabaseDVLD
 {
     public class ApplicationRepository : IApplicationRepository
     {
+
+        private readonly ILogger _logger;
+
+        public ApplicationRepository()
+        {
+            _logger =  new FileLogger() ;
+        }
+
         public int Add(Application application)
         {
 
@@ -47,9 +56,9 @@ INSERT INTO [dbo].[Applications]
                         application.ApplicationID = Convert.ToInt32(result);
 
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        _logger.Error("Error while adding Application", ex);
                     }
 
 
@@ -61,7 +70,6 @@ INSERT INTO [dbo].[Applications]
 
 
         }
-
         public Application GetByApplicationID(int applicationID)
         {
 
@@ -115,10 +123,11 @@ INSERT INTO [dbo].[Applications]
 
                         }
                     }
-                    catch
-                    {
-                        application = null;
+                    catch (Exception ex)
+                    {application = null;
+                        _logger.Error("Error while Grt Application By ID", ex);
                     }
+            
                 }
             }
 
@@ -142,10 +151,12 @@ INSERT INTO [dbo].[Applications]
                         if (result != 0)
                             isDelete = true;
                     }
-                    catch
-                    {
-                        isDelete = false;
+                    catch (Exception ex)
+                    {isDelete = false;
+                         
+                        _logger.Error("Error while Delete Application", ex);
                     }
+ 
                 }
             }
             return isDelete;

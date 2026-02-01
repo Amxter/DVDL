@@ -1,5 +1,7 @@
 ﻿using BusinessDVLD;
+using DatabaseDVLD;
 using Driving___Vehicle_License_Department.Properties;
+using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department
 {
@@ -19,12 +23,12 @@ namespace Driving___Vehicle_License_Department
         IPersonServices _personServices;
         ICountryServices _countryServices;
         int _personID;
-      
+
         public int PersonID
         {
             get { return _personID; }
         }
-        public UCDetailsPerson() 
+        public UCDetailsPerson()
         {
             InitializeComponent();
             _personServices = ServiceFactory.CreatePersonServices();
@@ -33,8 +37,6 @@ namespace Driving___Vehicle_License_Department
 
 
         }
-  
-
         private void loadPictureBoxImage(string Path , string Gendor )
         {
             pbPersonImage.ImageLocation = Path ;
@@ -50,7 +52,6 @@ namespace Driving___Vehicle_License_Department
 
             pbPersonImage.ImageLocation = Path; 
         }
-
         private void _loadInfo (PersonDTO person)
         {
 
@@ -70,8 +71,7 @@ namespace Driving___Vehicle_License_Department
 
             loadPictureBoxImage(person.ImagePath, lblGendor.Text);
         }
-
-       private void initLoadInfo()
+        private void initLoadInfo()
         {
             lblPersonID.Text =  "[????]";
             lblFullName.Text = "[????]";
@@ -118,11 +118,16 @@ namespace Driving___Vehicle_License_Department
         }
         private void llEditPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AddAndUpdatePerson updatePerson = new AddAndUpdatePerson(_personID);
-            updatePerson.ShowDialog();
+            var frm = Program.Container.Resolve<AddAndUpdatePerson>(
+               new ParameterOverride("ID", _personID));
+
+            frm.ShowDialog();
+      
+  
             LoadPersonDetails(_personID);
         }
 
  
     }
+
 }

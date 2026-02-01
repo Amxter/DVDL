@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +47,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.11.10\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.11.10\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Applications\ApplicationBasicInfo.cs">
@@ -155,12 +164,6 @@
     <Compile Include="People\PeopleManagement.Designer.cs">
       <DependentUpon>PeopleManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="People\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="People\User Controls\FilterPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,9 +244,6 @@
     <EmbeddedResource Include="People\PeopleManagement.resx">
       <DependentUpon>PeopleManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="People\User Controls\FilterPerson.resx">
       <DependentUpon>FilterPerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +266,7 @@
     <EmbeddedResource Include="Users\User Controls\UCUserCard.resx">
       <DependentUpon>UCUserCard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -283,6 +284,10 @@
     <ProjectReference Include="..\BusinessDVLD\BusinessDVLD.csproj">
       <Project>{16fea0ac-c1d5-495a-affa-d378ba92ecff}</Project>
       <Name>BusinessDVLD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseDVLD\DatabaseDVLD.csproj">
+      <Project>{05dbba68-7e52-4f7f-b68a-9df81f418ff0}</Project>
+      <Name>DatabaseDVLD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -417,10 +422,7 @@
   <ItemGroup>
     <None Include="Resources\TestType 512.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessDVLD\Models\" />
-    <Folder Include="BusinessDVLD\Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\ApplicationTitle.png" />
   </ItemGroup>

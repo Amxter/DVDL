@@ -35,15 +35,15 @@ namespace Driving___Vehicle_License_Department
         int _personID;
         private IPersonServices _personServices;
         private ICountryServices _countryServices;
-        public AddAndUpdatePerson(int ID = -1)
+        public AddAndUpdatePerson(IPersonServices  personServices  , ICountryServices  countryServices, int ID = -1  )
         {
             InitializeComponent();
             _imagesFolder = @"C:\\Programing with Mohamed abu Hadhod\\Course 19\\Image Person"; // For storing the selected image path
             _ImagePath = null;
             _oldImagePath = null;
 
-            _personServices = ServiceFactory.CreatePersonServices();
-            _countryServices = ServiceFactory.CreateCountryServices();
+            _personServices = personServices ;
+            _countryServices = countryServices ;
             _loadNationality();
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
             dtpDateOfBirth.MaxDate= DateTime.Now.AddHours(1);
