@@ -13,7 +13,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
 {
     public partial class ManageTestTypes : GeneralForm
     {
-        IManageTestTypesServices _manageTestTypes;
+        ITestTypesServices _manageTestTypes;
         private void loadData()
         {
 
@@ -27,7 +27,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
             lblRecordsCount.Text = dgvTestTypes.RowCount.ToString();
 
         }
-        public ManageTestTypes(IManageTestTypesServices manageTestTypes)
+        public ManageTestTypes(ITestTypesServices manageTestTypes)
         {
             InitializeComponent();
             _manageTestTypes = manageTestTypes ;

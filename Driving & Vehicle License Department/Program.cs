@@ -4,6 +4,10 @@ using Driving___Vehicle_License_Department;
 using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
 using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
+using Driving___Vehicle_License_Department.Applications.Tests;
+using Driving___Vehicle_License_Department.Drivers;
+using Driving___Vehicle_License_Department.Licenses;
+using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
 using Driving___Vehicle_License_Department.Login;
 using Driving___Vehicle_License_Department.People;
 using Driving___Vehicle_License_Department.People.User_Controls;
@@ -20,6 +24,7 @@ namespace PresentationDVLD
         public static IUnityContainer Container { get; private set; }
 
         [STAThread]
+
         static void Main()
         {
             System.Windows.Forms.Application.EnableVisualStyles();
@@ -34,9 +39,14 @@ namespace PresentationDVLD
             Container.RegisterType<IApplicationTypesRepository, ApplicationTypesRepository>();
             Container.RegisterType<ICountryRepository, CountryRepository>();
             Container.RegisterType<ILicenseClassRepository, LicenseClassRepository>();
-            Container.RegisterType<IManageTestTypesRepository, ManageTestTypesRepository>();
+            Container.RegisterType<ITestTypesRepository, TestTypesRepository>();
             Container.RegisterType<ILDLApplicationRepository, LDLApplicationRepository>();
             Container.RegisterType<ILogger, FileLogger>();
+            Container.RegisterType<ITestAppointmentRepository, TestAppointmentRepository>();
+            Container.RegisterType<ITestRepository, TestRepository>();
+            Container.RegisterType< ILicensesRepository, LicensesRepository>();
+            Container.RegisterType<IDriverRepository, DriverRepository>();
+
 
             // Services
             Container.RegisterType<IPersonServices, PersonServices>();
@@ -45,8 +55,12 @@ namespace PresentationDVLD
             Container.RegisterType<IApplicationTypesServices, ApplicationTypesServices>();
             Container.RegisterType<ICountryServices, CountryServices>();
             Container.RegisterType<ILicenseClassServices, LicenseClassServices>();
-            Container.RegisterType<IManageTestTypesServices, ManageTestTypesServices>();
+            Container.RegisterType<ITestTypesServices, TestTypesServices>();
             Container.RegisterType<ILDLApplicationServices, LDlApplicationServices>();
+            Container.RegisterType<ITestAppointmentServices, TestAppointmentServices>();
+            Container.RegisterType<ITestServices,  TestServices >();
+            Container.RegisterType<ILicenseService, LicenseService>();
+            Container.RegisterType<IDriverServices, DriverServices>();
 
             // Forms
             Container.RegisterType<LoginScreen>();
@@ -61,11 +75,23 @@ namespace PresentationDVLD
             Container.RegisterType<AddUpdateUser>();
             Container.RegisterType<ChangePassword>();
             Container.RegisterType<ListUsers>();
- 
+            Container.RegisterType<ListTestsAppointments>();
+            Container.RegisterType<ScheduleTestForm>();
+            Container.RegisterType<TakeTest>();
+            Container.RegisterType<LDLApplicationInfo>();
+            Container.RegisterType<ShowPersonLicenseHistory>(); 
+            Container.RegisterType<ShowLicensesInfo>();
+            Container.RegisterType<ListDrivers>();
+
+
+
+
+
             var login = Container.Resolve<LoginScreen>();
             System.Windows.Forms.Application.Run(login);
-           // System.Windows.Forms.Application.Run(new TestForm());
+            
 
         }
     }
+
 }

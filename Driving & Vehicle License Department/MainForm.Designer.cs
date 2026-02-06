@@ -41,6 +41,7 @@
             this.intrnationalLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accoutSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationsToolStripMenuItem,
             this.peToolStripMenuItem,
+            this.driversToolStripMenuItem,
             this.usersToolStripMenuItem,
             this.accoutSettingsToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
@@ -145,6 +147,13 @@
             resources.ApplyResources(this.peToolStripMenuItem, "peToolStripMenuItem");
             this.peToolStripMenuItem.Click += new System.EventHandler(this.peToolStripMenuItem_Click);
             // 
+            // driversToolStripMenuItem
+            // 
+            this.driversToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Drivers_64;
+            this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
+            resources.ApplyResources(this.driversToolStripMenuItem, "driversToolStripMenuItem");
+            this.driversToolStripMenuItem.Click += new System.EventHandler(this.driversToolStripMenuItem_Click);
+            // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Users_2_400;
@@ -229,6 +238,7 @@
         private System.Windows.Forms.ToolStripMenuItem newDrivengLicensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem intrnationalLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localLicenseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
     }
 }
 

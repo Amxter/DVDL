@@ -41,38 +41,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappers\ApplicationMapper.cs" />
-    <Compile Include="Mappers\ApplicationTypesMapper.cs" />
-    <Compile Include="Mappers\LDLApplicationTypesMapper.cs" />
-    <Compile Include="Mappers\ManageTestTypesMapper.cs" />
+    <Compile Include="DataTransferObject\Licenses\LicenseClassDTO.cs" />
+    <Compile Include="DataTransferObject\Tests\TestAppointmentDTO.cs" />
+    <Compile Include="interfaces\Tests\ITestServices.cs" />
+    <Compile Include="Mappers\Applications\ApplicationMapper.cs" />
+    <Compile Include="Mappers\Applications\ApplicationTypesMapper.cs" />
+    <Compile Include="Mappers\Applications\LDLApplicationTypesMapper.cs" />
+    <Compile Include="Mappers\Licenses\LicenseMapper.cs" />
+    <Compile Include="Mappers\Licenses\LicenseClassMapper.cs" />
+    <Compile Include="Mappers\Tests\TestMapper.cs" />
+    <Compile Include="Mappers\Tests\TestAppointmentMapper.cs" />
+    <Compile Include="Mappers\Tests\TestTypeMapper.cs" />
+    <Compile Include="Mappers\Users\DriverMapper.cs" />
     <Compile Include="PasswordHelper.cs" />
-    <Compile Include="interfaces\IGeneralServices.cs" />
-    <Compile Include="interfaces\IPersonServices.cs" />
-    <Compile Include="Mappers\PersonMapper.cs" />
-    <Compile Include="DataTransferObject\PersonDTO.cs" />
-    <Compile Include="interfaces\ICountryServices.cs" />
-    <Compile Include="Mappers\UserMapper.cs" />
-    <Compile Include="DataTransferObject\ApplicationTypesDTO.cs" />
-    <Compile Include="DataTransferObject\ApplicationDTO.cs" />
-    <Compile Include="Services\ApplicationServices.cs" />
-    <Compile Include="Services\ApplicationTypesServices.cs" />
-    <Compile Include="Services\CountryServices.cs" />
-    <Compile Include="interfaces\IUserServices.cs" />
-    <Compile Include="interfaces\IApplicationTypesServices.cs" />
-    <Compile Include="interfaces\IManageTestTypesServices.cs" />
-    <Compile Include="interfaces\ILDLApplicationServices.cs" />
-    <Compile Include="DataTransferObject\LDLApplicationDTO.cs" />
-    <Compile Include="interfaces\ILicenseClassServices.cs" />
-    <Compile Include="interfaces\IApplicationServices.cs" />
-    <Compile Include="Services\LDlApplicationServices.cs" />
-    <Compile Include="Services\LicenseClassServices.cs" />
-    <Compile Include="Services\ManageTestTypesServices.cs" />
-    <Compile Include="Services\PersonServices.cs" />
+    <Compile Include="interfaces\Ather Files\IGeneralServices.cs" />
+    <Compile Include="interfaces\Users\IPersonServices.cs" />
+    <Compile Include="Mappers\Users\PersonMapper.cs" />
+    <Compile Include="DataTransferObject\Users\PersonDTO.cs" />
+    <Compile Include="interfaces\Users\ICountryServices.cs" />
+    <Compile Include="Mappers\Users\UserMapper.cs" />
+    <Compile Include="DataTransferObject\Applications\ApplicationTypesDTO.cs" />
+    <Compile Include="DataTransferObject\Applications\ApplicationDTO.cs" />
+    <Compile Include="Services\Applications\ApplicationServices.cs" />
+    <Compile Include="Services\Applications\ApplicationTypesServices.cs" />
+    <Compile Include="DataTransferObject\Licenses\LicenseDTO.cs" />
+    <Compile Include="DataTransferObject\Users\DriverDTO.cs" />
+    <Compile Include="interfaces\Users\IDriverServices.cs" />
+    <Compile Include="interfaces\Licenses\ILicenseService.cs" />
+    <Compile Include="Services\Licenses\LicenseService.cs" />
+    <Compile Include="Services\Users\DriverServices.cs" />
+    <Compile Include="Services\Users\CountryServices.cs" />
+    <Compile Include="interfaces\Users\IUserServices.cs" />
+    <Compile Include="interfaces\Applications\IApplicationTypesServices.cs" />
+    <Compile Include="interfaces\Tests\ITestTypesServices.cs" />
+    <Compile Include="interfaces\Applications\ILDLApplicationServices.cs" />
+    <Compile Include="DataTransferObject\Applications\LDLApplicationDTO.cs" />
+    <Compile Include="interfaces\Licenses\ILicenseClassServices.cs" />
+    <Compile Include="interfaces\Applications\IApplicationServices.cs" />
+    <Compile Include="interfaces\Tests\ITestAppointmentServices.cs" />
+    <Compile Include="Services\Applications\LDlApplicationServices.cs" />
+    <Compile Include="Services\Licenses\LicenseClassServices.cs" />
+    <Compile Include="DataTransferObject\Tests\TestDTO.cs" />
+    <Compile Include="Services\Tests\TestServices.cs" />
+    <Compile Include="Services\Tests\TestTypesServices.cs" />
+    <Compile Include="Services\Users\PersonServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataTransferObject\UserDTO.cs" />
-    <Compile Include="DataTransferObject\TestDTO.cs" />
-    <Compile Include="Services\ServiceFactory.cs" />
-    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="DataTransferObject\Users\UserDTO.cs" />
+    <Compile Include="Services\Ather Files\ServiceFactory.cs" />
+    <Compile Include="Services\Tests\TestAppointmentServices.cs" />
+    <Compile Include="DataTransferObject\Tests\TestTypeDTO.cs" />
+    <Compile Include="Services\Users\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatabaseDVLD\DatabaseDVLD.csproj">
@@ -80,8 +98,6 @@
       <Name>DatabaseDVLD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Applicathion\ApplicationTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

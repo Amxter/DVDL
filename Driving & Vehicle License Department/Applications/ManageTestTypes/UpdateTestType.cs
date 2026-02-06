@@ -16,7 +16,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
     {
         int _ID;
 
-        IManageTestTypesServices _manageTestTypesServices;
+        ITestTypesServices _manageTestTypesServices;
 
         private void Initial (DataRow dataRow )
         {
@@ -71,12 +71,12 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
             {
 
 
-                TestDTO dTO = new TestDTO
+                TestTypeDTO dTO = new TestTypeDTO
                 {
-                    ID = _ID,
-                    Fees = Convert.ToDouble(txtFees.Text),
-                    Title = txtTitle.Text,
-                    Description = txtDescription.Text
+                    TestTypeID = _ID,
+                    TestTypeFees = Convert.ToDouble(txtFees.Text),
+                    TestTypeTitle = txtTitle.Text,
+                    TestTypeDescription = txtDescription.Text
 
                 };
                 if (_manageTestTypesServices.Upgrade(dTO))

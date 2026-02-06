@@ -42,35 +42,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseSittings.cs" />
-    <Compile Include="Entities\Person.cs" />
-    <Compile Include="interfaces\IPersonRepository.cs" />
+    <Compile Include="Entities\Users\Person.cs" />
+    <Compile Include="interfaces\Users\IPersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="interfaces\IGeneralRepository.cs" />
-    <Compile Include="interfaces\ICountryRepository.cs" />
-    <Compile Include="Entities\Application.cs" />
-    <Compile Include="Repositories\ApplicationRepository.cs" />
-    <Compile Include="Entities\ApplicationTypes.cs" />
-    <Compile Include="Repositories\ApplicationTypesRepository.cs" />
-    <Compile Include="Repositories\CountryRepository.cs" />
-    <Compile Include="interfaces\IUserRepository.cs" />
-    <Compile Include="interfaces\IApplicationTypesRepository.cs" />
-    <Compile Include="interfaces\IManageTestTypesRepository.cs" />
-    <Compile Include="interfaces\IApplicationRepository.cs" />
-    <Compile Include="interfaces\ILDLApplicationRepository.cs" />
-    <Compile Include="Entities\LDLApplication.cs" />
-    <Compile Include="interfaces\ILicenseClassRepository.cs" />
-    <Compile Include="interfaces\ILogger.cs" />
-    <Compile Include="Repositories\FileLogger.cs" />
-    <Compile Include="Repositories\LDLApplicationRepository.cs" />
-    <Compile Include="Repositories\LicenseClassRepository.cs" />
-    <Compile Include="Repositories\ManageTestTypesRepository.cs" />
-    <Compile Include="Repositories\PersonRepository.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\Test.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="interfaces\Ather Files\IGeneralRepository.cs" />
+    <Compile Include="interfaces\Users\ICountryRepository.cs" />
+    <Compile Include="Entities\Applications\Application.cs" />
+    <Compile Include="Repositories\Applications\ApplicationRepository.cs" />
+    <Compile Include="Entities\Applications\ApplicationTypes.cs" />
+    <Compile Include="Repositories\Applications\ApplicationTypesRepository.cs" />
+    <Compile Include="Entities\Licenses\License.cs" />
+    <Compile Include="interfaces\Licenses\ILicensesRepository.cs" />
+    <Compile Include="Entities\Users\Driver.cs" />
+    <Compile Include="interfaces\Users\IDriverRepository.cs" />
+    <Compile Include="Repositories\Users\DriverRepository.cs" />
+    <Compile Include="Repositories\Licenses\LicensesRepository.cs" />
+    <Compile Include="Repositories\Users\CountryRepository.cs" />
+    <Compile Include="interfaces\Users\IUserRepository.cs" />
+    <Compile Include="interfaces\Applications\IApplicationTypesRepository.cs" />
+    <Compile Include="interfaces\Tests\ITestTypesRepository.cs" />
+    <Compile Include="interfaces\Applications\IApplicationRepository.cs" />
+    <Compile Include="interfaces\Applications\ILDLApplicationRepository.cs" />
+    <Compile Include="Entities\Applications\LDLApplication.cs" />
+    <Compile Include="interfaces\Licenses\ILicenseClassRepository.cs" />
+    <Compile Include="interfaces\Ather Files\ILogger.cs" />
+    <Compile Include="Repositories\Ather Files\FileLogger.cs" />
+    <Compile Include="interfaces\Tests\ITestAppointmentRepository.cs" />
+    <Compile Include="Repositories\Ather Files\GlobalVariables.cs" />
+    <Compile Include="interfaces\Tests\ITestRepository.cs" />
+    <Compile Include="Repositories\Applications\LDLApplicationRepository.cs" />
+    <Compile Include="Entities\Licenses\LicenseClass.cs" />
+    <Compile Include="Repositories\Licenses\LicenseClassRepository.cs" />
+    <Compile Include="Repositories\Tests\TestRepository.cs" />
+    <Compile Include="Repositories\Tests\TestTypesRepository.cs" />
+    <Compile Include="Repositories\Users\PersonRepository.cs" />
+    <Compile Include="Entities\Users\User.cs" />
+    <Compile Include="Entities\Tests\Test.cs" />
+    <Compile Include="Entities\Tests\TestAppointment.cs" />
+    <Compile Include="Repositories\Tests\TestAppointmentRepository.cs" />
+    <Compile Include="Entities\Tests\TestType.cs" />
+    <Compile Include="Repositories\Users\UserRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Applications\ApplicationTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

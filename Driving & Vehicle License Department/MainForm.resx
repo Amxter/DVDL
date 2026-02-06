@@ -190,6 +190,12 @@
   <data name="peToolStripMenuItem.Text" xml:space="preserve">
     <value> People</value>
   </data>
+  <data name="driversToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 54</value>
+  </data>
+  <data name="driversToolStripMenuItem.Text" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
   <data name="usersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 54</value>
   </data>
@@ -197,22 +203,22 @@
     <value>  Users</value>
   </data>
   <data name="currentUserInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="currentUserInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>Current User Info</value>
   </data>
   <data name="changePasswordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="changePasswordToolStripMenuItem.Text" xml:space="preserve">
     <value>Change Password</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
+    <value>315, 6</value>
   </data>
   <data name="signOutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="signOutToolStripMenuItem.Text" xml:space="preserve">
     <value>Sign Out</value>
@@ -268,7 +274,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>MainForm</value>
+    <value>Main Form</value>
   </data>
   <data name="&gt;&gt;applicationsToolStripMenuItem.Name" xml:space="preserve">
     <value>applicationsToolStripMenuItem</value>
@@ -334,6 +340,12 @@
     <value>peToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;peToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;driversToolStripMenuItem.Name" xml:space="preserve">
+    <value>driversToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;driversToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;usersToolStripMenuItem.Name" xml:space="preserve">

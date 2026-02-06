@@ -3,6 +3,7 @@ using Driving___Vehicle_License_Department;
 using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
 using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
+using Driving___Vehicle_License_Department.Drivers;
 using Driving___Vehicle_License_Department.Users;
 using System;
 using System.Collections.Generic;
@@ -125,6 +126,14 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
             frm.ShowDialog();
 
 
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ListDrivers>();
+            // frm.MdiParent = this;
+            frm.ShowDialog();
+            
         }
     }
 }
