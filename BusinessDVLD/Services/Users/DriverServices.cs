@@ -11,7 +11,6 @@ namespace BusinessDVLD
         {
             _driverRepository = driverRepository;
         }
-
         public int Add(DriverDTO driverDTO) => _driverRepository.Add(driverDTO.ToEntity());
         public DataTable GetAll () => _driverRepository.GetAll();
         public int IsExistByPersonID(int personID) => _driverRepository.IsExistByPersonID(personID);

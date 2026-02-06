@@ -69,12 +69,9 @@ namespace BusinessDVLD
             return result == 0;
         }
     }
-
     public class CurrentUser
     {
         public static UserDTO LoggedInUser { get; set; }
 
     }
-
-
 }

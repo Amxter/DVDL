@@ -24,15 +24,9 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             if (testAppointment.HasValue)
             {
                  scheduleTest1.LoadScheduleTest(mode, testType, LDLApplication, testAppointment.Value);
-         
             }
-               
             else
             scheduleTest1.LoadScheduleTest(mode, testType, LDLApplication);
-
-
-
-
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

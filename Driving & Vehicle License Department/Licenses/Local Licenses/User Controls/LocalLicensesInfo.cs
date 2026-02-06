@@ -34,8 +34,8 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
 
         private void LoadPersonImage(string imagePath)
         {
-            // صورة افتراضية
-            pbPersonImage.Image = Properties.Resources.Male_512 ; // أو خليها null
+             
+            pbPersonImage.Image = Properties.Resources.Male_512 ; 
 
             if (string.IsNullOrWhiteSpace(imagePath))
                 return;
@@ -43,13 +43,12 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             if (!File.Exists(imagePath))
                 return;
 
-            // مهم: حتى ما يضل ماسك الملف (file lock)
+           
             using (var fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
             {
                 pbPersonImage.Image = Image.FromStream(fs);
             }
         }
-
         public void LoadData(int licenseID)
         {
             LicenseDTO licenseDTO = _licenseService.GetByID(licenseID);

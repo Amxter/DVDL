@@ -39,14 +39,11 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
         }
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             DataGridViewRow dgvRow = dgvTestTypes.SelectedRows[0];
             DataRow dataRow = ((DataRowView)dgvRow.DataBoundItem).Row;
             UpdateTestType updateTestType = new UpdateTestType(dataRow);
             updateTestType.ShowDialog();
             loadData();
-
         }
     }
 }

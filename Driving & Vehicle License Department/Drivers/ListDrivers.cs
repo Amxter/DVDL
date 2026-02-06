@@ -3,11 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Drivers
@@ -16,7 +11,6 @@ namespace Driving___Vehicle_License_Department.Drivers
     {
 
         IDriverServices _driverServices;
-
         enum FilterBy
         {
             None,
@@ -41,7 +35,6 @@ namespace Driving___Vehicle_License_Department.Drivers
             _driverServices = driverServices;
             LoadData();
         }
-
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -81,7 +74,6 @@ namespace Driving___Vehicle_License_Department.Drivers
 
             txtFilterValue.Clear();
         }
-
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (FilterBy.PersonID == _filterBy || FilterBy.DriverID == _filterBy)
@@ -123,7 +115,6 @@ namespace Driving___Vehicle_License_Department.Drivers
             _driversTable.DefaultView.RowFilter =
                 $"[{columnName}] LIKE '%{safeValue}%'";
         }
-
         private void Filter(string Value )
         {
             if (_filterBy == FilterBy.None)
@@ -143,18 +134,12 @@ namespace Driving___Vehicle_License_Department.Drivers
                 else
                 {
                     LoadData();
-                    // Invalid input for integer filter; clear the filter
-                    //_driversTable.DefaultView.RowFilter = "1=0"; // No results
                 }
             }
             else if (_filterBy == FilterBy.NationalNo || _filterBy == FilterBy.FullName)
             {
                 FilterByText(Value);
             }
-
-
-
-
             }
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {

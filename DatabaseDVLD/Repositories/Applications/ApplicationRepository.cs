@@ -191,40 +191,6 @@ INSERT INTO [dbo].[Applications]
             return isUpdated;
         }
 
-        //public DataTable GetAll()
-        //{
-        //    DataTable dataTable = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
-        //    {
-
-        //        string query = @"  SELECT Users.UserID, Users.PersonID, (People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) AS FullName , UserName , Users.IsActive
-        //                           FROM     Users INNER JOIN
-        //                           People ON Users.PersonID = People.PersonID
-        //                                 ";
-
-        //        using (SqlCommand cmd = new SqlCommand(query, conn))
-        //        {
-
-
-        //            try
-        //            {
-
-        //                conn.Open();
-
-        //                using (SqlDataReader reader = cmd.ExecuteReader())
-        //                {
-        //                    dataTable.Load(reader);
-        //                }
-        //            }
-        //            catch
-        //            {
-        //                dataTable = new DataTable();
-
-        //            }
-        //        }
-        //    }
-        //    return dataTable;
-        //}
     }
 
 

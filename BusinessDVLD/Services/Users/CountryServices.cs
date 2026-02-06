@@ -6,8 +6,6 @@ namespace BusinessDVLD
     public class CountryServices : ICountryServices
     {
         ICountryRepository _countryRepository;
-
-
         public CountryServices(ICountryRepository repository)
         {
 
@@ -15,8 +13,6 @@ namespace BusinessDVLD
 
 
         }
-
-
         public DataTable GetAll() => _countryRepository.GetAll();
         public string GetCountryNameByID(int country) => _countryRepository.GetCountryNameByID(country);
     }

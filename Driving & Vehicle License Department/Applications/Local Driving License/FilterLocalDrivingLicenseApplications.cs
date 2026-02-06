@@ -17,11 +17,12 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
     {
         DataGridView _dataGridView;
         DataTable _dataTable;
-        string _selectedColumnName = "";
+        string _selectedColumnName ;
         public FilterLocalDrivingLicenseApplications()
         {
 
             InitializeComponent();
+            _selectedColumnName = ""; 
         }
 
         public void SendPreparate(DataGridView dataGridView, DataTable dataTable)
@@ -29,7 +30,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             _dataGridView = dataGridView;
             _dataTable = dataTable;
         }
-
         private void FilterLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
@@ -38,13 +38,11 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             if (cbFilterBy.Items.Count > 0)
                 cbFilterBy.SelectedIndex = 0;
         }
-
         private void _loadData()
         {
             if (_dataGridView == null || _dataTable == null) return;
             _dataGridView.DataSource = _dataTable.DefaultView;
         }
-
         private void FilterColumn (string columnName, string filterValue)
         {
             if (string.IsNullOrEmpty(filterValue))
@@ -100,8 +98,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                 _selectedColumnName = "ApplicationStatus"; 
             }
         }
-
- 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
             if (_selectedColumnName != "")
@@ -110,7 +106,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             }
 
         }
-
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (_selectedColumnName == "LocalDrivingLicenseApplicationID")

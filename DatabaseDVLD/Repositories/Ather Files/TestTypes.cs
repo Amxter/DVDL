@@ -1,10 +1,10 @@
 ﻿namespace DatabaseDVLD
 {
-    public class GlobalVariables
+    public class TestTypes
     {
         public static readonly int VisionTestID =1  ;
-        public static readonly int Written = 2;
-        public static readonly int Practical = 3;
+        public static readonly int WrittenTestID = 2;
+        public static readonly int PracticalTestID = 3;
     }
 
     public class IssueReason
@@ -15,5 +15,12 @@
         public static readonly int ReplacementForDamaged = 3;
         public static readonly int ReplacementForLost = 4;
 
+    }
+
+    public class ApplicationStatus
+    {
+        public static readonly int NewStatus = 1;
+        public static readonly int CanceledStatus = 2;
+        public static readonly int CompletedStatus = 3;
     }
 }

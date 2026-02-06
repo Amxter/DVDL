@@ -33,15 +33,15 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
 
         private void LoadControl (int TestID )
         {
-            if (TestID == GlobalVariables.VisionTestID )
+            if (TestID == TestTypes.VisionTestID )
             {
                 pbTestTypeImage.Image = Properties.Resources.Vision_512;
             }
-            else if (TestID == GlobalVariables.Written)
+            else if (TestID == TestTypes.WrittenTestID)
             {
                 pbTestTypeImage.Image = Properties.Resources.Written_Test_512;
             }
-            else if (TestID == GlobalVariables.Practical)
+            else if (TestID == TestTypes.PracticalTestID)
             {
                 pbTestTypeImage.Image = Properties.Resources.driving_test_512;
             }

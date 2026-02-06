@@ -15,8 +15,6 @@ namespace BusinessDVLD
             _applicationServices = applicationServices;
             _lDLApplicationServices = lDLApplicationServices;
         }
-
-
         public DataTable GetAllVisionTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllVisionTestByLDLApplication(LocalDrivingLicenseApplicationID);
         public DataTable GetAllWrittenTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllWrittenTestByLDLApplication(LocalDrivingLicenseApplicationID);
         public DataTable GetAllPracticalTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllPracticalTestByLDLApplication(LocalDrivingLicenseApplicationID);
@@ -53,8 +51,6 @@ namespace BusinessDVLD
         public bool isActiveAppointment(int LDLApplicationID, int TestTypeID) => _testAppointmentRepository.isActiveAppointment(LDLApplicationID, TestTypeID);
         public int HowMatchFiledTest(int lDLApplicationID, int TestTypeID ) => _testAppointmentRepository.HowMatchFiledTest(lDLApplicationID , TestTypeID);
         public bool IsPassedTest(int lDLApplicationID, int testTypeID) => _testAppointmentRepository.IsPassedTest(lDLApplicationID, testTypeID);
-
-
     }
 
 }

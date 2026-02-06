@@ -13,8 +13,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
 {
     public partial class ScheduleTest : UserControl
     {
-
-        
         IApplicationServices _applicationServices;
         IApplicationTypesServices _applicationTypesServices;
         ILDLApplicationServices _lDLApplicationServices;
@@ -44,13 +42,11 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
             get { return dtpTestDate.Enabled ; }
             set { dtpTestDate.Enabled = value; }
         }
-
         public bool IsSaveEnabled
         {
             get { return btnSave.Enabled; }
             set { btnSave.Enabled = value; }
         }
-
         public ScheduleTest()
         {
 
@@ -126,7 +122,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
             }
 
             lblRetakeAppFees.Text = _AppointmentFees.ToString();
-            //_fees = _fees + AppointmentFees;
             lblTotalFees.Text = (_fees + _AppointmentFees).ToString();
 
         }
@@ -162,22 +157,14 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
                 lblTotalFees.Text = _fees.ToString();
                 lblRetakeAppFees.Text = "0";
                 lblRetakeTestAppID.Text = "[??]";
-
             }
             else
             {
-
                 ApplicationDTO applicationDTO = _applicationServices.GetByApplicationID(_testAppointmentDTO.RetakeTestApplicationID);
-
                 lblTotalFees.Text = (_fees + applicationDTO.PaidFees).ToString();
                 lblRetakeTestAppID.Text = _testAppointmentDTO.RetakeTestApplicationID.ToString();
                 lblRetakeAppFees.Text = applicationDTO.PaidFees.ToString();
             }
-
-
-
-
-
         }
         public void LoadScheduleTest(Mode mode, TestType testType, int LDLApplication )
         {
@@ -279,6 +266,5 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
             }
 
         }
-     
     }
 }

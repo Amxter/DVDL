@@ -9,6 +9,7 @@ namespace DatabaseDVLD
         DataTable GetAllLocalLicensesByPersonID(int personID);
         License GetByID(int licenseID);
         License GetByApplicationID(int ApplicationID);
+        bool IsExistsLicenseByLDLApplication(int lDLApplication);
     }
 }
 

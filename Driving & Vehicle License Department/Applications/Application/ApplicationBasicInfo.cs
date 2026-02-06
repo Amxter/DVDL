@@ -1,4 +1,5 @@
 ﻿using BusinessDVLD;
+using DatabaseDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,10 @@ namespace Driving___Vehicle_License_Department.Applications
         {
             get { return _personID; }
         }
-        public void loadData(int ApplicationID )
+        public void loadData(int applicationID )
         {
 
-           ApplicationDTO applicationDTO =  applicationServices.GetByApplicationID(ApplicationID);
+           ApplicationDTO applicationDTO =  applicationServices.GetByApplicationID(applicationID);
 
 
             if (applicationDTO != null)
@@ -39,11 +40,11 @@ namespace Driving___Vehicle_License_Department.Applications
                 lblApplicant.Text = personServices.GetByID (applicationDTO.ApplicantPersonID ).FullName.ToString()  ;
                 _personID = applicationDTO.ApplicantPersonID;
 
-                if (applicationDTO.ApplicationTypeID == 1)
+                if (applicationDTO.ApplicationTypeID == ApplicationStatus.NewStatus )
                     lblStatus.Text = "New";
-                else if (applicationDTO.ApplicationTypeID == 2)
+                else if (applicationDTO.ApplicationTypeID == ApplicationStatus.CanceledStatus)
                     lblStatus.Text = "Canceled";
-                else if (applicationDTO.ApplicationTypeID == 3)
+                else if (applicationDTO.ApplicationTypeID == ApplicationStatus.CompletedStatus)
                     lblStatus.Text = "Completed";
                 else
                     lblStatus.Text = "Other";
@@ -65,7 +66,6 @@ namespace Driving___Vehicle_License_Department.Applications
             personServices = ServiceFactory.CreatePersonServices();
             applicationTypesServices = ServiceFactory.CreateApplicationTypesServices();
         }
-
         private void llViewPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowDetailsPerson showDetailsPerson = new ShowDetailsPerson (_personID);

@@ -21,7 +21,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
         }
 
         Mode _mode; 
-        int _testID;
         int _appointmentID;
         ITestServices _testServices;
 
@@ -67,14 +66,12 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
 
             InitializeComponent();
             _mode = mode;
-            _testID = TestID;
             _appointmentID = AppointmentID;
             _testServices = testServices;
             secheduledTestInto1.LoadData(TestID, AppointmentID);
             SetMode();
 
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             TestDTO testDTO = new TestDTO();

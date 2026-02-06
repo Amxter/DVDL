@@ -15,7 +15,6 @@ namespace Driving___Vehicle_License_Department.Applications.ApplicationTypes
     public partial class UpdateApplicationTypes : GeneralForm
     {
         IApplicationTypesServices _services;
-
         int _applicationTypeID;
         private void LoadApplicationType(int applicationTypeID)
         {

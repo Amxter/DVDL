@@ -9,7 +9,7 @@ namespace DatabaseDVLD
     {
         private readonly ILogger _logger;
 
-        public UserRepository( )
+        public UserRepository()
         {
             _logger = new FileLogger();
         }

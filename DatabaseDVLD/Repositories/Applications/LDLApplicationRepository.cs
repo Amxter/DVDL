@@ -238,7 +238,7 @@ WHERE l.LocalDrivingLicenseApplicationID = @ID;
 
             return count;
         }
-        public bool IsExistsApplicationByUsernameAndLicenseClass(int PersonID, int LicenseClassID)
+        public bool IsExistsApplicationByPersonIDAndLicenseClass(int PersonID, int LicenseClassID)
         {
 
 
@@ -265,7 +265,6 @@ FROM     Applications INNER JOIN
 
 
         }
-
 
 
 

@@ -9,10 +9,7 @@ namespace BusinessDVLD
         IPersonRepository _personRepository;
         public PersonServices(IPersonRepository repository)
         {
-
             _personRepository = repository;
-
-
         }
         public int Add(PersonDTO dTO) => _personRepository.Add(dTO.ToEntity());
         public bool Delete(int personID) => _personRepository.Delete(personID);
@@ -24,16 +21,12 @@ namespace BusinessDVLD
             var entity = _personRepository.GetByID(id);
             return entity == null ? null : entity.ToDTO();
         }
-
         public PersonDTO GetByNationalNo(string id)
         {
             var entity = _personRepository.GetByNationalNo(id);
             return entity == null ? null : entity.ToDTO();
         }
-
         public bool Update(PersonDTO person) => _personRepository.Update(person.ToEntity());
-
-  
     }
 
 }

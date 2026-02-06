@@ -81,10 +81,6 @@ new ParameterOverride("LDLApplicationID", -1)
 
             _loadData();
         }
-        private void ScheduleTestsMenue_Click(object sender, EventArgs e)
-        {
-
-        }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int SelectedColumn = GetSelectedLocalDrivingLicenseApplicationID();
@@ -181,59 +177,11 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
 
         }
-        //private void _LoadStatusNew()
-        //{
-        //    int LDLApplicationID = GetSelectedLocalDrivingLicenseApplicationID();
-
-        //    showDetailsToolStripMenuItem.Enabled = true;
-        //    editToolStripMenuItem.Enabled = true;
-        //    DeleteApplicationToolStripMenuItem.Enabled = true;
-        //    CancelApplicaitonToolStripMenuItem.Enabled = true;
-        //    showLicenseToolStripMenuItem.Enabled = false;
-        //    showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
-        //    ScheduleTestsMenue.Enabled = true;
-
-        //    scheduleVisionTestToolStripMenuItem.Enabled = !_testAppointmentServices.IsPassedTest(LDLApplicationID, GlobalVariables.VisionTestID);
-        //    if (scheduleVisionTestToolStripMenuItem.Enabled == false)
-        //    {
-        //        scheduleWrittenTestToolStripMenuItem.Enabled = !_testAppointmentServices.IsPassedTest(LDLApplicationID, GlobalVariables.Written);
-        //        if (scheduleWrittenTestToolStripMenuItem.Enabled == false)
-        //        {
-        //            scheduleStreetTestToolStripMenuItem.Enabled = !_testAppointmentServices.IsPassedTest(LDLApplicationID, GlobalVariables.Practical);
-        //            if (scheduleStreetTestToolStripMenuItem.Enabled == false)
-        //            {
-        //                ScheduleTestsMenue.Enabled = false;
-        //                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
-        //            }
-        //            else
-        //            {
-        //                ScheduleTestsMenue.Enabled = true;
-        //                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            scheduleStreetTestToolStripMenuItem.Enabled = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        scheduleWrittenTestToolStripMenuItem.Enabled = false;
-        //        scheduleStreetTestToolStripMenuItem.Enabled = false;
-        //    }
-
-
-
-
-
-
-        //}
-
         private void _LoadStatusNew()
         {
             int appId = GetSelectedLocalDrivingLicenseApplicationID();
 
-            // Menu الأساسية
+             
             showDetailsToolStripMenuItem.Enabled = true;
             editToolStripMenuItem.Enabled = true;
             DeleteApplicationToolStripMenuItem.Enabled = true;
@@ -241,23 +189,22 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             showLicenseToolStripMenuItem.Enabled = false;
             showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
 
-            // هل نجحوا؟
-            bool passedVision = _testAppointmentServices.IsPassedTest(appId, GlobalVariables.VisionTestID);
-            bool passedWritten = _testAppointmentServices.IsPassedTest(appId, GlobalVariables.Written);
-            bool passedPractical = _testAppointmentServices.IsPassedTest(appId, GlobalVariables.Practical);
+            
+            bool passedVision = _testAppointmentServices.IsPassedTest(appId, TestTypes.VisionTestID);
+            bool passedWritten = _testAppointmentServices.IsPassedTest(appId, TestTypes.WrittenTestID);
+            bool passedPractical = _testAppointmentServices.IsPassedTest(appId, TestTypes.PracticalTestID);
 
-            // منطق التفعيل: ما بقدر تحجز Test إلا إذا اللي قبله نجح
+          
             scheduleVisionTestToolStripMenuItem.Enabled = !passedVision;
             scheduleWrittenTestToolStripMenuItem.Enabled = passedVision && !passedWritten;
             scheduleStreetTestToolStripMenuItem.Enabled = passedVision && passedWritten && !passedPractical;
 
-            // إذا كلهم ممرّرين → ما في Scheduling + فعّل إصدار الرخصة
+          
             bool allPassed = passedVision && passedWritten && passedPractical;
 
             ScheduleTestsMenue.Enabled = !allPassed;
             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = allPassed;
         }
-
         private void _LoadStatusCancelled()
         {
 
@@ -300,7 +247,6 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             frm.ShowDialog();
             _loadData(); 
         }
-
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = Program.Container.Resolve<LDLApplicationInfo>(
@@ -311,7 +257,6 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
 
             frm.ShowDialog();
         }
-
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LDLApplicationDTO lDLApplicationDTO = _ldlApplicationServices.GetByID(GetSelectedLocalDrivingLicenseApplicationID());
@@ -321,7 +266,6 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
 
             frm.ShowDialog();
         }
-
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -333,11 +277,6 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
 
             frm.ShowDialog();
            
-        }
-
-        private void CancelApplicaitonToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -94,7 +94,6 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             this.Close();
             return;
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close(); 

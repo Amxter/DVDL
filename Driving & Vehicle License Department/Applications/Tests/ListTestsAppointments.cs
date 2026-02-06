@@ -5,7 +5,6 @@ using Driving___Vehicle_License_Department.Properties;
 using Driving___Vehicle_License_Department.Users;
 using PresentationDVLD;
 using System;
- 
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
@@ -16,8 +15,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
     public partial class ListTestsAppointments : GeneralForm
     {   
         ITestAppointmentServices _testAppointmentServices;
-
-
         public enum TestType
         {
             Vision = 1 , Written, Practical 
@@ -52,10 +49,9 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             localDrivingLicenseApplicationInfo1.LoadData(_lDLApplicationID);
 
         }
-
         private int GetSelectedTestAppointmentID()
         {
- return dgvLicenseTestAppointments.CurrentRow != null ? Convert.ToInt32(dgvLicenseTestAppointments.CurrentRow.Cells["TestAppointmentID"].Value) : -1;
+           return dgvLicenseTestAppointments.CurrentRow != null ? Convert.ToInt32(dgvLicenseTestAppointments.CurrentRow.Cells["TestAppointmentID"].Value) : -1;
         }
         private void _LoadWritten()
         {
@@ -64,7 +60,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             pbTestTypeImage.Image = Resources.Written_Test_512 ;
             localDrivingLicenseApplicationInfo1.LoadData(_lDLApplicationID);
         }
-
         private void _LoadPractical()
         {
             this.Text = "List Practical Test Appointments";
@@ -72,7 +67,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             pbTestTypeImage.Image = Resources.Schedule_Test_512 ;
             localDrivingLicenseApplicationInfo1.LoadData(_lDLApplicationID);
         }
-
         private void LoadForm(TestType testType)
         {
 
@@ -101,7 +95,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             LoadForm(testType);
             LoadAppointmentDetails();
         }
-
         private void btnAddNewAppointment_Click(object sender, EventArgs e)
         {
             if (_testAppointmentServices.isActiveAppointment(_lDLApplicationID , Convert.ToInt32(_testType) )  )
@@ -127,12 +120,10 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             
 
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -147,7 +138,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
 
             LoadAppointmentDetails();
         }
-
         private TakeTest.Mode IsLocked ()
         {
             bool isLocked = dgvLicenseTestAppointments.CurrentRow != null ? Convert.ToBoolean(dgvLicenseTestAppointments.CurrentRow.Cells["IsLocked"].Value) : false ; ;
@@ -161,7 +151,6 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             }
 
         }
-
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             

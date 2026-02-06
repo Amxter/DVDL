@@ -7,15 +7,9 @@ namespace BusinessDVLD
     public class UserServices : IUserServices
     {
         IUserRepository _userRepository;
-
-
-
         public UserServices(IUserRepository repository)
         {
-
             _userRepository = repository;
-
-
         }
         public int Add(UserDTO dTO)
         {
@@ -39,7 +33,6 @@ namespace BusinessDVLD
             var entity = _userRepository.GetByID(id);
             return entity == null ? null : entity.ToDTO();
         }
-
         public bool Update(UserDTO dTO)
         {
 
@@ -47,7 +40,6 @@ namespace BusinessDVLD
             dTO.Password = PasswordHelper.HashPassword(dTO.Password);
             return _userRepository.Update(dTO.ToEntity());
         }
-
 
     }
 }

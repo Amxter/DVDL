@@ -68,7 +68,6 @@ INSERT INTO [dbo].[Tests]
 
 
         }
-
         public Test GetByTestAppointmentID(int testAppointmentID)
         {
             Test test = null;

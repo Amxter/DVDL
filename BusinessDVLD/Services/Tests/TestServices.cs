@@ -12,10 +12,8 @@ namespace BusinessDVLD
             _testRepository = testRepository;
 
         }
-
         public int Add(TestDTO dTO) => _testRepository.Add(dTO.ToEntity());
-
-       public TestDTO GetByTestAppointmentID(int testAppointmentID) => _testRepository.GetByTestAppointmentID(testAppointmentID).ToDTO() ;
+        public TestDTO GetByTestAppointmentID(int testAppointmentID) => _testRepository.GetByTestAppointmentID(testAppointmentID).ToDTO() ;
     }
 
 }

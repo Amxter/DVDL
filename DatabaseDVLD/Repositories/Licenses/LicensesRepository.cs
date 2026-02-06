@@ -13,7 +13,6 @@ namespace DatabaseDVLD
         {
             _logger = new FileLogger();
         }
-
         public int Add(License license)
         {
 
@@ -229,7 +228,7 @@ INSERT INTO [dbo].[Licenses]
             return license;
 
         }
-        public License GetByApplicationID(int ApplicationID)
+        public License GetByApplicationID(int applicationID)
         {
 
 
@@ -245,7 +244,7 @@ INSERT INTO [dbo].[Licenses]
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
 
-                    cmd.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    cmd.Parameters.AddWithValue("@ApplicationID", applicationID);
 
 
                     try
@@ -296,7 +295,34 @@ INSERT INTO [dbo].[Licenses]
             return license;
 
         }
+        public bool IsExistsLicenseByLDLApplication(int lDLApplication )
+        {
 
+
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            {
+
+                string query = @"SELECT Licenses.LicenseID
+                  FROM     Licenses INNER JOIN
+                  Applications ON Licenses.ApplicationID = Applications.ApplicationID INNER JOIN
+                  LocalDrivingLicenseApplications ON Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+				  where LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID =	@lDLApplication ";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@lDLApplication", lDLApplication);
+ 
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+
+
+        }
+ 
     }
 }
 

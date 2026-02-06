@@ -68,7 +68,7 @@
     <Compile Include="interfaces\Ather Files\ILogger.cs" />
     <Compile Include="Repositories\Ather Files\FileLogger.cs" />
     <Compile Include="interfaces\Tests\ITestAppointmentRepository.cs" />
-    <Compile Include="Repositories\Ather Files\GlobalVariables.cs" />
+    <Compile Include="Repositories\Ather Files\TestTypes.cs" />
     <Compile Include="interfaces\Tests\ITestRepository.cs" />
     <Compile Include="Repositories\Applications\LDLApplicationRepository.cs" />
     <Compile Include="Entities\Licenses\LicenseClass.cs" />

@@ -188,7 +188,7 @@
             this.CancelApplicaitonToolStripMenuItem.Name = "CancelApplicaitonToolStripMenuItem";
             this.CancelApplicaitonToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.CancelApplicaitonToolStripMenuItem.Text = "&Cancel Application";
-            this.CancelApplicaitonToolStripMenuItem.Click += new System.EventHandler(this.CancelApplicaitonToolStripMenuItem_Click);
+//            this.CancelApplicaitonToolStripMenuItem.Click += new System.EventHandler(this.CancelApplicaitonToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -206,7 +206,7 @@
             this.ScheduleTestsMenue.Name = "ScheduleTestsMenue";
             this.ScheduleTestsMenue.Size = new System.Drawing.Size(308, 38);
             this.ScheduleTestsMenue.Text = "Sechdule &Tests";
-            this.ScheduleTestsMenue.Click += new System.EventHandler(this.ScheduleTestsMenue_Click);
+          //  this.ScheduleTestsMenue.Click += new System.EventHandler(this.ScheduleTestsMenue_Click);
             // 
             // scheduleVisionTestToolStripMenuItem
             // 

@@ -14,9 +14,9 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         ILicenseClassServices _licenseClassServices;
         ILDLApplicationServices _ldlApplicationServices;
         IApplicationTypesServices _applicationTypesServices;
-        IUserServices _userServices;
+        IUserServices               _userServices;
 
-        enum Mode { Add  , Update  }
+        enum Mode {Add,Update}
         Mode _mode;
         ApplicationDTO _applicationDTO;
         int _LDLApplicationID;
@@ -88,10 +88,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             cbLicenseClass.DataSource = _licenseClassServices.GetAll();
             cbLicenseClass.DisplayMember = "ClassName";
             cbLicenseClass.ValueMember = "LicenseClassID";
-        }
-        private void AddUpdateLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
-        {
-        
         }
         private void _Update()
         {

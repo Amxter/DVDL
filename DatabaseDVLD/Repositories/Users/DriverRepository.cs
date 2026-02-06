@@ -59,7 +59,6 @@ namespace DatabaseDVLD
             return driver.DriverID ;
 
         }
-
         public DataTable GetAll ()
         {
             DataTable dataTable = new DataTable();

@@ -52,15 +52,15 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
         }
         public DataTable GetAllVisionTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(GlobalVariables.VisionTestID, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypes.VisionTestID, LocalDrivingLicenseApplicationID);
         }
         public DataTable GetAllWrittenTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(GlobalVariables.Written, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypes.WrittenTestID, LocalDrivingLicenseApplicationID);
         }
         public DataTable GetAllPracticalTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(GlobalVariables.Practical, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypes.PracticalTestID, LocalDrivingLicenseApplicationID);
         }
         public TestAppointment GetByID(int testAppointmentID)
         {
@@ -118,7 +118,6 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
 
             return testAppointment;
         }
-
         public bool isActiveAppointment(int LDLApplicationID, int TestTypeID)
         {
             bool count = false;

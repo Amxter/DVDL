@@ -88,7 +88,6 @@ namespace DatabaseDVLD
 
             return IsUpdate;
         }
-
         public ApplicationTypes GetApplication (string applicationTypeTitle)
         {
 

@@ -344,7 +344,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             this.Controls.Add(this.btnSave);
             this.Name = "AddUpdateLocalDrivingLicenseApplication";
             this.Text = "AddUpdateLocalDrivingLicenseApplication";
-            this.Load += new System.EventHandler(this.AddUpdateLocalDrivingLicenseApplication_Load);
+//            this.Load += new System.EventHandler(this.AddUpdateLocalDrivingLicenseApplication_Load);
             this.tcApplicationInfo.ResumeLayout(false);
             this.tpPersonalInfo.ResumeLayout(false);
             this.tpApplicationInfo.ResumeLayout(false);

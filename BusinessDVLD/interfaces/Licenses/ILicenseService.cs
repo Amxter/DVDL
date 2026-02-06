@@ -9,6 +9,7 @@ namespace BusinessDVLD
         DataTable GetAllInternationalLicensesByPersonID(int personID);
         LicenseDTO GetByID(int licenseID);
         LicenseDTO GetByApplicationID(int ApplicationID);
+        bool IsExistsLicenseByLDLApplication(int lDLApplication);
     }
 
  
