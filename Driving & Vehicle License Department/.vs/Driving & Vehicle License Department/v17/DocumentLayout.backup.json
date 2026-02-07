@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\applications\\application\\applicationbasicinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:applications\\application\\applicationbasicinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\applications\\replacelostordamagedlicense\\replacelostordamagedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:applications\\replacelostordamagedlicense\\replacelostordamagedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\applications\\application\\applicationbasicinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:applications\\application\\applicationbasicinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\applications\\replacelostordamagedlicense\\replacelostordamagedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:applications\\replacelostordamagedlicense\\replacelostordamagedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,32 +45,54 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAawLIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T18:29:21.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwGIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T18:28:46.931Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApplicationBasicInfo.cs",
-              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\Application\\ApplicationBasicInfo.cs",
-              "RelativeDocumentMoniker": "Applications\\Application\\ApplicationBasicInfo.cs",
-              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\Application\\ApplicationBasicInfo.cs*",
-              "RelativeToolTip": "Applications\\Application\\ApplicationBasicInfo.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
+              "Title": "ReplaceLostOrDamagedLicense.cs",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs",
+              "RelativeDocumentMoniker": "Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs*",
+              "RelativeToolTip": "Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwH8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:27:08.32Z",
+              "WhenOpened": "2026-02-07T17:57:52.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApplicationBasicInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\Application\\ApplicationBasicInfo.cs",
-              "RelativeDocumentMoniker": "Applications\\Application\\ApplicationBasicInfo.cs",
-              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\Application\\ApplicationBasicInfo.cs [Design]*",
-              "RelativeToolTip": "Applications\\Application\\ApplicationBasicInfo.cs [Design]*",
+              "Title": "ReplaceLostOrDamagedLicense.cs [Design]",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs",
+              "RelativeDocumentMoniker": "Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs [Design]*",
+              "RelativeToolTip": "Applications\\ReplaceLostOrDamagedLicense\\ReplaceLostOrDamagedLicense.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:27:04.521Z",
+              "WhenOpened": "2026-02-07T17:52:54.847Z",
               "EditorCaption": " [Design]"
             }
           ]

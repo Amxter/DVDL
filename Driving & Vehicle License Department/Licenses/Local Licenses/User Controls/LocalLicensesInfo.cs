@@ -1,15 +1,17 @@
 ﻿using BusinessDVLD;
+using DatabaseDVLD;
+using Driving___Vehicle_License_Department.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
 {
@@ -20,6 +22,11 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
         ILicenseClassServices _licenseClassServices;
         IApplicationServices _applicationServices;
         IPersonServices _personServices;
+
+        LicenseDTO _licenseDTO;
+        PersonDTO _personDTO;
+        public LicenseDTO LicenseDTO { get { return _licenseDTO; }  }  
+        public PersonDTO PersonDTO { get { return _personDTO ; } }
         public LocalLicensesInfo()
         {
             InitializeComponent();
@@ -28,10 +35,6 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             _applicationServices = ServiceFactory.CreateApplicationServices();
             _personServices = ServiceFactory.CreatePersonServices();
         }
-
-
-
-
         private void LoadPersonImage(string imagePath)
         {
              
@@ -49,29 +52,58 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
                 pbPersonImage.Image = Image.FromStream(fs);
             }
         }
-        public void LoadData(int licenseID)
+        private void Initialize ()
         {
-            LicenseDTO licenseDTO = _licenseService.GetByID(licenseID);
-            PersonDTO personDTO = _personServices.GetByID(_applicationServices.GetByApplicationID(licenseDTO.ApplicationID).ApplicantPersonID);
+
+            _licenseDTO = null ;
+            _personDTO = null;
 
 
-            lblClass.Text = _licenseClassServices.GetByID(licenseDTO.LicenseClass).ClassName.ToString();
-            lblFullName.Text = personDTO.FullName.ToString();
-            lblLicenseID.Text = licenseDTO.LicenseID.ToString();
-            lblNationalNo.Text = personDTO.NationalNo.ToString();
-            lblGendor.Text = personDTO.Gendor == 1 ? " Male " : " Female ";
-            lblIssueDate.Text = licenseDTO.IssueDate.ToShortDateString();
-            lblIssueReason.Text = licenseDTO.IssueReason.ToString();
-            lblNotes.Text = licenseDTO.Notes;
-            lblIsActive.Text = licenseDTO.IsActive ? "Active" : "Inactive";
-            lblDateOfBirth.Text = personDTO.DateOfBirth.ToShortDateString();
-            lblDriverID.Text = licenseDTO.DriverID.ToString();
-            lblExpirationDate.Text = licenseDTO.ExpirationDate.ToShortDateString();
+            lblClass.Text =  "[???]" ;
+            lblFullName.Text = "[????]";
+            lblLicenseID.Text = "[????]";
+            lblNationalNo.Text = "[????]";
+            lblGendor.Text = "[????]";
+            lblIssueDate.Text = "[????]";
+            lblIssueReason.Text = "[????]";
+            lblNotes.Text = "[????]";
+            lblIsActive.Text = "[????]";
+            lblDateOfBirth.Text = "[????]";
+            lblDriverID.Text = "[????]";
+            lblExpirationDate.Text = "[????]";
 
-            LoadPersonImage(personDTO.ImagePath);
+            pbPersonImage.Image = Resources.Male_512;
 
         }
+        public void LoadData(int licenseID)
+        {
+            if (licenseID ==  -1 )
+            {
+                Initialize();
+                return;
+            }
 
 
+
+            _licenseDTO = _licenseService.GetByID(licenseID);
+            _personDTO = _personServices.GetByID(_applicationServices.GetByApplicationID(_licenseDTO.ApplicationID).ApplicantPersonID);
+
+
+            lblClass.Text = _licenseClassServices.GetByID(_licenseDTO.LicenseClass).ClassName.ToString();
+            lblFullName.Text = _personDTO.FullName.ToString();
+            lblLicenseID.Text = _licenseDTO.LicenseID.ToString();
+            lblNationalNo.Text = _personDTO.NationalNo.ToString();
+            lblGendor.Text = _personDTO.Gendor == 1 ? " Male " : " Female ";
+            lblIssueDate.Text = _licenseDTO.IssueDate.ToShortDateString();
+            lblIssueReason.Text = _licenseDTO.IssueReason.ToString();
+            lblNotes.Text = _licenseDTO.Notes;
+            lblIsActive.Text = _licenseDTO.IsActive ? "Active" : "Inactive";
+            lblDateOfBirth.Text = _personDTO.DateOfBirth.ToShortDateString();
+            lblDriverID.Text = _licenseDTO.DriverID.ToString();
+            lblExpirationDate.Text = _licenseDTO.ExpirationDate.ToShortDateString();
+
+            LoadPersonImage(_personDTO.ImagePath);
+
+        }
     }
 }

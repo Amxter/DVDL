@@ -55,6 +55,9 @@
     <Compile Include="interfaces\Licenses\ILicensesRepository.cs" />
     <Compile Include="Entities\Users\Driver.cs" />
     <Compile Include="interfaces\Users\IDriverRepository.cs" />
+    <Compile Include="Entities\Licenses\InternationalLicense.cs" />
+    <Compile Include="interfaces\Licenses\IInternationalLicensesRepository.cs" />
+    <Compile Include="Repositories\Licenses\InternationalLicensesRepository.cs" />
     <Compile Include="Repositories\Users\DriverRepository.cs" />
     <Compile Include="Repositories\Licenses\LicensesRepository.cs" />
     <Compile Include="Repositories\Users\CountryRepository.cs" />

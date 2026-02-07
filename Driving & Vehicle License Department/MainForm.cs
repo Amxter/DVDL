@@ -3,7 +3,10 @@ using Driving___Vehicle_License_Department;
 using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
 using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
+using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
+using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
 using Driving___Vehicle_License_Department.Drivers;
+using Driving___Vehicle_License_Department.Licenses.International;
 using Driving___Vehicle_License_Department.Users;
 using System;
 using System.Collections.Generic;
@@ -110,7 +113,6 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
             var frm = Program.Container.Resolve<AddUpdateLocalDrivingLicenseApplication>(
            new ParameterOverride("LDLApplicationID", -1)
              );
-         //   frm.MdiParent = this;
             frm.ShowDialog();
 
            
@@ -122,7 +124,6 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
 
 
             var frm = Program.Container.Resolve<ListLocalDrivingLicenseApplication>();
-           // frm.MdiParent = this;
             frm.ShowDialog();
 
 
@@ -131,7 +132,47 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
         private void driversToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = Program.Container.Resolve<ListDrivers>();
-            // frm.MdiParent = this;
+            frm.ShowDialog();
+            
+        }
+
+        private void intrnationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<InternationalLicenseApplication>();
+
+
+
+            frm.ShowDialog();
+        }
+
+        private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ListLocalDrivingLicenseApplication>();
+            frm.ShowDialog();
+        }
+
+        private void internationaLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            var frm = Program.Container.Resolve<ListInternationalLicenses>();
+            frm.ShowDialog();
+        }
+
+        private void renewDrivingLicensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            var frm = Program.Container.Resolve<RenewLocalDrivingLicenseApplication>();
+            frm.ShowDialog();
+        }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ReplaceLostOrDamagedLicense>();
             frm.ShowDialog();
             
         }

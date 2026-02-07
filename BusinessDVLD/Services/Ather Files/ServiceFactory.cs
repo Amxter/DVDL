@@ -52,10 +52,14 @@ namespace BusinessDVLD
         {
             return new TestAppointmentServices(new TestAppointmentRepository() , CreateApplicationServices() , CreateLDLApplicationServices());
         }
-
+        
         public static ILicenseService CreateLicenseServices()
         {
             return new LicenseService(new LicensesRepository() );
+        }
+        public static IInternationalLicenseService CreateInternationalLicenseService()
+        {
+            return new InternationalLicenseService(new InternationalLicensesRepository() , CreateLicenseServices());
         }
     }
 }

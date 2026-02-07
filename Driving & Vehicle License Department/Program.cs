@@ -4,9 +4,12 @@ using Driving___Vehicle_License_Department;
 using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
 using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
+using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
+using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
 using Driving___Vehicle_License_Department.Applications.Tests;
 using Driving___Vehicle_License_Department.Drivers;
 using Driving___Vehicle_License_Department.Licenses;
+using Driving___Vehicle_License_Department.Licenses.International;
 using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
 using Driving___Vehicle_License_Department.Login;
 using Driving___Vehicle_License_Department.People;
@@ -46,6 +49,9 @@ namespace PresentationDVLD
             Container.RegisterType<ITestRepository, TestRepository>();
             Container.RegisterType< ILicensesRepository, LicensesRepository>();
             Container.RegisterType<IDriverRepository, DriverRepository>();
+            Container.RegisterType<IInternationalLicensesRepository , InternationalLicensesRepository>();
+
+
 
 
             // Services
@@ -61,6 +67,10 @@ namespace PresentationDVLD
             Container.RegisterType<ITestServices,  TestServices >();
             Container.RegisterType<ILicenseService, LicenseService>();
             Container.RegisterType<IDriverServices, DriverServices>();
+            Container.RegisterType<IInternationalLicenseService, InternationalLicenseService>();
+
+
+
 
             // Forms
             Container.RegisterType<LoginScreen>();
@@ -80,12 +90,13 @@ namespace PresentationDVLD
             Container.RegisterType<TakeTest>();
             Container.RegisterType<LDLApplicationInfo>();
             Container.RegisterType<ShowPersonLicenseHistory>(); 
-            Container.RegisterType<ShowLicensesInfo>();
-            Container.RegisterType<ListDrivers>();
-
-
-
-
+            Container.RegisterType<ShowLicensesInfo>(); 
+            Container.RegisterType<ListDrivers>(); 
+            Container.RegisterType<InternationalLicenseApplication>(); 
+            Container.RegisterType<ShowInternationalLicense>(); 
+            Container.RegisterType<ListInternationalLicenses>(); 
+            Container.RegisterType<RenewLocalDrivingLicenseApplication>();
+            Container.RegisterType<ReplaceLostOrDamagedLicense>();
 
             var login = Container.Resolve<LoginScreen>();
             System.Windows.Forms.Application.Run(login);

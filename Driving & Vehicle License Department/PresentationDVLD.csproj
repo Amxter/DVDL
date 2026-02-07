@@ -115,6 +115,18 @@
     <Compile Include="Applications\ManageTestTypes\UpdateTestType.Designer.cs">
       <DependentUpon>UpdateTestType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Renew Local Driving license\RenewLocalDrivingLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Renew Local Driving license\RenewLocalDrivingLicenseApplication.Designer.cs">
+      <DependentUpon>RenewLocalDrivingLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ReplaceLostOrDamagedLicense\ReplaceLostOrDamagedLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\ReplaceLostOrDamagedLicense\ReplaceLostOrDamagedLicense.Designer.cs">
+      <DependentUpon>ReplaceLostOrDamagedLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Tests\ListTestsAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,30 @@
     </Compile>
     <Compile Include="Licenses\DetainLicenseApplication.Designer.cs">
       <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\International\InternationalLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\International\InternationalLicenseApplication.Designer.cs">
+      <DependentUpon>InternationalLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\International\ListInternationalLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\International\ListInternationalLicenses.Designer.cs">
+      <DependentUpon>ListInternationalLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\International\ShowInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\International\ShowInternationalLicense.Designer.cs">
+      <DependentUpon>ShowInternationalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\International\User Controls\InfoInternationalLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\International\User Controls\InfoInternationalLicense.Designer.cs">
+      <DependentUpon>InfoInternationalLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\User Controls\DriverLicenses.cs">
       <SubType>UserControl</SubType>
@@ -304,6 +340,12 @@
     <EmbeddedResource Include="Applications\ManageTestTypes\UpdateTestType.resx">
       <DependentUpon>UpdateTestType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Renew Local Driving license\RenewLocalDrivingLicenseApplication.resx">
+      <DependentUpon>RenewLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\ReplaceLostOrDamagedLicense\ReplaceLostOrDamagedLicense.resx">
+      <DependentUpon>ReplaceLostOrDamagedLicense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\Tests\ListTestsAppointments.resx">
       <DependentUpon>ListTestsAppointments.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +369,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\DetainLicenseApplication.resx">
       <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\International\InternationalLicenseApplication.resx">
+      <DependentUpon>InternationalLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\International\ListInternationalLicenses.resx">
+      <DependentUpon>ListInternationalLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\International\ShowInternationalLicense.resx">
+      <DependentUpon>ShowInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\International\User Controls\InfoInternationalLicense.resx">
+      <DependentUpon>InfoInternationalLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\User Controls\DriverLicenses.resx">
       <DependentUpon>DriverLicenses.cs</DependentUpon>
@@ -682,6 +736,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Driver Main1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detain 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renew Driving License 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Damaged Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Retake Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detain 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Release Detained License 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detain 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cars 48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Application 641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manage Applications 641.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

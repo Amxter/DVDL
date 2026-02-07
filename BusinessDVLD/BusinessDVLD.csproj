@@ -68,6 +68,10 @@
     <Compile Include="DataTransferObject\Users\DriverDTO.cs" />
     <Compile Include="interfaces\Users\IDriverServices.cs" />
     <Compile Include="interfaces\Licenses\ILicenseService.cs" />
+    <Compile Include="Mappers\Licenses\InternationalLicenseDTOMapper.cs" />
+    <Compile Include="interfaces\Licenses\IInternationalLicenseService.cs" />
+    <Compile Include="DataTransferObject\Licenses\InternationalLicenseDTO.cs" />
+    <Compile Include="Services\Licenses\InternationalLicenseService.cs" />
     <Compile Include="Services\Licenses\LicenseService.cs" />
     <Compile Include="Services\Users\DriverServices.cs" />
     <Compile Include="Services\Users\CountryServices.cs" />

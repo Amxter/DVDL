@@ -79,6 +79,28 @@ INSERT INTO [dbo].[Licenses]
 
 
         }
+        public bool DeactivateLicense(int licenseID)
+        {
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            {
+                string query = @"Update Licenses Set IsActive = 0 where LicenseID = @LicenseID ";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@LicenseID", licenseID);
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Error("Error while deactivating license", ex);
+                        return false;
+                    }
+                }
+            }
+        }
         public DataTable GetAllLocalLicensesByPersonID(int personID)
         {
 
@@ -322,7 +344,56 @@ INSERT INTO [dbo].[Licenses]
 
 
         }
- 
+        public bool IsExists (int license )
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            {
+
+                string query = @"SELECT Fiend =1 
+                  FROM     Licenses where LicenseID = @LicenseID ";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@LicenseID", license);
+
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+
+
+        }
+        public bool IsExpirationDateLicense(int license)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            {
+
+                string query = @"SELECT x = 1 
+FROM     Licenses
+where Licenses.LicenseID = @LicenseID and 
+Licenses.ExpirationDate  < @ExpirationDate";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@LicenseID", license);
+                    cmd.Parameters.AddWithValue("@ExpirationDate", DateTime.Now );
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+
+
+        }
     }
 }
 

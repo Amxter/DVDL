@@ -19,4 +19,6 @@ namespace BusinessDVLD
         public bool UpdateApplicationStatus(int applicationID, int applicationStatus, System.DateTime lastStatusDate) =>
             _applicationRepository.UpdateApplicationStatus(applicationID, applicationStatus, lastStatusDate);
     }
+
+
 }
