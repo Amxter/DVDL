@@ -5,6 +5,7 @@ using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
 using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
 using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
+using Driving___Vehicle_License_Department.Applications.Rlease_Detained_License;
 using Driving___Vehicle_License_Department.Drivers;
 using Driving___Vehicle_License_Department.Licenses.International;
 using Driving___Vehicle_License_Department.Users;
@@ -173,6 +174,27 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
         private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = Program.Container.Resolve<ReplaceLostOrDamagedLicense>();
+            frm.ShowDialog();
+            
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        var frm = Program.Container.Resolve<DetainLicenseApplication>();
+            frm.ShowDialog();
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ReleaseDetainedLicenseApplication>();
+            frm.ShowDialog();
+            
+        }
+
+        private void manToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ListDetainedLicenses>();
             frm.ShowDialog();
             
         }

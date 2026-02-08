@@ -22,6 +22,7 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
         ILicenseClassServices _licenseClassServices;
         IApplicationServices _applicationServices;
         IPersonServices _personServices;
+        IDetainedLicenseServices _detainedLicenseServices;
 
         LicenseDTO _licenseDTO;
         PersonDTO _personDTO;
@@ -34,6 +35,7 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             _licenseClassServices = ServiceFactory.CreateLicenseClassServices();
             _applicationServices = ServiceFactory.CreateApplicationServices();
             _personServices = ServiceFactory.CreatePersonServices();
+            _detainedLicenseServices = ServiceFactory.CreateDetainedLicenseServices();
         }
         private void LoadPersonImage(string imagePath)
         {
@@ -82,9 +84,6 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
                 Initialize();
                 return;
             }
-
-
-
             _licenseDTO = _licenseService.GetByID(licenseID);
             _personDTO = _personServices.GetByID(_applicationServices.GetByApplicationID(_licenseDTO.ApplicationID).ApplicantPersonID);
 
@@ -96,11 +95,12 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             lblGendor.Text = _personDTO.Gendor == 1 ? " Male " : " Female ";
             lblIssueDate.Text = _licenseDTO.IssueDate.ToShortDateString();
             lblIssueReason.Text = _licenseDTO.IssueReason.ToString();
-            lblNotes.Text = _licenseDTO.Notes;
+            lblNotes.Text = _licenseDTO.Notes == null || _licenseDTO.Notes == "" ? "No Notes" : _licenseDTO.Notes ;
             lblIsActive.Text = _licenseDTO.IsActive ? "Active" : "Inactive";
             lblDateOfBirth.Text = _personDTO.DateOfBirth.ToShortDateString();
             lblDriverID.Text = _licenseDTO.DriverID.ToString();
             lblExpirationDate.Text = _licenseDTO.ExpirationDate.ToShortDateString();
+            lblIsDetained.Text = _detainedLicenseServices.IsLicenseDetained(_licenseDTO.LicenseID) ? "Yes" : "No";
 
             LoadPersonImage(_personDTO.ImagePath);
 

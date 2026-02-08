@@ -192,8 +192,6 @@ INSERT INTO [dbo].[Applications]
         }
 
     }
-
-
 }
 
 

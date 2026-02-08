@@ -71,6 +71,10 @@
     <Compile Include="Mappers\Licenses\InternationalLicenseDTOMapper.cs" />
     <Compile Include="interfaces\Licenses\IInternationalLicenseService.cs" />
     <Compile Include="DataTransferObject\Licenses\InternationalLicenseDTO.cs" />
+    <Compile Include="DataTransferObject\Applications\DetainedLicenseDTO.cs" />
+    <Compile Include="Mappers\Applications\DetainedLicenseMapper.cs" />
+    <Compile Include="Services\Applications\DetainedLicenseServices.cs" />
+    <Compile Include="interfaces\Applications\IDetainedLicenseServices.cs" />
     <Compile Include="Services\Licenses\InternationalLicenseService.cs" />
     <Compile Include="Services\Licenses\LicenseService.cs" />
     <Compile Include="Services\Users\DriverServices.cs" />

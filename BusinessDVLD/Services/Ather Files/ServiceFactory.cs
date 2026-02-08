@@ -61,6 +61,10 @@ namespace BusinessDVLD
         {
             return new InternationalLicenseService(new InternationalLicensesRepository() , CreateLicenseServices());
         }
+        public static IDetainedLicenseServices CreateDetainedLicenseServices()
+        {
+            return new DetainedLicenseServices (new  DetainedLicenseRepository());
+        }
     }
 }
 

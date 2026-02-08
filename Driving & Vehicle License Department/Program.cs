@@ -6,6 +6,7 @@ using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
 using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
 using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
 using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
+using Driving___Vehicle_License_Department.Applications.Rlease_Detained_License;
 using Driving___Vehicle_License_Department.Applications.Tests;
 using Driving___Vehicle_License_Department.Drivers;
 using Driving___Vehicle_License_Department.Licenses;
@@ -50,7 +51,7 @@ namespace PresentationDVLD
             Container.RegisterType< ILicensesRepository, LicensesRepository>();
             Container.RegisterType<IDriverRepository, DriverRepository>();
             Container.RegisterType<IInternationalLicensesRepository , InternationalLicensesRepository>();
-
+            Container.RegisterType<IDetainedLicenseRepository, DetainedLicenseRepository>();
 
 
 
@@ -68,7 +69,7 @@ namespace PresentationDVLD
             Container.RegisterType<ILicenseService, LicenseService>();
             Container.RegisterType<IDriverServices, DriverServices>();
             Container.RegisterType<IInternationalLicenseService, InternationalLicenseService>();
-
+            Container.RegisterType<IDetainedLicenseServices, DetainedLicenseServices>();
 
 
 
@@ -95,8 +96,12 @@ namespace PresentationDVLD
             Container.RegisterType<InternationalLicenseApplication>(); 
             Container.RegisterType<ShowInternationalLicense>(); 
             Container.RegisterType<ListInternationalLicenses>(); 
-            Container.RegisterType<RenewLocalDrivingLicenseApplication>();
-            Container.RegisterType<ReplaceLostOrDamagedLicense>();
+            Container.RegisterType<RenewLocalDrivingLicenseApplication>(); 
+            Container.RegisterType<ReplaceLostOrDamagedLicense>(); 
+            Container.RegisterType<Driving___Vehicle_License_Department.Applications.Rlease_Detained_License.DetainLicenseApplication>();
+            Container.RegisterType<ReleaseDetainedLicenseApplication>();
+            Container.RegisterType<ListDetainedLicenses>();
+
 
             var login = Container.Resolve<LoginScreen>();
             System.Windows.Forms.Application.Run(login);

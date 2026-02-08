@@ -1,5 +1,4 @@
 ﻿using DatabaseDVLD;
-using System;
 
 namespace BusinessDVLD
 {
@@ -11,14 +10,12 @@ namespace BusinessDVLD
             _applicationRepository = applicationRepository;
         }
 
-        public ApplicationDTO GetByApplicationID(int applicationID) => _applicationRepository.GetByApplicationID(applicationID ).ToDTO() ;
+        public ApplicationDTO GetByApplicationID(int applicationID) => _applicationRepository.GetByApplicationID(applicationID).ToDTO();
 
         public int Add(ApplicationDTO applicationDTO) => _applicationRepository.Add(applicationDTO.ToEntity());
 
-      public bool Delete(int applicationID) => _applicationRepository.Delete(applicationID);
+        public bool Delete(int applicationID) => _applicationRepository.Delete(applicationID);
         public bool UpdateApplicationStatus(int applicationID, int applicationStatus, System.DateTime lastStatusDate) =>
             _applicationRepository.UpdateApplicationStatus(applicationID, applicationStatus, lastStatusDate);
     }
-
-
 }

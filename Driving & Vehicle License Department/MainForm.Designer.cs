@@ -214,18 +214,21 @@
             this.manToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_64;
             this.manToolStripMenuItem.Name = "manToolStripMenuItem";
             resources.ApplyResources(this.manToolStripMenuItem, "manToolStripMenuItem");
+            this.manToolStripMenuItem.Click += new System.EventHandler(this.manToolStripMenuItem_Click);
             // 
             // detainLicenseToolStripMenuItem
             // 
             this.detainLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_32;
             this.detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
             resources.ApplyResources(this.detainLicenseToolStripMenuItem, "detainLicenseToolStripMenuItem");
+            this.detainLicenseToolStripMenuItem.Click += new System.EventHandler(this.detainLicenseToolStripMenuItem_Click);
             // 
             // releaseDetainedLicenseToolStripMenuItem
             // 
             this.releaseDetainedLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Release_Detained_License_64;
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
             resources.ApplyResources(this.releaseDetainedLicenseToolStripMenuItem, "releaseDetainedLicenseToolStripMenuItem");
+            this.releaseDetainedLicenseToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedLicenseToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
