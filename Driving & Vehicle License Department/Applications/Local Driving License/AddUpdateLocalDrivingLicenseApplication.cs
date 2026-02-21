@@ -13,7 +13,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
 
         ILicenseClassServices _licenseClassServices;
         ILDLApplicationServices _ldlApplicationServices;
-        IApplicationTypesServices _applicationTypesServices;
         IUserServices               _userServices;
 
         enum Mode {Add,Update}
@@ -24,7 +23,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         public AddUpdateLocalDrivingLicenseApplication(int LDLApplicationID , 
             ILicenseClassServices licenseClassServices ,
             ILDLApplicationServices  ldlApplicationServices ,
-           IApplicationTypesServices applicationTypesServices ,
            IUserServices userServices ,
            IPersonServices personServices ) 
         {
@@ -32,7 +30,6 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
            
             _licenseClassServices = licenseClassServices;
             _ldlApplicationServices = ldlApplicationServices;
-            _applicationTypesServices = applicationTypesServices;
             _userServices = userServices;
             _LDLApplicationID = LDLApplicationID;
             _LoadLicenseClasses();
@@ -45,8 +42,8 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             }
             else
             {
-                
-                 _UpdateMode();
+                _LDLApplicationID = LDLApplicationID;
+                _UpdateMode();
             }
 
                  
@@ -65,9 +62,9 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             lblLocalDrivingLicebseApplicationID.Text = _LDLApplicationID.ToString() ;
             filterPerson1.FilterPersonByID(lDLApplicationDTO.Application.ApplicantPersonID) ;
             cbLicenseClass.SelectedValue = lDLApplicationDTO.LicenseClassID;
-            lblApplicationDate.Text = lDLApplicationDTO.Application.ApplicationDate.ToString("yyyy-MM-dd HH:mm:ss");
+            lblApplicationDate.Text = lDLApplicationDTO.Application.ApplicationDate.ToString("yyyy-MM-dd");
             lblCreatedByUser.Text = _userServices.GetByID( Convert.ToInt32 (lDLApplicationDTO.Application.CreatedByUserID ) ).UserName  ;
-            lblFees.Text = _applicationTypesServices.GetApplication("New Local Driving License Service").Fees.ToString()  ;
+            lblFees.Text = lDLApplicationDTO.Application.PaidFees.ToString() ;
 
 
         }

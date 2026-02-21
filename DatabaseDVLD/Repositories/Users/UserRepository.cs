@@ -13,6 +13,24 @@ namespace DatabaseDVLD
         {
             _logger = new FileLogger();
         }
+        private void _AddUserParameters(SqlCommand cmd, User user)
+        {
+            cmd.Parameters.AddWithValue("@PersonID", user.PersonID);
+            cmd.Parameters.AddWithValue("@UserName", user.UserName);
+            cmd.Parameters.AddWithValue("@Password", user.PasswordHash);
+            cmd.Parameters.AddWithValue("@IsActive", user.IsActive);
+        }
+        private User _MapUser(SqlDataReader reader)
+        {
+            return new User
+            {
+                UserID = Convert.ToInt32(reader["UserID"]),
+                PersonID = Convert.ToInt32(reader["PersonID"]),
+                IsActive = Convert.ToBoolean(reader["IsActive"]),
+                UserName = reader["UserName"].ToString(),
+                PasswordHash = reader["Password"].ToString()
+            };
+        }
         public int Add(User user)
         {
             user.UserID = -1;
@@ -32,10 +50,7 @@ namespace DatabaseDVLD
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PersonID", user.PersonID);
-                    cmd.Parameters.AddWithValue("@UserName", user.UserName);
-                    cmd.Parameters.AddWithValue("@Password", user.PasswordHash);
-                    cmd.Parameters.AddWithValue("@IsActive", user.IsActive);
+                    _AddUserParameters(cmd, user);
 
 
                     try
@@ -50,7 +65,7 @@ namespace DatabaseDVLD
                     {
                         _logger.Error("Error while adding user", ex);
                     }
-  
+
 
 
 
@@ -79,10 +94,7 @@ namespace DatabaseDVLD
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@UserID", user.UserID);
-                    cmd.Parameters.AddWithValue("@PersonID", user.PersonID);
-                    cmd.Parameters.AddWithValue("@UserName", user.UserName);
-                    cmd.Parameters.AddWithValue("@Password", user.PasswordHash);
-                    cmd.Parameters.AddWithValue("@IsActive", user.IsActive);
+                    _AddUserParameters(cmd, user);
                     try
                     {
                         conn.Open();
@@ -93,10 +105,11 @@ namespace DatabaseDVLD
 
                     }
                     catch (Exception ex)
-                    {IsUpdate = false;
+                    {
+                        IsUpdate = false;
                         _logger.Error("Error while update user", ex);
                     }
-           
+
                 }
             }
 
@@ -119,10 +132,11 @@ namespace DatabaseDVLD
                             isDelete = true;
                     }
                     catch (Exception ex)
-                    { isDelete = false;
+                    {
+                        isDelete = false;
                         _logger.Error("Error while delete user", ex);
                     }
-  
+
                 }
             }
             return isDelete;
@@ -153,10 +167,11 @@ namespace DatabaseDVLD
                         }
                     }
                     catch (Exception ex)
-                    {dataTable = new DataTable();
+                    {
+                        dataTable = new DataTable();
                         _logger.Error("Error while get all user", ex);
                     }
-   
+
                 }
             }
             return dataTable;
@@ -169,14 +184,10 @@ namespace DatabaseDVLD
             {
 
                 string query = "Select * from Users  Where UserID = @UserID ";
-
-
-
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
 
                     cmd.Parameters.AddWithValue("@UserID", userID);
-
 
                     try
                     {
@@ -186,34 +197,20 @@ namespace DatabaseDVLD
                         {
                             if (reader.Read())
                             {
-                                user = new User
-                                {
-                                    UserID = Convert.ToInt32(reader["UserID"]),
-                                    PersonID = Convert.ToInt32(reader["PersonID"]),
-                                    IsActive = Convert.ToBoolean(reader["IsActive"]),
-                                    UserName = reader["UserName"].ToString(),
-                                    PasswordHash = reader["Password"].ToString()
-                                };
+                                user = _MapUser(reader);
                             }
-
-
                             else
                             {
-
                                 user = null;
-
                             }
-
-
-
-
                         }
                     }
                     catch (Exception ex)
-                    { user = null;
+                    {
+                        user = null;
                         _logger.Error("Error while get user by ID", ex);
                     }
- 
+
                 }
             }
 
@@ -227,7 +224,7 @@ namespace DatabaseDVLD
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
 
-                string query = @"Select * FROM  Users  WHERE  UserID = @UserID ";
+                string query = @"Select 1 FROM  Users  WHERE  UserID = @UserID ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -292,10 +289,11 @@ namespace DatabaseDVLD
                         }
                     }
                     catch (Exception ex)
-                    { user = null;
+                    {
+                        user = null;
                         _logger.Error("Error while Is Exists By User Name", ex);
                     }
-         
+
                 }
             }
 
@@ -308,7 +306,7 @@ namespace DatabaseDVLD
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
 
-                string query = @"Select * FROM  Users  WHERE  PersonID = @PersonID ";
+                string query = @"Select 1 FROM  Users  WHERE  PersonID = @PersonID ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -329,7 +327,7 @@ namespace DatabaseDVLD
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
 
-                string query = @"Select * FROM  Users  WHERE  UserName = @UserName  and UserId <> @UserID ";
+                string query = @"Select 1 FROM  Users  WHERE  UserName = @UserName  and UserId <> @UserID ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {

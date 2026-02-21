@@ -13,8 +13,7 @@ namespace DatabaseDVLD.Repositories
         bool Update(Entity entity);
         bool Delete(int entityID);
         DataTable GetAll();
-        Entity GetByID(int entityID);
-        bool IsExistsByID(int entityID);
+ 
 
     }
 }

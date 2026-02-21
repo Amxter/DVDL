@@ -1,6 +1,5 @@
 ﻿using DatabaseDVLD;
 using System.Data;
-using System.Runtime.CompilerServices;
 
 namespace BusinessDVLD
 {
@@ -19,20 +18,11 @@ namespace BusinessDVLD
         }
         public bool Delete(int userID) => _userRepository.Delete(userID);
         public bool IsExistsByID(int userID) => _userRepository.IsExistsByID(userID);
-        public UserDTO GetByUserName(string username)
-        {
-
-            var entity = _userRepository.IsExistsByUserName(username);
-            return entity == null ? null : entity.ToDTO();
-        }
+        public UserDTO GetByUserName(string username) => _userRepository.IsExistsByUserName(username)?.ToDTO();
         public bool IsExistsByPersonID(int personID) => _userRepository.IsExistsByPersonID(personID);
         public bool IsExistsByUserNameExceptUserID(string username, int userID) => _userRepository.IsExistsByUserNameExceptUserID(username, userID);
         public DataTable GetAll() => _userRepository.GetAll();
-        public UserDTO GetByID(int id)
-        {
-            var entity = _userRepository.GetByID(id);
-            return entity == null ? null : entity.ToDTO();
-        }
+        public UserDTO GetByID(int id) => _userRepository.GetByID(id)?.ToDTO();
         public bool Update(UserDTO dTO)
         {
 

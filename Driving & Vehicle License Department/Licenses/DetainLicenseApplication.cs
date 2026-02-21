@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Licenses
 {
-    public partial class DetainLicenseApplication : Form
+    public partial class DetainLicenseApplication : GeneralForm
     {
         public DetainLicenseApplication()
         {

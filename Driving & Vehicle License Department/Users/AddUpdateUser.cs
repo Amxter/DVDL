@@ -38,9 +38,10 @@ namespace Driving___Vehicle_License_Department.Users
 
             if (_user != null)
             {
-                filterPerson1.FilterEnabled = false;
                 _userMode = UserMode.Update;
                 filterPerson1.FilterPersonByID(_user.PersonID);
+                filterPerson1.FilterEnabled = false;
+                lblUserID.Text = _user.UserID.ToString();
                 txtUserName.Text = _user.UserName;
                 chkIsActive.Checked = _user.IsActive;
                 tpLoginInfo.Enabled = true;
@@ -59,10 +60,11 @@ namespace Driving___Vehicle_License_Department.Users
             _userServices = userServices ;
 
   
-            _isValidUserName = false;
-            _isValidPassword = false;
+
             if (userId == (int)UserMode.Add)
             {
+                _isValidUserName = false;
+                _isValidPassword = false;
                 _userMode = UserMode.Add;
                 _user = new UserDTO();
                 _user.PersonID = -1;
@@ -73,7 +75,8 @@ namespace Driving___Vehicle_License_Department.Users
             else
             {
                 _userMode = UserMode.Update;
-                
+                _isValidUserName = true ;
+                _isValidPassword = true ;
                 _user = _userServices.GetByID(userId);
                 _user.UserID = userId;
                 this.Text = "Update User";
@@ -268,12 +271,13 @@ namespace Driving___Vehicle_License_Department.Users
                 if (_userServices.IsExistsByUserNameExceptUserID(txtUserName.Text.Trim(), _user.UserID))
                 {
                     errorProvider1.SetError(txtUserName, "This user name is already taken.");
-
+                    _isValidUserName = false;
                 }
                 else
                 {
                     errorProvider1.SetError(txtUserName, null);
                     btnSave.Enabled = true;
+                    _isValidUserName = true; 
                 }
             }
         }
@@ -282,7 +286,10 @@ namespace Driving___Vehicle_License_Department.Users
            
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-
+                if (_userMode == UserMode.Update)
+                {
+                    return; 
+                }
                 errorProvider1.SetError(txtPassword, "This field is required!");
             }
             else
@@ -292,7 +299,6 @@ namespace Driving___Vehicle_License_Department.Users
             }
             matchPasswords();
         }
-
         private void AddUpdateUser_Load(object sender, EventArgs e)
         {
  

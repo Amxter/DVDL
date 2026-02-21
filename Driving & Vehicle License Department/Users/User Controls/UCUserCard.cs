@@ -37,6 +37,10 @@ namespace Driving___Vehicle_License_Department.Users
             }
             else
             {
+                ucDetailsPerson1.LoadPersonDetails(-1);
+                lblUserID.Text =  "[???]";
+                lblUserName.Text = "[???]";
+                lblIsActive.Text = "[???]";
                 MessageBox.Show("User not found.");
 
             }

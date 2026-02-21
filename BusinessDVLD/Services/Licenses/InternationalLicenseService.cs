@@ -33,7 +33,7 @@ namespace BusinessDVLD
             return _internationalLicensesRepository.Add(license.ToEntity());
         }
         public int DoesHaveActiveInternationalLicense(int licenseID) => _internationalLicensesRepository.DoesHaveActiveInternationalLicense(licenseID);
-        public InternationalLicenseDTO GetByID(int internationalLicenseID) => _internationalLicensesRepository.GetByID(internationalLicenseID).ToDTO();
+        public InternationalLicenseDTO GetByID(int internationalLicenseID) => _internationalLicensesRepository.GetByID(internationalLicenseID)?.ToDTO();
         public DataTable GetAll( ) => _internationalLicensesRepository.GetAll();
     }
 

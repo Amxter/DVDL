@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
 {
-    public partial class IssueDriverLicenseFirstTime : Form
+    public partial class IssueDriverLicenseFirstTime : GeneralForm
     {
 
         ILicenseService _licenseService;

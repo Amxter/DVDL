@@ -8,9 +8,55 @@ namespace DatabaseDVLD
     {
         private readonly ILogger _logger;
 
-        public PersonRepository( )
+        public PersonRepository()
         {
             _logger = new FileLogger();
+        }
+
+        private  void _AddPersonParameters(SqlCommand cmd, Person person, bool includeId)
+        {
+            if (includeId)
+                cmd.Parameters.AddWithValue("@PersonID", person.PersonID);
+
+            cmd.Parameters.AddWithValue("@NationalNo", person.NationalNo);
+            cmd.Parameters.AddWithValue("@FirstName", person.FirstName);
+            cmd.Parameters.AddWithValue("@SecondName", person.SecondName);
+
+            cmd.Parameters.AddWithValue("@ThirdName",
+                string.IsNullOrWhiteSpace(person.ThirdName) ? (object)DBNull.Value : person.ThirdName);
+
+            cmd.Parameters.AddWithValue("@LastName", person.LastName);
+            cmd.Parameters.AddWithValue("@DateOfBirth", person.DateOfBirth);
+            cmd.Parameters.AddWithValue("@Gendor", person.Gendor);
+            cmd.Parameters.AddWithValue("@Address", person.Address);
+            cmd.Parameters.AddWithValue("@Phone", person.Phone);
+
+            cmd.Parameters.AddWithValue("@Email",
+                string.IsNullOrWhiteSpace(person.Email) ? (object)DBNull.Value : person.Email);
+
+            cmd.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
+
+            cmd.Parameters.AddWithValue("@ImagePath",
+                string.IsNullOrWhiteSpace(person.ImagePath) ? (object)DBNull.Value : person.ImagePath);
+        }
+        private  Person _MapPerson(SqlDataReader reader)
+        {
+            return new Person
+            {
+                PersonID = Convert.ToInt32(reader["PersonID"]),
+                NationalNo = reader["NationalNo"].ToString(),
+                FirstName = reader["FirstName"].ToString(),
+                SecondName = reader["SecondName"].ToString(),
+                ThirdName = reader["ThirdName"] == DBNull.Value ? null : reader["ThirdName"].ToString(),
+                LastName = reader["LastName"].ToString(),
+                DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
+                Gendor = Convert.ToInt16(reader["Gendor"]),
+                Address = reader["Address"].ToString(),
+                Phone = reader["Phone"].ToString(),
+                Email = reader["Email"] == DBNull.Value ? null : reader["Email"].ToString(),
+                NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]),
+                ImagePath = reader["ImagePath"] == DBNull.Value ? null : reader["ImagePath"].ToString()
+            };
         }
 
         public int Add(Person person)
@@ -20,49 +66,28 @@ namespace DatabaseDVLD
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
                 string query = @"
-INSERT INTO dbo.People
-(
-    NationalNo, FirstName, SecondName, ThirdName, LastName,
-    DateOfBirth, Gendor, Address, Phone, Email,
-    NationalityCountryID, ImagePath
-)
-VALUES
-(
-    @NationalNo, @FirstName, @SecondName, @ThirdName, @LastName,
-    @DateOfBirth, @Gendor, @Address, @Phone, @Email,
-    @NationalityCountryID, @ImagePath
-);
-
-SELECT SCOPE_IDENTITY();
-";
+                           INSERT INTO dbo.People
+                           (
+                               NationalNo, FirstName, SecondName, ThirdName, LastName,
+                               DateOfBirth, Gendor, Address, Phone, Email,
+                               NationalityCountryID, ImagePath
+                           )
+                           VALUES
+                           (
+                               @NationalNo, @FirstName, @SecondName, @ThirdName, @LastName,
+                               @DateOfBirth, @Gendor, @Address, @Phone, @Email,
+                               @NationalityCountryID, @ImagePath
+                           );
+                           
+                           SELECT SCOPE_IDENTITY();
+                           ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@NationalNo", person.NationalNo);
-                    cmd.Parameters.AddWithValue("@FirstName", person.FirstName);
-                    cmd.Parameters.AddWithValue("@SecondName", person.SecondName);
-
-                    cmd.Parameters.AddWithValue("@ThirdName",
-                        string.IsNullOrWhiteSpace(person.ThirdName) ? (object)DBNull.Value : person.ThirdName);
-
-                    cmd.Parameters.AddWithValue("@LastName", person.LastName);
-                    cmd.Parameters.AddWithValue("@DateOfBirth", person.DateOfBirth);
-                    cmd.Parameters.AddWithValue("@Gendor", person.Gendor);
-                    cmd.Parameters.AddWithValue("@Address", person.Address);
-                    cmd.Parameters.AddWithValue("@Phone", person.Phone);
-
-                    cmd.Parameters.AddWithValue("@Email",
-                        string.IsNullOrWhiteSpace(person.Email) ? (object)DBNull.Value : person.Email);
-
-                    cmd.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
-
-                    cmd.Parameters.AddWithValue("@ImagePath",
-                        string.IsNullOrWhiteSpace(person.ImagePath) ? (object)DBNull.Value : person.ImagePath);
-
+                    _AddPersonParameters(cmd, person, false);
                     conn.Open();
-
                     object result = cmd.ExecuteScalar();
-                    person.PersonID = Convert.ToInt32(result); // SCOPE_IDENTITY returns decimal غالبًا
+                    person.PersonID = Convert.ToInt32(result);
                 }
             }
 
@@ -95,30 +120,7 @@ SELECT SCOPE_IDENTITY();
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PersonID", person.PersonID);
-                    cmd.Parameters.AddWithValue("@NationalNo", person.NationalNo);
-                    cmd.Parameters.AddWithValue("@FirstName", person.FirstName);
-                    cmd.Parameters.AddWithValue("@SecondName", person.SecondName);
-
-                    cmd.Parameters.AddWithValue("@ThirdName",
-                        string.IsNullOrWhiteSpace(person.ThirdName) ? (object)DBNull.Value : person.ThirdName);
-
-                    cmd.Parameters.AddWithValue("@LastName", person.LastName);
-                    cmd.Parameters.AddWithValue("@DateOfBirth", person.DateOfBirth);
-                    cmd.Parameters.AddWithValue("@Gendor", person.Gendor);
-                    cmd.Parameters.AddWithValue("@Address", person.Address);
-                    cmd.Parameters.AddWithValue("@Phone", person.Phone);
-
-                    cmd.Parameters.AddWithValue("@Email",
-                        string.IsNullOrWhiteSpace(person.Email) ? (object)DBNull.Value : person.Email);
-
-                    cmd.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
-
-                    cmd.Parameters.AddWithValue("@ImagePath",
-                        string.IsNullOrWhiteSpace(person.ImagePath) ? (object)DBNull.Value : person.ImagePath);
-
-
-
+                    _AddPersonParameters(cmd, person, true);
 
                     try
                     {
@@ -130,10 +132,11 @@ SELECT SCOPE_IDENTITY();
 
                     }
                     catch (Exception ex)
-                    { IsUpdate = false;
+                    {
+                        IsUpdate = false;
                         _logger.Error("Error while update person", ex);
                     }
-  
+
                 }
             }
 
@@ -161,10 +164,11 @@ SELECT SCOPE_IDENTITY();
 
                     }
                     catch (Exception ex)
-                    {isDelete = false;
+                    {
+                        isDelete = false;
                         _logger.Error("Error while delete person", ex);
                     }
-         
+
                 }
             }
 
@@ -177,7 +181,7 @@ SELECT SCOPE_IDENTITY();
             {
 
                 string query = @" 
-SELECT People.PersonID, People.NationalNo,(FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName) AS FullName ,People.DateOfBirth,
+SELECT People.PersonID, People.NationalNo,(FirstName + ' ' + SecondName + ' ' + COALESCE(ThirdName,'') + ' ' + LastName) AS FullName ,People.DateOfBirth,
     CASE 
         WHEN Gendor = 0 THEN 'Male'
         WHEN Gendor = 1 THEN 'Female'
@@ -202,10 +206,11 @@ FROM     People INNER JOIN
                         }
                     }
                     catch (Exception ex)
-                    {dataTable = new DataTable();
+                    {
+                        dataTable = new DataTable();
                         _logger.Error("Error while get all person", ex);
                     }
-  
+
                 }
             }
             return dataTable;
@@ -218,60 +223,31 @@ FROM     People INNER JOIN
             {
 
                 string query = "Select * from People  Where PersonID = @PersonID ";
-
-
-
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
 
                     cmd.Parameters.AddWithValue("@PersonID", personID);
-
-
                     try
                     {
-
                         conn.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                person = new Person
-                                {
-                                    PersonID = Convert.ToInt32(reader["PersonID"]),
-                                    NationalNo = reader["NationalNo"].ToString(),
-                                    FirstName = reader["FirstName"].ToString(),
-                                    SecondName = reader["SecondName"].ToString(),
-                                    ThirdName = reader["ThirdName"] == DBNull.Value ? null : reader["ThirdName"].ToString(),
-                                    LastName = reader["LastName"].ToString(),
-                                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
-                                    Gendor = Convert.ToInt16(reader["Gendor"]),
-                                    Address = reader["Address"].ToString(),
-                                    Phone = reader["Phone"].ToString(),
-                                    Email = reader["Email"] == DBNull.Value ? null : reader["Email"].ToString(),
-                                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]),
-                                    ImagePath = reader["ImagePath"] == DBNull.Value ? null : reader["ImagePath"].ToString()
-
-                                };
+                                person = _MapPerson(reader);
                             }
-
-
                             else
                             {
-
                                 person = null;
-
                             }
-
-
-
-
                         }
                     }
                     catch (Exception ex)
-                    { person = null;
+                    {
+                        person = null;
                         _logger.Error("Error while get by person ID ", ex);
                     }
-  
+
                 }
             }
 
@@ -281,27 +257,34 @@ FROM     People INNER JOIN
         public bool IsExistsByID(int personID)
         {
 
-            bool exists = false;
+
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
 
-                string query = @"Select * FROM  People  WHERE  PersonID = @PersonID ";
+                string query = @"Select 1 FROM  People  WHERE  PersonID = @PersonID ";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@PersonID", personID);
-
-                    conn.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        return reader.HasRows;
+                        cmd.Parameters.AddWithValue("@PersonID", personID);
+
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            return reader.HasRows;
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error("Error while checking exists by ID", ex);
+                    return false;
                 }
             }
 
-
         }
-        public bool IsExistsNationalNo(string nationalNo)
+        public bool IsExistsByNationalNo(string nationalNo)
         {
             using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
             {
@@ -328,60 +311,31 @@ FROM     People INNER JOIN
             {
 
                 string query = "Select * from People  Where NationalNo = @nationalNo ";
-
-
-
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
 
                     cmd.Parameters.AddWithValue("@nationalNo", nationalNo);
-
-
                     try
                     {
-
                         conn.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                person = new Person
-                                {
-                                    PersonID = Convert.ToInt32(reader["PersonID"]),
-                                    NationalNo = reader["NationalNo"].ToString(),
-                                    FirstName = reader["FirstName"].ToString(),
-                                    SecondName = reader["SecondName"].ToString(),
-                                    ThirdName = reader["ThirdName"] == DBNull.Value ? null : reader["ThirdName"].ToString(),
-                                    LastName = reader["LastName"].ToString(),
-                                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
-                                    Gendor = Convert.ToInt16(reader["Gendor"]),
-                                    Address = reader["Address"].ToString(),
-                                    Phone = reader["Phone"].ToString(),
-                                    Email = reader["Email"] == DBNull.Value ? null : reader["Email"].ToString(),
-                                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]),
-                                    ImagePath = reader["ImagePath"] == DBNull.Value ? null : reader["ImagePath"].ToString()
-
-                                };
+                                person = _MapPerson(reader);
                             }
-
-
                             else
                             {
-
                                 person = null;
-
                             }
-
-
-
-
                         }
                     }
                     catch (Exception ex)
-                    { person = null;
+                    {
+                        person = null;
                         _logger.Error("Error while get by national No", ex);
                     }
-    
+
                 }
             }
 

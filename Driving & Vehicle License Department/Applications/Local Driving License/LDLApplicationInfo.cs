@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
 {
-    public partial class LDLApplicationInfo : Form
+    public partial class LDLApplicationInfo : GeneralForm
     {
         public LDLApplicationInfo(int lDLApplicationID )
         {

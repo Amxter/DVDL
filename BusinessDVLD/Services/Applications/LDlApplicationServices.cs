@@ -47,7 +47,7 @@ namespace BusinessDVLD
             return _lDLApplicationRepository.Add(dTO.ToEntity());
         }
         public int GetPassedTestCount(int lDLApplicationID) => _lDLApplicationRepository.GetPassedTestCount(lDLApplicationID);
-        public LDLApplicationDTO GetByID(int iD) => _lDLApplicationRepository.GetByID(iD).ToDTO();
+        public LDLApplicationDTO GetByID(int iD) => _lDLApplicationRepository.GetByID(iD)?.ToDTO();
         public bool Delete(int LDLApplicationID) => _ApplicationServices.Delete(_lDLApplicationRepository.GetByID(LDLApplicationID).Application.ApplicationID);
         public bool Update(LDLApplicationDTO dTO) => _lDLApplicationRepository.Update(dTO.ToEntity());
         public DataTable GetAll() => _lDLApplicationRepository.GetAll();

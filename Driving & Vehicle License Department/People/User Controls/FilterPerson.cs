@@ -15,19 +15,15 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
 {
     public partial class FilterPerson : UserControl
     {
-
-        IPersonServices _personServices;
-
+ 
         public int PersonID
         {
             get
             {
-                
+
                 return ucDetailsPerson1.PersonID;
             }
         }
-
-        bool _filterEnabled = true;
         public bool FilterEnabled
         {
             get { return _filterEnabled; }
@@ -37,8 +33,6 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
                 gbFilter.Enabled = value;
             }
         }
-
-        bool _showAddPerson = true;
         public bool ShowAddPerson
         {
             get { return _showAddPerson; }
@@ -49,16 +43,17 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
             }
         }
 
-        public event Action<int> OnPersonSelected;
+        bool _filterEnabled = true;
+        bool _showAddPerson = true;
 
-        // Protected method to raise (fire) the event
+        public event Action<int> OnPersonSelected;
         protected virtual void PersonSelected(int personID)
         {
             Action<int> handler = OnPersonSelected;
 
             if (handler != null)
             {
-                handler(personID); // Fire the event and pass the parameter
+                handler(personID);
             }
         }
 
@@ -71,23 +66,22 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
         {
             InitializeComponent();
             InitialForm();
-            _personServices = ServiceFactory.CreatePersonServices();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             if (cbFilter.Text == "PersonID" && txbSearch.Text != "")
             {
-               ucDetailsPerson1.LoadPersonDetails(Convert.ToInt32(txbSearch.Text.Trim()));
+                ucDetailsPerson1.LoadPersonDetails(Convert.ToInt32(txbSearch.Text.Trim()));
                 if (OnPersonSelected != null && _filterEnabled)
-                OnPersonSelected(ucDetailsPerson1.PersonID);
+                    PersonSelected(ucDetailsPerson1.PersonID);
 
             }
-            else if (cbFilter.Text == "NationalNo"&& txbSearch.Text != "")
+            else if (cbFilter.Text == "NationalNo" && txbSearch.Text != "")
             {
 
-                 ucDetailsPerson1.LoadPersonDetails(txbSearch.Text.Trim());
+                ucDetailsPerson1.LoadPersonDetails(txbSearch.Text.Trim());
                 if (OnPersonSelected != null && _filterEnabled)
-                    OnPersonSelected(ucDetailsPerson1.PersonID);
+                    PersonSelected(ucDetailsPerson1.PersonID);
             }
         }
         private void _LoadInfoAfterAddPerson(int personID)
@@ -120,8 +114,6 @@ namespace Driving___Vehicle_License_Department.People.User_Controls
             {
                 button1.PerformClick();
             }
-
-            // Allow only digits if "Person ID" is selected
             if (cbFilter.Text == "PersonID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

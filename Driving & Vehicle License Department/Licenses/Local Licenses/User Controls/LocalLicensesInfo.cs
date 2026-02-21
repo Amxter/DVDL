@@ -7,10 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
@@ -18,16 +15,16 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
     public partial class LocalLicensesInfo : UserControl
     {
 
-        ILicenseService _licenseService;
-        ILicenseClassServices _licenseClassServices;
-        IApplicationServices _applicationServices;
-        IPersonServices _personServices;
-        IDetainedLicenseServices _detainedLicenseServices;
+        readonly ILicenseService _licenseService;
+        readonly ILicenseClassServices _licenseClassServices;
+        readonly IApplicationServices _applicationServices;
+        readonly IPersonServices _personServices;
+        readonly IDetainedLicenseServices _detainedLicenseServices;
 
         LicenseDTO _licenseDTO;
         PersonDTO _personDTO;
-        public LicenseDTO LicenseDTO { get { return _licenseDTO; }  }  
-        public PersonDTO PersonDTO { get { return _personDTO ; } }
+        public LicenseDTO LicenseDTO { get { return _licenseDTO; } }
+        public PersonDTO PersonDTO { get { return _personDTO; } }
         public LocalLicensesInfo()
         {
             InitializeComponent();
@@ -39,8 +36,8 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
         }
         private void LoadPersonImage(string imagePath)
         {
-             
-            pbPersonImage.Image = Properties.Resources.Male_512 ; 
+
+            pbPersonImage.Image = Properties.Resources.Male_512;
 
             if (string.IsNullOrWhiteSpace(imagePath))
                 return;
@@ -48,20 +45,20 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             if (!File.Exists(imagePath))
                 return;
 
-           
+
             using (var fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
             {
                 pbPersonImage.Image = Image.FromStream(fs);
             }
         }
-        private void Initialize ()
+        private void Initialize()
         {
 
-            _licenseDTO = null ;
+            _licenseDTO = null;
             _personDTO = null;
 
 
-            lblClass.Text =  "[???]" ;
+            lblClass.Text = "[???]";
             lblFullName.Text = "[????]";
             lblLicenseID.Text = "[????]";
             lblNationalNo.Text = "[????]";
@@ -79,7 +76,7 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
         }
         public void LoadData(int licenseID)
         {
-            if (licenseID ==  -1 )
+            if (licenseID == -1)
             {
                 Initialize();
                 return;
@@ -94,8 +91,24 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
             lblNationalNo.Text = _personDTO.NationalNo.ToString();
             lblGendor.Text = _personDTO.Gendor == 1 ? " Male " : " Female ";
             lblIssueDate.Text = _licenseDTO.IssueDate.ToShortDateString();
-            lblIssueReason.Text = _licenseDTO.IssueReason.ToString();
-            lblNotes.Text = _licenseDTO.Notes == null || _licenseDTO.Notes == "" ? "No Notes" : _licenseDTO.Notes ;
+            switch (_licenseDTO.IssueReason)
+            {     case 1 :
+                    lblIssueReason.Text = "First Time";
+                    break;
+                case 2 :
+                    lblIssueReason.Text = "Renew";
+                    break;
+                case 3 :
+                    lblIssueReason.Text = "Replacement For Damaged";
+                    break;
+                case 4 :
+                    lblIssueReason.Text = "Replacement For Lost";
+                    break;
+                default:
+                    lblIssueReason.Text = "Unknown";
+                    break;
+            }
+            lblNotes.Text = _licenseDTO.Notes == null || _licenseDTO.Notes == "" ? "No Notes" : _licenseDTO.Notes;
             lblIsActive.Text = _licenseDTO.IsActive ? "Active" : "Inactive";
             lblDateOfBirth.Text = _personDTO.DateOfBirth.ToShortDateString();
             lblDriverID.Text = _licenseDTO.DriverID.ToString();

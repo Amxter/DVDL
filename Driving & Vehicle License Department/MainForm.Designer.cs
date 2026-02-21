@@ -158,6 +158,7 @@
             this.releaseDetainedDrivingLicenToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Damaged_Driving_License_32;
             this.releaseDetainedDrivingLicenToolStripMenuItem.Name = "releaseDetainedDrivingLicenToolStripMenuItem";
             resources.ApplyResources(this.releaseDetainedDrivingLicenToolStripMenuItem, "releaseDetainedDrivingLicenToolStripMenuItem");
+            this.releaseDetainedDrivingLicenToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedDrivingLicenToolStripMenuItem_Click);
             // 
             // retakeTestToolStripMenuItem
             // 

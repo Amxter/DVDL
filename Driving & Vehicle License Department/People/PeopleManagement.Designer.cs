@@ -79,8 +79,6 @@
             this.dgvPeople.RowTemplate.Height = 26;
             this.dgvPeople.Size = new System.Drawing.Size(1345, 363);
             this.dgvPeople.TabIndex = 2;
-          //  this.dgvPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeople_CellContentClick);
-            //this.dgvPeople.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeople_CellDoubleClick);
             this.dgvPeople.DoubleClick += new System.EventHandler(this.dgvPeople_DoubleClick);
             // 
             // cmsMenuPeople
@@ -148,6 +146,7 @@
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
@@ -155,6 +154,7 @@
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.phoneCallToolStripMenuItem.Text = "Phone call";
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -273,8 +273,6 @@
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.labPeopleManagement);
             this.Controls.Add(this.pictureBox1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PeopleManagement";
             this.Text = "PeopleManagement";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();

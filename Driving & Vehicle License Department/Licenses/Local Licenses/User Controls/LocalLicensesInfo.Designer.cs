@@ -142,7 +142,7 @@
             // 
             this.lblIsDetained.AutoSize = true;
             this.lblIsDetained.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsDetained.Location = new System.Drawing.Point(539, 252);
+            this.lblIsDetained.Location = new System.Drawing.Point(586, 251);
             this.lblIsDetained.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIsDetained.Name = "lblIsDetained";
             this.lblIsDetained.Size = new System.Drawing.Size(68, 25);
@@ -152,7 +152,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Question_32;
-            this.pictureBox12.Location = new System.Drawing.Point(498, 251);
+            this.pictureBox12.Location = new System.Drawing.Point(545, 250);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(31, 26);
@@ -164,7 +164,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(367, 252);
+            this.label11.Location = new System.Drawing.Point(414, 251);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 25);
@@ -175,7 +175,7 @@
             // 
             this.lblIssueReason.AutoSize = true;
             this.lblIssueReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIssueReason.Location = new System.Drawing.Point(180, 250);
+            this.lblIssueReason.Location = new System.Drawing.Point(198, 250);
             this.lblIssueReason.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIssueReason.Name = "lblIssueReason";
             this.lblIssueReason.Size = new System.Drawing.Size(68, 25);
@@ -185,7 +185,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Notes_32;
-            this.pictureBox11.Location = new System.Drawing.Point(140, 250);
+            this.pictureBox11.Location = new System.Drawing.Point(158, 250);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(31, 26);

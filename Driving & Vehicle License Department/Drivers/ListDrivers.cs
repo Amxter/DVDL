@@ -96,9 +96,9 @@ namespace Driving___Vehicle_License_Department.Drivers
             switch (filterBy)
             {
                 case FilterBy.FullName: return "Full Name";
-                case FilterBy.NationalNo: return "National No";
+                case FilterBy.NationalNo: return "NationalNo";
                 case FilterBy.PersonID: return "PersonID";
-                default: return "Full Name"; // أو throw
+                default: return "Full Name"; 
             }
         }
         private void FilterByText(string value)

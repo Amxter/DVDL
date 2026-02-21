@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,8 @@ namespace Driving___Vehicle_License_Department
             string isActiveValue = cbIsActive.Text == "Yes" ? "true" : "false";
             if ("All"!= cbIsActive.Text)
             FilterUsersBy("IsActive", isActiveValue);
+            else
+                dt.DefaultView.RowFilter = null; 
         }
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,6 +77,7 @@ namespace Driving___Vehicle_License_Department
             {
                 cbIsActive.Visible = false;
                 txtFilterValue.Visible = false;
+             
                 _loadUsers();
 
             }
@@ -87,13 +91,15 @@ namespace Driving___Vehicle_License_Department
             {
                 cbIsActive.Visible = false;
                 txtFilterValue.Visible = true;
+
             }
-      
+
+            txtFilterValue.Clear();
         }
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            FilterUsersBy(cbFilterBy.Text, txtFilterValue.Text );
+            FilterUsersBy(cbFilterBy.Text.Trim() , txtFilterValue.Text );
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -170,11 +176,32 @@ new ParameterOverride("userId", _getSelectedUserID()));
         {
 
             var frm = Program.Container.Resolve<ChangePassword>(
-new ParameterOverride("user", _getSelectedUserID() ));
+            new ParameterOverride("user", _getSelectedUserID() ));
 
             frm.ShowDialog();
  
 
+        }
+
+        private void callPhoneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void sendeEmailToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy .Text == "PersonID" || cbFilterBy.Text == "UserID")
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

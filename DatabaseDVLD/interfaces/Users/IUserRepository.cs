@@ -9,5 +9,7 @@ namespace DatabaseDVLD
         User IsExistsByUserName(string userName);
 
         bool IsExistsByUserNameExceptUserID(string userName, int userID);
+        User GetByID(int entityID);
+        bool IsExistsByID(int entityID);
     }
 }

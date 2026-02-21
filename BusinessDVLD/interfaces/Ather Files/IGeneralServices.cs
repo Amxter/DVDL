@@ -8,8 +8,7 @@ namespace BusinessDVLD
         bool  Update(DTO dTO);
         bool Delete(int dTO);
         DataTable  GetAll();
-        DTO GetByID(int dTOID);
-        bool IsExistsByID(int dTOID);
+
 
     }
 }

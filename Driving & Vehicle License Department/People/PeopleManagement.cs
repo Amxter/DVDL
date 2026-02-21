@@ -1,4 +1,5 @@
 ﻿using BusinessDVLD;
+using DatabaseDVLD;
 using Driving___Vehicle_License_Department;
 using System;
 using System.Data;
@@ -222,7 +223,6 @@ namespace PresentationDVLD
  
            _LoadPeopleData();
         }
-
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = Program.Container.Resolve<AddAndUpdatePerson>();
@@ -231,7 +231,6 @@ namespace PresentationDVLD
  
             _LoadPeopleData();
         }
-
         private int GetSelectedPersonID()
         {
      
@@ -255,7 +254,6 @@ namespace PresentationDVLD
             
 
         }
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_personServices.Delete(GetSelectedPersonID()))
@@ -268,32 +266,42 @@ namespace PresentationDVLD
                 MessageBox.Show("Failed to delete person.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int personID = GetSelectedPersonID();
             if (personID != -1)
             {
-                ShowDetailsPerson showDetails = new ShowDetailsPerson(personID);
-                showDetails.ShowDialog();
+                var frm = Program.Container.Resolve<ShowDetailsPerson>(
+                   new ParameterOverride("ID", personID));
+
+                frm.ShowDialog();
+                _LoadPeopleData(); 
             }
             else
             {
                 MessageBox.Show("Please select a person to view details.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-    
-
         private void dgvPeople_DoubleClick(object sender, EventArgs e)
         {
-            ShowDetailsPerson showDetails = new ShowDetailsPerson(GetSelectedPersonID());
-            showDetails.ShowDialog();
+            var frm = Program.Container.Resolve<ShowDetailsPerson>(
+   new ParameterOverride("ID", GetSelectedPersonID()));
+
+            frm.ShowDialog();
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Driving___Vehicle_License_Department.Applications.Application
     public partial class LocalDrivingLicenseApplicationInfo : UserControl
     {
 
-        ILDLApplicationServices _dlApplicationServices;
-        ILicenseClassServices _licenseClassServices;
-        ILicenseService _licenseService;
+      readonly ILDLApplicationServices _dlApplicationServices;
+      readonly ILicenseClassServices _licenseClassServices;
+        readonly ILicenseService _licenseService;
          
 
         int _localDrivingLicenseApplicationID;
@@ -42,6 +42,7 @@ namespace Driving___Vehicle_License_Department.Applications.Application
             InitializeComponent();
             _dlApplicationServices =  ServiceFactory.CreateLDLApplicationServices() ;
             _licenseClassServices = ServiceFactory.CreateLicenseClassServices();
+            _licenseService = ServiceFactory.CreateLicenseServices();
         }
         public void LoadData(int localApplicationID)
         {

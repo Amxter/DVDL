@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
 {
-    public partial class ShowLicensesInfo : Form
+    public partial class ShowLicensesInfo : GeneralForm
     {
         public ShowLicensesInfo(int licenseID)
         {

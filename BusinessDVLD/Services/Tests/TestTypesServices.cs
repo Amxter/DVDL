@@ -14,7 +14,7 @@ namespace BusinessDVLD
         }
         public DataTable GetAll() => _manageTestTypes.GetAll();
         public bool Upgrade(TestTypeDTO testDTO) => _manageTestTypes.Update(testDTO.ToEntity());
-        public TestTypeDTO GetByID(int testTypeID) => _manageTestTypes.GetByID(testTypeID).ToDTO();
+        public TestTypeDTO GetByID(int testTypeID) => _manageTestTypes.GetByID(testTypeID)?.ToDTO();
     }
 
     }

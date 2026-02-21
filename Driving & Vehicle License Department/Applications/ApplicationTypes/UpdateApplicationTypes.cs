@@ -28,9 +28,9 @@ namespace Driving___Vehicle_License_Department.Applications.ApplicationTypes
         public UpdateApplicationTypes(int applicationTypeID, IApplicationTypesServices services )
         {
             InitializeComponent();
+            _services = services ;
             _applicationTypeID = applicationTypeID;
             LoadApplicationType(_applicationTypeID);
-            _services = services ;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

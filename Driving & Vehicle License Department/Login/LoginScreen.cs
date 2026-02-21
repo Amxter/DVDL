@@ -69,7 +69,7 @@ namespace Driving___Vehicle_License_Department.Login
                 UserDTO userDTO = _userServices.GetByUserName(txtUserName.Text.Trim());
                 if (userDTO != null && PasswordHelper.VerifyPassword(txtPassword.Text.Trim(), userDTO.Password))
                 {
-                    if (!userDTO.IsActive)
+                     if (!userDTO.IsActive)
                     {
                         MessageBox.Show("Your account is inactive. Please contact the administrator.", "Account Inactive", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -119,6 +119,9 @@ namespace Driving___Vehicle_License_Department.Login
             LoadUserNameAndPasswordFromFile();
         }
 
-
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

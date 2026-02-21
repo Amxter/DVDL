@@ -36,7 +36,7 @@ namespace Driving___Vehicle_License_Department.Users
             this.lblTitle = new System.Windows.Forms.Label();
             this.tcUserInfo = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
-            this.filterPerson2 = new Driving___Vehicle_License_Department.People.User_Controls.FilterPerson();
+            this.filterPerson1 = new Driving___Vehicle_License_Department.People.User_Controls.FilterPerson();
             this.btnPersonInfoNext = new System.Windows.Forms.Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@ namespace Driving___Vehicle_License_Department.Users
             // 
             // tpPersonalInfo
             // 
-            this.tpPersonalInfo.Controls.Add(this.filterPerson2);
+            this.tpPersonalInfo.Controls.Add(this.filterPerson1);
             this.tpPersonalInfo.Controls.Add(this.btnPersonInfoNext);
             this.tpPersonalInfo.Location = new System.Drawing.Point(4, 25);
             this.tpPersonalInfo.Name = "tpPersonalInfo";
@@ -99,15 +99,15 @@ namespace Driving___Vehicle_License_Department.Users
             this.tpPersonalInfo.Text = "Personal Info";
             this.tpPersonalInfo.UseVisualStyleBackColor = true;
             // 
-            // filterPerson2
+            // filterPerson1
             // 
-            this.filterPerson2.FilterEnabled = true;
-            this.filterPerson2.Location = new System.Drawing.Point(3, 3);
-            this.filterPerson2.Name = "filterPerson2";
-            this.filterPerson2.ShowAddPerson = true;
-            this.filterPerson2.Size = new System.Drawing.Size(846, 392);
-            this.filterPerson2.TabIndex = 120;
-            this.filterPerson2.OnPersonSelected += new System.Action<int>(this.filterPerson1_OnPersonSelected);
+            this.filterPerson1.FilterEnabled = true;
+            this.filterPerson1.Location = new System.Drawing.Point(3, 3);
+            this.filterPerson1.Name = "filterPerson1";
+            this.filterPerson1.ShowAddPerson = true;
+            this.filterPerson1.Size = new System.Drawing.Size(846, 392);
+            this.filterPerson1.TabIndex = 120;
+            this.filterPerson1.OnPersonSelected += new System.Action<int>(this.filterPerson1_OnPersonSelected);
             // 
             // btnPersonInfoNext
             // 
@@ -369,8 +369,7 @@ namespace Driving___Vehicle_License_Department.Users
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
-        private People.User_Controls.FilterPerson filterPerson1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private FilterPerson filterPerson2;
+        private FilterPerson filterPerson1;
     }
 }

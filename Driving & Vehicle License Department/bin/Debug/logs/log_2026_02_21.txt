@@ -1,0 +1,69 @@
+2026-02-21 13:31:41 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:32:02 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:32:11 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:15 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:20 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:23 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:25 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:25 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:34:26 [ERROR] Error while Is Exists By User Name
+System.IndexOutOfRangeException: UserID
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at DatabaseDVLD.UserRepository.IsExistsByUserName(String userName) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\UserRepository.cs:line 268
+2026-02-21 13:41:38 [ERROR] Error while delete person
+System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Applications_People". The conflict occurred in database "DVLD", table "dbo.Applications", column 'ApplicantPersonID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatabaseDVLD.PersonRepository.Delete(Int32 personID) in C:\Programing with Mohamed abu Hadhod\Course 19\Driving Licence Managment\DatabaseDVLD\Repositories\Users\PersonRepository.cs:line 160
+ClientConnectionId:f266b71e-801f-40ba-b937-8543bcbe7428
+Error Number:547,State:0,Class:16

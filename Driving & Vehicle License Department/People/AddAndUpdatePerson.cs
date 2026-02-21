@@ -13,7 +13,7 @@ using Driving___Vehicle_License_Department.Properties;
 
 namespace Driving___Vehicle_License_Department
 {
- 
+
 
     public partial class AddAndUpdatePerson : GeneralForm
     {
@@ -28,25 +28,24 @@ namespace Driving___Vehicle_License_Department
 
         public delegate void SendDataDelegate(int personID);
 
-        
         public event SendDataDelegate OnDataSent;
 
         Mode _mode;
         int _personID;
         private IPersonServices _personServices;
         private ICountryServices _countryServices;
-        public AddAndUpdatePerson(IPersonServices  personServices  , ICountryServices  countryServices, int ID = -1  )
+        public AddAndUpdatePerson(IPersonServices personServices, ICountryServices countryServices, int ID = -1)
         {
             InitializeComponent();
-            _imagesFolder = @"C:\\Programing with Mohamed abu Hadhod\\Course 19\\Image Person"; // For storing the selected image path
+            _imagesFolder = @"C:\\Programing with Mohamed abu Hadhod\\Course 19\\Image Person";
             _ImagePath = null;
             _oldImagePath = null;
 
-            _personServices = personServices ;
-            _countryServices = countryServices ;
+            _personServices = personServices;
+            _countryServices = countryServices;
             _loadNationality();
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
-            dtpDateOfBirth.MaxDate= DateTime.Now.AddHours(1);
+            dtpDateOfBirth.MaxDate = DateTime.Now.AddHours(1);
             _personID = ID;
             if (_personID == -1)
             {
@@ -99,19 +98,22 @@ namespace Driving___Vehicle_License_Department
             txbSecondName.Text = person.SecondName;
             txbThirdName.Text = person.ThirdName;
             txbLastName.Text = person.LastName;
-            
+
             dtpDateOfBirth.Value = person.DateOfBirth;
+          
             if (person.Gendor == 0)
                 rbMale.Checked = true;
             else if (person.Gendor == 1)
                 rbFemale.Checked = true;
+           
             txbAddress.Text = person.Address;
             txbPhone.Text = person.Phone;
             txtEmail.Text = person.Email;
             cbNationality.SelectedValue = person.Nationality;
             _oldImagePath = _ImagePath = person.ImagePath;
+           
             if (_ImagePath != null)
-                linkLabel2.Visible = true; 
+                linkLabel2.Visible = true;
             pictureBox1.ImageLocation = _ImagePath;
         }
         private void UpdatePerson()
@@ -184,7 +186,7 @@ namespace Driving___Vehicle_License_Department
                 MessageBox.Show("Person added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _mode = Mode.Update;
                 InitialUpdateForm();
-                OnDataSent.Invoke(_personID);
+                OnDataSent?.Invoke(_personID);
             }
             else
             {
@@ -203,17 +205,17 @@ namespace Driving___Vehicle_License_Department
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    return ofd.FileName; // Path الصورة
+                    return ofd.FileName;
                 }
             }
 
-            return null; // المستخدم لغى
+            return null;
         }
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
             {
-               
+
                 MessageBox.Show("Some fields are not veiled!, put the mouse over the red icon(s) to see the error", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
@@ -245,9 +247,6 @@ namespace Driving___Vehicle_License_Department
             if (string.IsNullOrWhiteSpace(sourceImagePath))
                 return null;
 
-
-
-
             if (!Directory.Exists(_imagesFolder))
                 Directory.CreateDirectory(_imagesFolder);
 
@@ -269,7 +268,7 @@ namespace Driving___Vehicle_License_Department
             }
         }
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
-        { 
+        {
             TextBox Temp = ((TextBox)sender);
             if (string.IsNullOrEmpty(Temp.Text.Trim()))
             {
@@ -278,7 +277,7 @@ namespace Driving___Vehicle_License_Department
             }
             else
             {
-              
+
                 errorProvider1.SetError(Temp, null);
             }
 
@@ -295,15 +294,13 @@ namespace Driving___Vehicle_License_Department
         }
         private void txbNationalNo_Leave(object sender, EventArgs e)
         {
-            if (_personServices.IsExistsNationalNo(txbNationalNo.Text))
+            if (_personServices.IsExistsByNationalNo(txbNationalNo.Text))
             {
                 errorProvider1.SetError(txbNationalNo, "National No already exists.");
             }
             else
             {
                 errorProvider1.Clear();
-
-
             }
         }
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -323,7 +320,6 @@ namespace Driving___Vehicle_License_Department
             if (txtEmail.Text.Trim() == "")
                 return;
 
-            //validate email format
             if (!clsValidatoin.ValidateEmail(txtEmail.Text))
             {
                 e.Cancel = true;

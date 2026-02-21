@@ -99,8 +99,9 @@ namespace PresentationDVLD
             Container.RegisterType<RenewLocalDrivingLicenseApplication>(); 
             Container.RegisterType<ReplaceLostOrDamagedLicense>(); 
             Container.RegisterType<Driving___Vehicle_License_Department.Applications.Rlease_Detained_License.DetainLicenseApplication>();
-            Container.RegisterType<ReleaseDetainedLicenseApplication>();
+            Container.RegisterType<ReleaseDetainedLicenseApplication>(); 
             Container.RegisterType<ListDetainedLicenses>();
+            Container.RegisterType<ShowDetailsPerson>();
 
 
             var login = Container.Resolve<LoginScreen>();

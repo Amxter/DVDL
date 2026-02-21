@@ -198,5 +198,11 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
             frm.ShowDialog();
             
         }
+
+        private void releaseDetainedDrivingLicenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = Program.Container.Resolve<ReleaseDetainedLicenseApplication>();
+            frm.ShowDialog(); 
+        }
     }
 }

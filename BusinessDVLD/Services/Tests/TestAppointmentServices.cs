@@ -18,7 +18,7 @@ namespace BusinessDVLD
         public DataTable GetAllVisionTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllVisionTestByLDLApplication(LocalDrivingLicenseApplicationID);
         public DataTable GetAllWrittenTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllWrittenTestByLDLApplication(LocalDrivingLicenseApplicationID);
         public DataTable GetAllPracticalTestByLDLApplication(int LocalDrivingLicenseApplicationID) => _testAppointmentRepository.GetAllPracticalTestByLDLApplication(LocalDrivingLicenseApplicationID);
-        public TestAppointmentDTO GetByID(int id) => _testAppointmentRepository.GetByID(id).ToDTO()   ;
+        public TestAppointmentDTO GetByID(int id) => _testAppointmentRepository.GetByID(id)?.ToDTO()   ;
         public int Add(TestAppointmentDTO dTO, ApplicationDTO application )
         {
             if ( 0 ==_testAppointmentRepository.HowMatchFiledTest(dTO.LocalDrivingLicenseApplicationID , dTO.TestTypeID ))

@@ -11,7 +11,7 @@ namespace BusinessDVLD
             _licenseClassesRepository = licenseClasses;
         }
         public DataTable GetAll() => _licenseClassesRepository.GetAll();
-        public LicenseClassDTO GetByID(int licenseClassID) => _licenseClassesRepository.GetByID(licenseClassID).ToDTO()  ;
+        public LicenseClassDTO GetByID(int licenseClassID) => _licenseClassesRepository.GetByID(licenseClassID)?.ToDTO()  ;
 
     }
 

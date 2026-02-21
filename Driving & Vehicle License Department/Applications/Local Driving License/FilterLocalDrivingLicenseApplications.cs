@@ -76,10 +76,13 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
+            txtFilterValue.Clear();
             if (cbFilterBy.Text == "None")
             {
                 _loadData();
+                _selectedColumnName = "";
+                txtFilterValue.Visible = false;
+                return; 
             }
             else if (cbFilterBy.Text == "L.D.L.AppID")
             {
@@ -97,6 +100,8 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             {
                 _selectedColumnName = "ApplicationStatus"; 
             }
+
+            txtFilterValue.Visible = true ;
         }
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {

@@ -2,7 +2,7 @@
 
 namespace DatabaseDVLD
 {
-    public interface IDriverRepository
+    public interface IDriverRepository 
     {
         int Add(Driver driver);
         DataTable GetAll();

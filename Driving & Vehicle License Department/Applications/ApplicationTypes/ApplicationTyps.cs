@@ -50,7 +50,7 @@ namespace Driving___Vehicle_License_Department
 
 
             var frm = Program.Container.Resolve<UpdateApplicationTypes>(
-                new ParameterOverride("applicationTypeId", id)
+                new ParameterOverride("applicationTypeID", id)
             );
             frm.ShowDialog();
             LoadApplications();

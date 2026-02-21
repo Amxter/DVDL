@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department.Licenses
 {
-    public partial class ShowPersonLicenseHistory : Form
+    public partial class ShowPersonLicenseHistory : GeneralForm
     {
         public ShowPersonLicenseHistory(int PersonID)
         {

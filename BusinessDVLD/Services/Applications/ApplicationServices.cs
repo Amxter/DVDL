@@ -10,7 +10,7 @@ namespace BusinessDVLD
             _applicationRepository = applicationRepository;
         }
 
-        public ApplicationDTO GetByApplicationID(int applicationID) => _applicationRepository.GetByApplicationID(applicationID).ToDTO();
+        public ApplicationDTO GetByApplicationID(int applicationID) => _applicationRepository.GetByApplicationID(applicationID)?.ToDTO();
 
         public int Add(ApplicationDTO applicationDTO) => _applicationRepository.Add(applicationDTO.ToEntity());
 

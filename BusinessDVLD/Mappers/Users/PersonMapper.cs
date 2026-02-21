@@ -8,6 +8,13 @@ namespace BusinessDVLD
     {
         public static PersonDTO ToDTO(this Person person)
         {
+            if (person == null) return null;
+
+            var today = DateTime.Today;
+            int age = today.Year - person.DateOfBirth.Year;
+            if (person.DateOfBirth.Date > today.AddYears(-age)) age--;
+             
+ 
             return new PersonDTO
             {
                 PersonID = person.PersonID,
@@ -22,14 +29,14 @@ namespace BusinessDVLD
                 Phone = person.Phone,
                 Email = person.Email,
                 FullName = $"{person.FirstName} {person.SecondName} {person.ThirdName} {person.LastName}",
-                Age = (short)(DateTime.Now.Year - person.DateOfBirth.Year) ,
+                Age = (short)age ,
                 Nationality = person.NationalityCountryID,
                 ImagePath = person.ImagePath
             };
         }
         public static Person ToEntity(this PersonDTO personDTO)
         {
-           
+            if (personDTO == null) return null; 
             return new Person
             {
                 PersonID = personDTO.PersonID,

@@ -17,8 +17,11 @@ using Unity.Resolution;
 
 namespace Driving___Vehicle_License_Department
 {
+
     public partial class UCDetailsPerson : UserControl
     {
+
+       public event EventHandler<PersonDTO> OnSelectedPerson ; 
 
         IPersonServices _personServices;
         ICountryServices _countryServices;
@@ -99,6 +102,7 @@ namespace Driving___Vehicle_License_Department
                 initLoadInfo();
               
             }
+            OnSelectedPerson?.Invoke(this, person);
         }
         public void LoadPersonDetails(string nationalNo)
         {
@@ -113,8 +117,8 @@ namespace Driving___Vehicle_License_Department
             {
                 _personID = -1;
                 initLoadInfo();
-                //MessageBox.Show(text: $"Person NationalNo{nationalNo} is not found ");
             }
+            OnSelectedPerson?.Invoke(this, person);
         }
         private void llEditPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -126,8 +130,6 @@ namespace Driving___Vehicle_License_Department
   
             LoadPersonDetails(_personID);
         }
-
- 
     }
 
 }
