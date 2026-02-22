@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\drivers\\listdrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:drivers\\listdrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\people\\peoplemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:people\\peoplemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\people\\peoplemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:people\\peoplemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|c:\\programing with mohamed abu hadhod\\course 19\\driving licence managment\\driving \u0026 vehicle license department\\people\\showdetailsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4B47A87E-3FB1-41D0-B0B7-B85E16BFA8C8}|PresentationDVLD.csproj|solutionrelative:people\\showdetailsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,15 +43,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ListDrivers.cs",
-              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Drivers\\ListDrivers.cs",
-              "RelativeDocumentMoniker": "Drivers\\ListDrivers.cs",
-              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\Drivers\\ListDrivers.cs*",
-              "RelativeToolTip": "Drivers\\ListDrivers.cs*",
-              "ViewState": "AgIAAGIAAAAAAAAAAAApwGIAAAA6AAAAAAAAAA==",
+              "Title": "PeopleManagement.cs",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\PeopleManagement.cs",
+              "RelativeDocumentMoniker": "People\\PeopleManagement.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\PeopleManagement.cs*",
+              "RelativeToolTip": "People\\PeopleManagement.cs*",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAawBEBAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T12:46:06.434Z",
+              "WhenOpened": "2026-02-22T20:25:04.942Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PeopleManagement.cs [Design]",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\PeopleManagement.cs",
+              "RelativeDocumentMoniker": "People\\PeopleManagement.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\PeopleManagement.cs [Design]*",
+              "RelativeToolTip": "People\\PeopleManagement.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T20:25:00.016Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShowDetailsPerson.cs [Design]",
+              "DocumentMoniker": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\ShowDetailsPerson.cs",
+              "RelativeDocumentMoniker": "People\\ShowDetailsPerson.cs",
+              "ToolTip": "C:\\Programing with Mohamed abu Hadhod\\Course 19\\Driving Licence Managment\\Driving \u0026 Vehicle License Department\\People\\ShowDetailsPerson.cs [Design]",
+              "RelativeToolTip": "People\\ShowDetailsPerson.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T20:24:57.013Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

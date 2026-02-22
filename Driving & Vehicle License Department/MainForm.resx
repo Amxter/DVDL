@@ -266,22 +266,22 @@
     <value>  Users</value>
   </data>
   <data name="currentUserInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="currentUserInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>Current User Info</value>
   </data>
   <data name="changePasswordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="changePasswordToolStripMenuItem.Text" xml:space="preserve">
     <value>Change Password</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
+    <value>315, 6</value>
   </data>
   <data name="signOutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
+    <value>318, 56</value>
   </data>
   <data name="signOutToolStripMenuItem.Text" xml:space="preserve">
     <value>Sign Out</value>
@@ -294,6 +294,18 @@
   </data>
   <data name="accoutSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Accout Settings</value>
+  </data>
+  <data name="darkThemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 54</value>
+  </data>
+  <data name="darkThemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dark Them</value>
+  </data>
+  <data name="lightThemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 54</value>
+  </data>
+  <data name="lightThemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Light Them</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -525,10 +537,22 @@
   <data name="&gt;&gt;signOutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;darkThemToolStripMenuItem.Name" xml:space="preserve">
+    <value>darkThemToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;darkThemToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lightThemToolStripMenuItem.Name" xml:space="preserve">
+    <value>lightThemToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;lightThemToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Driving___Vehicle_License_Department.Ather_File.ThemedForm, Driving &amp; Vehicle License Department, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

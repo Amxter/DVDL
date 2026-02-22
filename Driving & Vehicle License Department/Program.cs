@@ -13,13 +13,15 @@ using Driving___Vehicle_License_Department.Licenses;
 using Driving___Vehicle_License_Department.Licenses.International;
 using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
 using Driving___Vehicle_License_Department.Login;
-using Driving___Vehicle_License_Department.People;
-using Driving___Vehicle_License_Department.People.User_Controls;
 using Driving___Vehicle_License_Department.Users;
 using System;
-using System.Windows.Forms;
 using Unity;
-using Unity.Resolution;
+
+
+
+
+using DVLD = Driving___Vehicle_License_Department ;
+
 
 namespace PresentationDVLD
 {
@@ -27,6 +29,7 @@ namespace PresentationDVLD
     {
         public static IUnityContainer Container { get; private set; }
 
+        
         [STAThread]
 
         static void Main()
@@ -48,7 +51,7 @@ namespace PresentationDVLD
             Container.RegisterType<ILogger, FileLogger>();
             Container.RegisterType<ITestAppointmentRepository, TestAppointmentRepository>();
             Container.RegisterType<ITestRepository, TestRepository>();
-            Container.RegisterType< ILicensesRepository, LicensesRepository>();
+            Container.RegisterType<ILicensesRepository, LicensesRepository>();
             Container.RegisterType<IDriverRepository, DriverRepository>();
             Container.RegisterType<IInternationalLicensesRepository , InternationalLicensesRepository>();
             Container.RegisterType<IDetainedLicenseRepository, DetainedLicenseRepository>();
@@ -77,7 +80,7 @@ namespace PresentationDVLD
             Container.RegisterType<LoginScreen>();
             Container.RegisterType<PeopleManagement>(); 
             Container.RegisterType<UpdateApplicationTypes>();
-            Container.RegisterType<Driving___Vehicle_License_Department.ApplicationTypes>();
+            Container.RegisterType<DVLD.ApplicationTypes>();
             Container.RegisterType<AddUpdateLocalDrivingLicenseApplication>();
             Container.RegisterType<ListLocalDrivingLicenseApplication>();
             Container.RegisterType<ManageTestTypes>();
@@ -98,7 +101,7 @@ namespace PresentationDVLD
             Container.RegisterType<ListInternationalLicenses>(); 
             Container.RegisterType<RenewLocalDrivingLicenseApplication>(); 
             Container.RegisterType<ReplaceLostOrDamagedLicense>(); 
-            Container.RegisterType<Driving___Vehicle_License_Department.Applications.Rlease_Detained_License.DetainLicenseApplication>();
+            Container.RegisterType<DVLD.Applications.Rlease_Detained_License.DetainLicenseApplication>();
             Container.RegisterType<ReleaseDetainedLicenseApplication>(); 
             Container.RegisterType<ListDetainedLicenses>();
             Container.RegisterType<ShowDetailsPerson>();

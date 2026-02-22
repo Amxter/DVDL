@@ -272,7 +272,7 @@ namespace PresentationDVLD
             if (personID != -1)
             {
                 var frm = Program.Container.Resolve<ShowDetailsPerson>(
-                   new ParameterOverride("ID", personID));
+                   new ParameterOverride("id", personID));
 
                 frm.ShowDialog();
                 _LoadPeopleData(); 

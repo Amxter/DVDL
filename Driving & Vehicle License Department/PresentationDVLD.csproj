@@ -176,6 +176,14 @@
       <DependentUpon>SecheduledTestInto.cs</DependentUpon>
     </Compile>
     <Compile Include="Ather File\clsValidation.cs" />
+    <Compile Include="Ather File\ThemedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ather File\ThemedForm.Designer.cs">
+      <DependentUpon>ThemedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ather File\ThemedToolStripRenderer.cs" />
+    <Compile Include="Ather File\ThemeManager.cs" />
     <Compile Include="Drivers\ListDrivers.cs">
       <SubType>Form</SubType>
     </Compile>

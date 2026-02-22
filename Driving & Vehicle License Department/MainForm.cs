@@ -6,6 +6,7 @@ using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
 using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
 using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
 using Driving___Vehicle_License_Department.Applications.Rlease_Detained_License;
+using Driving___Vehicle_License_Department.Ather_File;
 using Driving___Vehicle_License_Department.Drivers;
 using Driving___Vehicle_License_Department.Licenses.International;
 using Driving___Vehicle_License_Department.Users;
@@ -23,7 +24,7 @@ using Unity.Resolution;
 
 namespace PresentationDVLD
 {
-    public partial class MainForm : Form
+    public partial class MainForm : ThemedForm 
     {
         Form _loginForm;
         private bool _suppressFormClosed  ; 
@@ -203,6 +204,17 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
         {
             var frm = Program.Container.Resolve<ReleaseDetainedLicenseApplication>();
             frm.ShowDialog(); 
+        }
+
+        private void darkThemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemeManager.SetTheme(AppTheme.Dark);
+           
+        }
+
+        private void lightThemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemeManager.SetTheme(AppTheme.Light);
         }
     }
 }

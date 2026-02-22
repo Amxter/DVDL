@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Driving___Vehicle_License_Department.Ather_File
+{
+    public partial class ThemedForm : Form
+    {
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            ThemeManager.ApplyTheme(this);
+        }
+
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            base.OnControlAdded(e);
+            ThemeManager.ApplyTheme(e.Control);
+        }
+        public ThemedForm()
+        {
+            InitializeComponent();
+        }
+    }
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving___Vehicle_License_Department.Ather_File;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Driving___Vehicle_License_Department
 {
-    public partial class GeneralForm : Form
+    public partial class GeneralForm : ThemedForm 
     {
         public GeneralForm()
         {
