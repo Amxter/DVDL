@@ -481,6 +481,7 @@
     <EmbeddedResource Include="Users\User Controls\UCUserCard.resx">
       <DependentUpon>UCUserCard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Ather File\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

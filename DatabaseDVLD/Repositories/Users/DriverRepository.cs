@@ -10,7 +10,7 @@ namespace DatabaseDVLD
 
         public DriverRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
         public int Add(Driver driver)

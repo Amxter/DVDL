@@ -11,7 +11,7 @@ namespace DatabaseDVLD
 
         public UserRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
         private void _AddUserParameters(SqlCommand cmd, User user)
         {

@@ -10,7 +10,7 @@ namespace DatabaseDVLD
 
         public PersonRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
         private  void _AddPersonParameters(SqlCommand cmd, Person person, bool includeId)

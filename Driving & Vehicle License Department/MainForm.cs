@@ -33,6 +33,7 @@ namespace PresentationDVLD
             InitializeComponent();
             _loginForm = loginForm;
             _suppressFormClosed = false;
+           
         }
 
         private void peToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,12 +210,16 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
         private void darkThemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemeManager.SetTheme(AppTheme.Dark);
-           
+            Driving___Vehicle_License_Department.Properties.Settings.Default.Theme = "Dark";
+            Driving___Vehicle_License_Department.Properties.Settings.Default.Save();
+
         }
 
         private void lightThemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemeManager.SetTheme(AppTheme.Light);
+            Driving___Vehicle_License_Department.Properties.Settings.Default.Theme = "Light";
+            Driving___Vehicle_License_Department.Properties.Settings.Default.Save();
         }
     }
 }

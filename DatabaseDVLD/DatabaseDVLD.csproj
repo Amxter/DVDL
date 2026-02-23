@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,7 +73,7 @@
     <Compile Include="Entities\Applications\LDLApplication.cs" />
     <Compile Include="interfaces\Licenses\ILicenseClassRepository.cs" />
     <Compile Include="interfaces\Ather Files\ILogger.cs" />
-    <Compile Include="Repositories\Ather Files\FileLogger.cs" />
+    <Compile Include="Repositories\Ather Files\EventLogs.cs" />
     <Compile Include="interfaces\Tests\ITestAppointmentRepository.cs" />
     <Compile Include="Repositories\Ather Files\TestTypes.cs" />
     <Compile Include="interfaces\Tests\ITestRepository.cs" />

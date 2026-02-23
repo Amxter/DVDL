@@ -1,8 +1,14 @@
-﻿namespace DatabaseDVLD
+﻿
+ 
+using System.Configuration;
+namespace DatabaseDVLD
 {
 
     public static class DatabaseSittings
     {
-        public static string connectionString = "Server=.;Database=DVLD;Integrated Security=True";
+        //public static string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+
+
+        public static string connectionString => ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
     }
 }

@@ -10,7 +10,7 @@ namespace DatabaseDVLD
 
         public TestTypesRepository( )
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
         public DataTable GetAll()

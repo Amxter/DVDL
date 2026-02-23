@@ -11,7 +11,7 @@ namespace DatabaseDVLD
 
         public LicensesRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
         public int Add(License license)
         {

@@ -11,7 +11,7 @@ namespace DatabaseDVLD
 
         public ApplicationRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
         public int Add(Application application)

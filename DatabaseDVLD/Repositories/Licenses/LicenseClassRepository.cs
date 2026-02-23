@@ -12,7 +12,7 @@ namespace DatabaseDVLD
 
         public LicenseClassRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
         public DataTable GetAll()

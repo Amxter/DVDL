@@ -11,7 +11,7 @@ namespace DatabaseDVLD
 
         public InternationalLicensesRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
 
 

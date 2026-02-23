@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 
 namespace Driving___Vehicle_License_Department.Login
@@ -19,33 +20,60 @@ namespace Driving___Vehicle_License_Department.Login
     {
 
         IUserServices _userServices;
-        public LoginScreen(IUserServices  userServices)
+        public LoginScreen(IUserServices userServices)
         {
             InitializeComponent();
-            _userServices = userServices ;
-
+            _userServices = userServices;
+            LoadTheme(); 
         }
-        private void SavePasswordAndUserNameInFile(bool isSave)
+        private void LoadTheme()
         {
-            string filePath = "login.txt"; 
+            var theme = Driving___Vehicle_License_Department.Properties.Settings.Default.Theme;
+            if (theme == "Dark")
+                ThemeManager.SetTheme(AppTheme.Dark);
+            else
+                ThemeManager.SetTheme(AppTheme.Light);
+        }
+        private void SavePasswordAndUserNameInWindowsRegistry(bool isSave)
+        {
+            // Specify the Registry key and path
+            string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVDLApplication";
+
 
             if (isSave)
             {
-                 
-                string content =
-                    txtUserName.Text + Environment.NewLine +
-                    txtPassword.Text;
+                try
+                {
+                    // Write the value to the Registry
+                    Registry.SetValue(keyPath, "UserName", txtUserName.Text, RegistryValueKind.String);
+                    Registry.SetValue(keyPath, "Password", txtPassword.Text, RegistryValueKind.String);
 
-                File.WriteAllText(filePath, content);
+                }
+                catch
+                {
+
+                }
+                
             }
             else
             {
-                
-                if (File.Exists(filePath))
+                try
                 {
-                    File.WriteAllText(filePath, string.Empty);
+                    // Write the value to the Registry
+                    Registry.SetValue(keyPath, "UserName",  "", RegistryValueKind.String);
+                    Registry.SetValue(keyPath, "Password",  "", RegistryValueKind.String);
+
                 }
+                catch
+                {
+
+                }
+
             }
+
+
+
+            
         }
         private void ValidateInputs(object sender, CancelEventArgs e)
         {
@@ -71,7 +99,7 @@ namespace Driving___Vehicle_License_Department.Login
                 UserDTO userDTO = _userServices.GetByUserName(txtUserName.Text.Trim());
                 if (userDTO != null && PasswordHelper.VerifyPassword(txtPassword.Text.Trim(), userDTO.Password))
                 {
-                     if (!userDTO.IsActive)
+                    if (!userDTO.IsActive)
                     {
                         MessageBox.Show("Your account is inactive. Please contact the administrator.", "Account Inactive", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -79,10 +107,10 @@ namespace Driving___Vehicle_License_Department.Login
                     CurrentUser.LoggedInUser = userDTO;
 
                     MainForm mainForm = new MainForm(this);
-                    SavePasswordAndUserNameInFile(chkRememberMe.Checked);
+                    SavePasswordAndUserNameInWindowsRegistry(chkRememberMe.Checked);
                     this.Hide();
                     mainForm.ShowDialog();
-                     
+
 
 
                 }
@@ -99,26 +127,37 @@ namespace Driving___Vehicle_License_Department.Login
                 MessageBox.Show("Please correct the input errors before proceeding.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadUserNameAndPasswordFromFile()
+        private void LoadUserNameAndPasswordFromWindowsRegistry()
         {
-            string filePath = "login.txt";
-
-           
-            if (!File.Exists(filePath))
-                return;
-
-            string[] lines = File.ReadAllLines(filePath);
-
+            string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVDLApplication";
             
-            if (lines.Length < 2)
-                return;
 
-            txtUserName.Text = lines[0];
-            txtPassword.Text = lines[1];
+
+            try
+            {
+
+                string UserName = Registry.GetValue(keyPath, "UserName", null) as string;
+                string Password = Registry.GetValue(keyPath, "Password" , null) as string;
+
+                if ( !string.IsNullOrEmpty(UserName))
+                {
+                     txtUserName.Text = UserName;
+                }
+
+                if (!string.IsNullOrEmpty(Password))
+                {
+                    txtPassword.Text = Password;
+                }
+
+            }
+            catch (Exception ex)
+            {
+               
+            }
         }
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-            LoadUserNameAndPasswordFromFile();
+            LoadUserNameAndPasswordFromWindowsRegistry();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

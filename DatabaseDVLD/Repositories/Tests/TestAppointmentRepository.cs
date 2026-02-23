@@ -11,7 +11,7 @@ namespace DatabaseDVLD
 
         public TestAppointmentRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
         private DataTable GetAllByTestType(int testTypeID, int LocalDrivingLicenseApplicationID)
         {

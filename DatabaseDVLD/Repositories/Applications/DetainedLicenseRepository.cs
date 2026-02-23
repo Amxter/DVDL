@@ -9,7 +9,7 @@ namespace DatabaseDVLD
         private readonly ILogger _logger;
         public DetainedLicenseRepository()
         {
-            _logger = new FileLogger();
+            _logger = new EventLogs();
         }
         public int Add(DetainedLicense detainedLicense)
         {

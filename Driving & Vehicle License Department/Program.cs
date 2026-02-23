@@ -48,7 +48,7 @@ namespace PresentationDVLD
             Container.RegisterType<ILicenseClassRepository, LicenseClassRepository>();
             Container.RegisterType<ITestTypesRepository, TestTypesRepository>();
             Container.RegisterType<ILDLApplicationRepository, LDLApplicationRepository>();
-            Container.RegisterType<ILogger, FileLogger>();
+            Container.RegisterType<ILogger, EventLogs>();
             Container.RegisterType<ITestAppointmentRepository, TestAppointmentRepository>();
             Container.RegisterType<ITestRepository, TestRepository>();
             Container.RegisterType<ILicensesRepository, LicensesRepository>();
