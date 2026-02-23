@@ -5,7 +5,7 @@ namespace BusinessDVLD
 {
     public class LicenseClassServices : ILicenseClassServices
     {
-        ILicenseClassRepository _licenseClassesRepository;
+        readonly ILicenseClassRepository _licenseClassesRepository;
         public LicenseClassServices(ILicenseClassRepository licenseClasses)
         {
             _licenseClassesRepository = licenseClasses;

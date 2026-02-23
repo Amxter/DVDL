@@ -16,7 +16,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" SELECT [ApplicationTypeID]
@@ -52,7 +52,7 @@ namespace DatabaseDVLD
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"UPDATE [dbo].[ApplicationTypes]
@@ -91,7 +91,7 @@ namespace DatabaseDVLD
         {
 
             ApplicationTypes applicationTypes =  new ApplicationTypes() ;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT *
                                    FROM [DVLD].[dbo].[ApplicationTypes]
@@ -126,7 +126,7 @@ namespace DatabaseDVLD
         {
 
             ApplicationTypes applicationTypes = new ApplicationTypes();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT *
                                    FROM [DVLD].[dbo].[ApplicationTypes]

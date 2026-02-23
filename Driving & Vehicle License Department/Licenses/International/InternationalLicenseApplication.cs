@@ -105,7 +105,7 @@ namespace Driving___Vehicle_License_Department.Licenses.International
                         ApplicantPersonID = driverLicenseInfoWithFilter1.PersonDTO.PersonID,
                         ApplicationDate = DateTime.Now,
                         ApplicationTypeID = applicationTypesDTO.ID,
-                        ApplicationStatus = ApplicationStatus.CompletedStatus,
+                        ApplicationStatus = ApplicationStatusIDs.CompletedStatus,
                         LastStatusDate = DateTime.Now,
                         PaidFees = applicationTypesDTO.Fees,
                         CreatedByUserID = CurrentUser.LoggedInUser.UserID

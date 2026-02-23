@@ -6,8 +6,8 @@ namespace BusinessDVLD
 {
     public class InternationalLicenseService : IInternationalLicenseService
     {
-        IInternationalLicensesRepository _internationalLicensesRepository;
-        ILicenseService _licenseService;
+        readonly IInternationalLicensesRepository _internationalLicensesRepository;
+        readonly ILicenseService _licenseService;
  
         public InternationalLicenseService(IInternationalLicensesRepository internationalLicensesRepository,
             ILicenseService licenseService   )

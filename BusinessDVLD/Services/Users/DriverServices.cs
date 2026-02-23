@@ -6,7 +6,7 @@ namespace BusinessDVLD
     public class DriverServices : IDriverServices
     {
 
-        IDriverRepository _driverRepository;
+        readonly IDriverRepository _driverRepository;
         public DriverServices(IDriverRepository driverRepository)
         {
             _driverRepository = driverRepository;

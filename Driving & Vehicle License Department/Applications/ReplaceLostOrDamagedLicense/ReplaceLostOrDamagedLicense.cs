@@ -135,7 +135,7 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
                 LastStatusDate = DateTime.Now,
                 CreatedByUserID = CurrentUser.LoggedInUser.UserID,
                 ApplicantPersonID = driverLicenseInfoWithFilter1.PersonDTO.PersonID,
-                ApplicationStatus = ApplicationStatus.CompletedStatus,
+                ApplicationStatus = ApplicationStatusIDs.CompletedStatus,
                 PaidFees = Convert.ToDouble(lblApplicationFees.Text)
             };
             int ApplicationID = _applicationServices.Add(applicationDTO);
@@ -143,9 +143,9 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
             int IssueReasonID;
 
             if (rbDamagedLicense.Checked)
-                IssueReasonID = IssueReason.ReplacementForDamaged;
+                IssueReasonID = DatabaseDVLD.IssueReasonIDs.ReplacementForDamaged;
             else
-                IssueReasonID = IssueReason.ReplacementForLost;
+                IssueReasonID = DatabaseDVLD.IssueReasonIDs.ReplacementForLost;
 
             LicenseClassDTO licenseClassDTO = _licenseClassServices.GetByID(driverLicenseInfoWithFilter1.LicenseDTO.LicenseClass);
             LicenseDTO licenseDTO = new LicenseDTO

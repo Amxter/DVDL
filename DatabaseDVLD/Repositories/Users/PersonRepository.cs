@@ -13,7 +13,7 @@ namespace DatabaseDVLD
             _logger = new EventLogs();
         }
 
-        private  void _AddPersonParameters(SqlCommand cmd, Person person, bool includeId)
+        private  void AddPersonParameters(SqlCommand cmd, Person person, bool includeId)
         {
             if (includeId)
                 cmd.Parameters.AddWithValue("@PersonID", person.PersonID);
@@ -39,7 +39,7 @@ namespace DatabaseDVLD
             cmd.Parameters.AddWithValue("@ImagePath",
                 string.IsNullOrWhiteSpace(person.ImagePath) ? (object)DBNull.Value : person.ImagePath);
         }
-        private  Person _MapPerson(SqlDataReader reader)
+        private  Person MapPerson(SqlDataReader reader)
         {
             return new Person
             {
@@ -63,7 +63,7 @@ namespace DatabaseDVLD
         {
             person.PersonID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                            INSERT INTO dbo.People
@@ -84,7 +84,7 @@ namespace DatabaseDVLD
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    _AddPersonParameters(cmd, person, false);
+                    AddPersonParameters(cmd, person, false);
                     conn.Open();
                     object result = cmd.ExecuteScalar();
                     person.PersonID = Convert.ToInt32(result);
@@ -98,7 +98,7 @@ namespace DatabaseDVLD
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"UPDATE [dbo].[People]
@@ -120,7 +120,7 @@ namespace DatabaseDVLD
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    _AddPersonParameters(cmd, person, true);
+                    AddPersonParameters(cmd, person, true);
 
                     try
                     {
@@ -146,7 +146,7 @@ namespace DatabaseDVLD
         {
 
             bool isDelete = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"DELETE FROM  People  WHERE  PersonID = @PersonID ";
@@ -177,7 +177,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" 
@@ -219,7 +219,7 @@ FROM     People INNER JOIN
         {
             Person person = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from People  Where PersonID = @PersonID ";
@@ -234,7 +234,7 @@ FROM     People INNER JOIN
                         {
                             if (reader.Read())
                             {
-                                person = _MapPerson(reader);
+                                person = MapPerson(reader);
                             }
                             else
                             {
@@ -258,7 +258,7 @@ FROM     People INNER JOIN
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"Select 1 FROM  People  WHERE  PersonID = @PersonID ";
@@ -286,7 +286,7 @@ FROM     People INNER JOIN
         }
         public bool IsExistsByNationalNo(string nationalNo)
         {
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"SELECT NationalNo FROM People WHERE NationalNo = @NationalNo";
 
@@ -307,7 +307,7 @@ FROM     People INNER JOIN
         {
             Person person = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from People  Where NationalNo = @nationalNo ";
@@ -322,7 +322,7 @@ FROM     People INNER JOIN
                         {
                             if (reader.Read())
                             {
-                                person = _MapPerson(reader);
+                                person = MapPerson(reader);
                             }
                             else
                             {

@@ -16,7 +16,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" SELECT  [TestTypeID]
@@ -53,7 +53,7 @@ namespace DatabaseDVLD
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"UPDATE [dbo].[TestTypes]
@@ -96,7 +96,7 @@ namespace DatabaseDVLD
 
             TestType testTypeID = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from TestTypes  Where TestTypeID = @TestTypeID ";

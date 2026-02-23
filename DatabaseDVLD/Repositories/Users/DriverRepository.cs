@@ -19,7 +19,7 @@ namespace DatabaseDVLD
 
             driver.DriverID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
             INSERT INTO [dbo].[Drivers]
@@ -62,7 +62,7 @@ namespace DatabaseDVLD
         public DataTable GetAll ()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"  SELECT Drivers.DriverID, Drivers.PersonID, People.NationalNo , ( People.FirstName + ' ' + People.SecondName+ ' ' + People.ThirdName+ ' ' + People.LastName ) as 'Full Name', Drivers.CreatedDate , (
                    SELECT count (Licenses.LicenseID  )
@@ -95,7 +95,7 @@ namespace DatabaseDVLD
         public int IsExistByPersonID(int personID)
         {
             int DriverID = -1;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT  DriverID FROM Drivers WHERE PersonID = @PersonID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))

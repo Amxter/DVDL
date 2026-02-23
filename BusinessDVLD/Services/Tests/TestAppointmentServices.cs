@@ -6,9 +6,9 @@ namespace BusinessDVLD
 {
     public class TestAppointmentServices : ITestAppointmentServices
     {
-        ITestAppointmentRepository _testAppointmentRepository;
-        IApplicationServices _applicationServices;
-        ILDLApplicationServices _lDLApplicationServices;
+        readonly ITestAppointmentRepository _testAppointmentRepository;
+        readonly IApplicationServices _applicationServices;
+        readonly ILDLApplicationServices _lDLApplicationServices;
         public TestAppointmentServices(ITestAppointmentRepository testAppointmentRepository, IApplicationServices applicationServices , ILDLApplicationServices lDLApplicationServices)
         {
             _testAppointmentRepository = testAppointmentRepository;
@@ -48,7 +48,7 @@ namespace BusinessDVLD
 
         }
         public bool Update(TestAppointmentDTO testAppointment) => _testAppointmentRepository.Update(testAppointment.ToEntity());
-        public bool isActiveAppointment(int LDLApplicationID, int TestTypeID) => _testAppointmentRepository.isActiveAppointment(LDLApplicationID, TestTypeID);
+        public bool IsActiveAppointment(int LDLApplicationID, int TestTypeID) => _testAppointmentRepository.IsActiveAppointment(LDLApplicationID, TestTypeID);
         public int HowMatchFiledTest(int lDLApplicationID, int TestTypeID ) => _testAppointmentRepository.HowMatchFiledTest(lDLApplicationID , TestTypeID);
         public bool IsPassedTest(int lDLApplicationID, int testTypeID) => _testAppointmentRepository.IsPassedTest(lDLApplicationID, testTypeID);
     }

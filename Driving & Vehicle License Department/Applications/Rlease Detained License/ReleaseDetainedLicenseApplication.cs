@@ -135,7 +135,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
                     ApplicantPersonID = driverLicenseInfoWithFilter1.PersonDTO.PersonID,
                     PaidFees = ApplicationFees,
                     ApplicationDate = DateTime.Now,
-                    ApplicationStatus = ApplicationStatus.CompletedStatus,
+                    ApplicationStatus = ApplicationStatusIDs.CompletedStatus,
                     LastStatusDate = DateTime.Now,
 
 

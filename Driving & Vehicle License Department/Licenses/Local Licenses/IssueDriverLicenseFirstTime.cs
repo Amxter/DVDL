@@ -73,7 +73,7 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
                 Notes = txtNotes.Text ,
                 PaidFees = Convert.ToDouble(  licenseClassDTO.ClassFees ),
                 IsActive = true,
-                IssueReason = IssueReason.FirstTime ,  
+                IssueReason = IssueReasonIDs.FirstTime ,  
                 CreatedByUserID = CurrentUser.LoggedInUser.UserID ,
                 IssueDate = DateTime.Now
 

@@ -17,7 +17,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" SELECT * FROM Countries ";
@@ -52,7 +52,7 @@ namespace DatabaseDVLD
 
 
             string countryName = string.Empty;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT CountryName FROM Countries WHERE CountryID = @CountryID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))

@@ -7,7 +7,7 @@ namespace BusinessDVLD
     {
 
 
-        ILicensesRepository _licensesRepository;
+        readonly ILicensesRepository _licensesRepository;
         public LicenseService(ILicensesRepository licensesRepository )
         {
  

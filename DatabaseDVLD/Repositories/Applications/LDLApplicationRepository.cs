@@ -20,7 +20,7 @@ namespace DatabaseDVLD
 
             application.LocalDrivingLicenseApplicationID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
 INSERT INTO [dbo].[LocalDrivingLicenseApplications]
@@ -61,7 +61,7 @@ INSERT INTO [dbo].[LocalDrivingLicenseApplications]
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"
@@ -101,7 +101,7 @@ UPDATE [dbo].[LocalDrivingLicenseApplications]
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"  SELECT *
@@ -157,7 +157,7 @@ WHERE l.LocalDrivingLicenseApplicationID = @ID;
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(DatabaseSittings.connectionString))
+                using (SqlConnection connection = new SqlConnection(DatabaseSittings.ConnectionString))
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.Add("@ID", SqlDbType.Int).Value = localDrivingLicenseApplicationID;
@@ -204,7 +204,7 @@ WHERE l.LocalDrivingLicenseApplicationID = @ID;
         public int GetPassedTestCount(int lDLApplicationID)
         {
             int count = 0;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"SELECT count ( TestAppointments.LocalDrivingLicenseApplicationID )  
                          FROM     Tests INNER JOIN
@@ -242,7 +242,7 @@ WHERE l.LocalDrivingLicenseApplicationID = @ID;
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"SELECT Applications.ApplicantPersonID, LocalDrivingLicenseApplications.LicenseClassID

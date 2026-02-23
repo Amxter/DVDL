@@ -9,6 +9,6 @@ namespace DatabaseDVLD
         //public static string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
 
 
-        public static string connectionString => ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+        public static string ConnectionString => ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
     }
 }

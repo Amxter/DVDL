@@ -6,9 +6,9 @@ namespace BusinessDVLD
 {
     public class LDlApplicationServices : ILDLApplicationServices
     {
-        ILDLApplicationRepository _lDLApplicationRepository;
-        IApplicationServices _ApplicationServices;
-        IApplicationTypesServices _ApplicationTypesServices;
+        readonly ILDLApplicationRepository _lDLApplicationRepository;
+        readonly IApplicationServices _ApplicationServices;
+        readonly IApplicationTypesServices _ApplicationTypesServices;
         public LDlApplicationServices(ILDLApplicationRepository repository)
         {
             _lDLApplicationRepository = repository;
@@ -17,8 +17,8 @@ namespace BusinessDVLD
         }
         public int Add(int licenseClassID, int personID)
         {
-
-            ApplicationTypesDTO applicationType = _ApplicationTypesServices.GetApplication("New Local Driving License Service");
+            //
+            ApplicationTypesDTO applicationType = _ApplicationTypesServices.GetApplication(ApplicationTypesIDs.NewLocalDrivingLicenseService);
             int applicationID = _ApplicationServices.Add(new ApplicationDTO
             {
                 ApplicantPersonID = personID,

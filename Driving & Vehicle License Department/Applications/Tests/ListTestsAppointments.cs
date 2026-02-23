@@ -97,7 +97,7 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
         }
         private void btnAddNewAppointment_Click(object sender, EventArgs e)
         {
-            if (_testAppointmentServices.isActiveAppointment(_lDLApplicationID , Convert.ToInt32(_testType) )  )
+            if (_testAppointmentServices.IsActiveAppointment(_lDLApplicationID , Convert.ToInt32(_testType) )  )
             {
                 MessageBox.Show("An active Vision Test Appointment already exists for this application. You cannot schedule another one until the existing appointment is completed or canceled.", "Active Appointment Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

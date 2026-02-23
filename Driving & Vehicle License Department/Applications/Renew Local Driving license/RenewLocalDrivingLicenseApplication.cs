@@ -113,7 +113,7 @@ namespace Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_
                 LastStatusDate = DateTime.Now,
                 CreatedByUserID = CurrentUser.LoggedInUser.UserID,
                 ApplicantPersonID = driverLicenseInfoWithFilter1.PersonDTO.PersonID,
-                ApplicationStatus = ApplicationStatus.CompletedStatus,
+                ApplicationStatus = ApplicationStatusIDs.CompletedStatus,
                 PaidFees = Convert.ToDouble(lblApplicationFees.Text)
             };
             int ApplicationID = _ApplicationServices.Add(applicationDTO);
@@ -129,7 +129,7 @@ namespace Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_
                 LicenseClass = driverLicenseInfoWithFilter1.LicenseDTO.LicenseClass,
                 Notes = txtNotes.Text,
                 PaidFees = Convert.ToDouble(lblLicenseFees.Text),
-                IssueReason = IssueReason.Renew,
+                IssueReason = IssueReasonIDs.Renew,
                 CreatedByUserID = CurrentUser.LoggedInUser.UserID
             };
 

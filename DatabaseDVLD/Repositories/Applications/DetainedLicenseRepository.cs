@@ -15,7 +15,7 @@ namespace DatabaseDVLD
         {
             detainedLicense.DetainID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
 INSERT INTO [dbo].[DetainedLicenses]
@@ -81,7 +81,7 @@ INSERT INTO [dbo].[DetainedLicenses]
         public bool ReleaseLicense(int detainID, DateTime releaseDate, int releasedByUserID, int releaseApplicationID)
         {
             bool isReleased = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"update DetainedLicenses set  DetainedLicenses.IsReleased = 1 , DetainedLicenses.ReleaseDate = @ReleaseDate , DetainedLicenses.ReleasedByUserID = @ReleasedByUserID , DetainedLicenses.ReleaseApplicationID = @ReleaseApplicationID where DetainedLicenses.DetainID = @DetainID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -109,7 +109,7 @@ INSERT INTO [dbo].[DetainedLicenses]
         public DetainedLicense GetByLicenseID(int licenseID)
         {
             DetainedLicense detainedLicense = new DetainedLicense();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT *
                                    FROM DetainedLicenses
@@ -159,7 +159,7 @@ INSERT INTO [dbo].[DetainedLicenses]
         public DataTable GetAllDetainedLicenses()
         {
             DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"select * from detainedLicenses_View order by IsReleased ,DetainID;";
                 
@@ -185,7 +185,7 @@ INSERT INTO [dbo].[DetainedLicenses]
         public bool IsDetained(int licenseID)
         {
             bool isDetained = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"SELECT COUNT(*) FROM DetainedLicenses WHERE LicenseID = @LicenseID AND IsReleased = 0";
                 using (SqlCommand cmd = new SqlCommand(query, conn))

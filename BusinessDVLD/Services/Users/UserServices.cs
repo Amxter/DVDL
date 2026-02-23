@@ -5,7 +5,7 @@ namespace BusinessDVLD
 {
     public class UserServices : IUserServices
     {
-        IUserRepository _userRepository;
+        readonly IUserRepository _userRepository;
         public UserServices(IUserRepository repository)
         {
             _userRepository = repository;

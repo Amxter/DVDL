@@ -5,7 +5,7 @@ namespace BusinessDVLD
 {
     public class ApplicationTypesServices : IApplicationTypesServices
     {
-        IApplicationTypesRepository _applicationTypesRepository;
+        readonly IApplicationTypesRepository _applicationTypesRepository;
         public ApplicationTypesServices(IApplicationTypesRepository applicationTypes)
         {
             _applicationTypesRepository = applicationTypes;

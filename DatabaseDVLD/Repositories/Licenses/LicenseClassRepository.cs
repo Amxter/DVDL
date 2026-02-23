@@ -18,7 +18,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" SELECT[LicenseClassID]
@@ -57,7 +57,7 @@ namespace DatabaseDVLD
         {
 
             LicenseClass licenseClass = null;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from LicenseClasses   Where LicenseClassID = @LicenseClassID ";

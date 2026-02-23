@@ -16,7 +16,7 @@ namespace DatabaseDVLD
         private DataTable GetAllByTestType(int testTypeID, int LocalDrivingLicenseApplicationID)
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"  SELECT TestAppointmentID, AppointmentDate, PaidFees, IsLocked
@@ -52,21 +52,21 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
         }
         public DataTable GetAllVisionTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(TestTypes.VisionTestID, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypesIDs.VisionTestID, LocalDrivingLicenseApplicationID);
         }
         public DataTable GetAllWrittenTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(TestTypes.WrittenTestID, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypesIDs.WrittenTestID, LocalDrivingLicenseApplicationID);
         }
         public DataTable GetAllPracticalTestByLDLApplication(int LocalDrivingLicenseApplicationID)
         {
-            return GetAllByTestType(TestTypes.PracticalTestID, LocalDrivingLicenseApplicationID);
+            return GetAllByTestType(TestTypesIDs.PracticalTestID, LocalDrivingLicenseApplicationID);
         }
         public TestAppointment GetByID(int testAppointmentID)
         {
             TestAppointment testAppointment = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
             SELECT 
@@ -93,19 +93,20 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
                         {
                             if (reader.Read())
                             {
-                                testAppointment = new TestAppointment();
+                                testAppointment = new TestAppointment()
+                                {
 
-                                testAppointment.TestAppointmentID = reader.GetInt32(reader.GetOrdinal("TestAppointmentID"));
-                                testAppointment.TestTypeID = reader.GetInt32(reader.GetOrdinal("TestTypeID"));
-                                testAppointment.LocalDrivingLicenseApplicationID = reader.GetInt32(reader.GetOrdinal("LocalDrivingLicenseApplicationID"));
-                                testAppointment.AppointmentDate = reader.GetDateTime(reader.GetOrdinal("AppointmentDate"));
-                                testAppointment.PaidFees = Convert.ToDouble( reader["PaidFees"]  );
-                                testAppointment.CreatedByUserID = reader.GetInt32(reader.GetOrdinal("CreatedByUserID"));
-                                testAppointment.IsLocked = reader.GetBoolean(reader.GetOrdinal("IsLocked"));
-                                testAppointment.RetakeTestApplicationID = reader.IsDBNull(reader.GetOrdinal("RetakeTestApplicationID"))
+                                    TestAppointmentID = reader.GetInt32(reader.GetOrdinal("TestAppointmentID")),
+                                    TestTypeID = reader.GetInt32(reader.GetOrdinal("TestTypeID")),
+                                    LocalDrivingLicenseApplicationID = reader.GetInt32(reader.GetOrdinal("LocalDrivingLicenseApplicationID")),
+                                    AppointmentDate = reader.GetDateTime(reader.GetOrdinal("AppointmentDate")),
+                                    PaidFees = Convert.ToDouble(reader["PaidFees"]),
+                                    CreatedByUserID = reader.GetInt32(reader.GetOrdinal("CreatedByUserID")),
+                                    IsLocked = reader.GetBoolean(reader.GetOrdinal("IsLocked")),
+                                    RetakeTestApplicationID = reader.IsDBNull(reader.GetOrdinal("RetakeTestApplicationID"))
                                         ? -1
-                                        : reader.GetInt32(reader.GetOrdinal("RetakeTestApplicationID"));
-                                 
+                                        : reader.GetInt32(reader.GetOrdinal("RetakeTestApplicationID")),
+                                };
                             }
                         }
                     }
@@ -118,10 +119,10 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
 
             return testAppointment;
         }
-        public bool isActiveAppointment(int LDLApplicationID, int TestTypeID)
+        public bool IsActiveAppointment(int LDLApplicationID, int TestTypeID)
         {
             bool count = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"SELECT count ( LocalDrivingLicenseApplicationID )
                           FROM     TestAppointments    
@@ -148,7 +149,7 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
         public int HowMatchFiledTest(int lDLApplicationID, int TestTypeID)
         {
             int count = -1 ;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"SELECT  count (TestAppointments.LocalDrivingLicenseApplicationID )FROM   Tests INNER JOIN
                   TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID  
@@ -182,7 +183,7 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
         public bool IsPassedTest(int lDLApplicationID, int testTypeID)
         {
             bool count = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @" SELECT count (TestAppointments.LocalDrivingLicenseApplicationID  )
                   FROM     Tests INNER JOIN
@@ -217,7 +218,7 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
  
             testAppointment.TestAppointmentID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                    INSERT INTO [dbo].[TestAppointments]
@@ -275,7 +276,7 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"UPDATE [dbo].[TestAppointments]
@@ -330,7 +331,7 @@ where TestAppointments.TestTypeID = @TestTypeID and TestAppointments.LocalDrivin
         public bool Delete(int testAppointmentID)
         {
             bool isDelete = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"DELETE FROM  TestAppointments  WHERE  TestAppointmentID = @TestAppointmentID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))

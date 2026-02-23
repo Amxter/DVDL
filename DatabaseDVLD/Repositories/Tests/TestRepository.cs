@@ -18,7 +18,7 @@ namespace DatabaseDVLD
 
             test.TestID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
 
@@ -71,7 +71,7 @@ INSERT INTO [dbo].[Tests]
         public Test GetByTestAppointmentID(int testAppointmentID)
         {
             Test test = null;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                 SELECT [TestID]

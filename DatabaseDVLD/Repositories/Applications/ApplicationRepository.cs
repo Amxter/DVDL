@@ -20,7 +20,7 @@ namespace DatabaseDVLD
 
             application.ApplicationID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
 INSERT INTO [dbo].[Applications]
@@ -75,7 +75,7 @@ INSERT INTO [dbo].[Applications]
 
             Application application = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from Applications  Where ApplicationID = @ApplicationID ";
@@ -139,7 +139,7 @@ INSERT INTO [dbo].[Applications]
         public bool Delete(int applicationID)
         {
             bool isDelete = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"update Applications set  Applications.ApplicationStatus = 2 where Applications.ApplicationID = @ApplicationID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -166,7 +166,7 @@ INSERT INTO [dbo].[Applications]
         public bool UpdateApplicationStatus(int applicationID, int applicationStatus, DateTime lastStatusDate)
         {
             bool isUpdated = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"update Applications set  Applications.ApplicationStatus = @ApplicationStatus , Applications.LastStatusDate = @LastStatusDate  where Applications.ApplicationID = @ApplicationID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))

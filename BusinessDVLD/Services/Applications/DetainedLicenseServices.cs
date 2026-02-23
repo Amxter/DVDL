@@ -6,7 +6,7 @@ namespace BusinessDVLD
 {
     public class DetainedLicenseServices : IDetainedLicenseServices
     {
-        IDetainedLicenseRepository _detainedLicenseRepository;
+        readonly IDetainedLicenseRepository _detainedLicenseRepository;
 
         public DetainedLicenseServices(IDetainedLicenseRepository detainedLicenseRepository)
         {

@@ -13,7 +13,7 @@ namespace DatabaseDVLD
         TestAppointment GetByID(int testAppointmentID);
         int HowMatchFiledTest(int LDLApplication, int TestTypeID);
         bool IsPassedTest(int lDLApplicationID, int testTypeID);
-        bool isActiveAppointment(int LDLApplicationID, int TestTypeID);
+        bool IsActiveAppointment(int LDLApplicationID, int TestTypeID);
          
 
     }

@@ -5,7 +5,7 @@ namespace BusinessDVLD
     public class TestServices : ITestServices
     {
 
-        ITestRepository _testRepository;
+        readonly ITestRepository _testRepository;
         public TestServices (ITestRepository  testRepository)
         {
 

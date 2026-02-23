@@ -190,9 +190,9 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
 
             
-            bool passedVision = _testAppointmentServices.IsPassedTest(appId, TestTypes.VisionTestID);
-            bool passedWritten = _testAppointmentServices.IsPassedTest(appId, TestTypes.WrittenTestID);
-            bool passedPractical = _testAppointmentServices.IsPassedTest(appId, TestTypes.PracticalTestID);
+            bool passedVision = _testAppointmentServices.IsPassedTest(appId, TestTypesIDs.VisionTestID);
+            bool passedWritten = _testAppointmentServices.IsPassedTest(appId, TestTypesIDs.WrittenTestID);
+            bool passedPractical = _testAppointmentServices.IsPassedTest(appId, TestTypesIDs.PracticalTestID);
 
           
             scheduleVisionTestToolStripMenuItem.Enabled = !passedVision;

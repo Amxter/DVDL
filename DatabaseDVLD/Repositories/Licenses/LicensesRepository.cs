@@ -18,7 +18,7 @@ namespace DatabaseDVLD
 
             license.LicenseID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
 INSERT INTO [dbo].[Licenses]
@@ -81,7 +81,7 @@ INSERT INTO [dbo].[Licenses]
         }
         public bool DeactivateLicense(int licenseID)
         {
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"Update Licenses Set IsActive = 0 where LicenseID = @LicenseID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -105,7 +105,7 @@ INSERT INTO [dbo].[Licenses]
         {
 
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"  SELECT Licenses.LicenseID, Licenses.ApplicationID, LicenseClasses.ClassName, Licenses.IssueDate, Licenses.ExpirationDate, Licenses.IsActive
@@ -145,7 +145,7 @@ INSERT INTO [dbo].[Licenses]
 
 
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"  SELECT InternationalLicenses.InternationalLicenseID, InternationalLicenses.ApplicationID, Licenses.LicenseID, InternationalLicenses.IssueDate, InternationalLicenses.ExpirationDate, InternationalLicenses.IsActive, 
@@ -186,7 +186,7 @@ INSERT INTO [dbo].[Licenses]
 
             License license = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from Licenses Where LicenseID = @LicenseID  ";
@@ -256,7 +256,7 @@ INSERT INTO [dbo].[Licenses]
 
             License license = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from Licenses Where Licenses.ApplicationID = @ApplicationID  ; ";
@@ -321,7 +321,7 @@ INSERT INTO [dbo].[Licenses]
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"SELECT Licenses.LicenseID
@@ -348,7 +348,7 @@ INSERT INTO [dbo].[Licenses]
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"SELECT Fiend =1 
@@ -372,7 +372,7 @@ INSERT INTO [dbo].[Licenses]
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"SELECT x = 1 

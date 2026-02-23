@@ -13,14 +13,14 @@ namespace DatabaseDVLD
         {
             _logger = new EventLogs();
         }
-        private void _AddUserParameters(SqlCommand cmd, User user)
+        private void AddUserParameters(SqlCommand cmd, User user)
         {
             cmd.Parameters.AddWithValue("@PersonID", user.PersonID);
             cmd.Parameters.AddWithValue("@UserName", user.UserName);
             cmd.Parameters.AddWithValue("@Password", user.PasswordHash);
             cmd.Parameters.AddWithValue("@IsActive", user.IsActive);
         }
-        private User _MapUser(SqlDataReader reader)
+        private User MapUser(SqlDataReader reader)
         {
             return new User
             {
@@ -35,7 +35,7 @@ namespace DatabaseDVLD
         {
             user.UserID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                      INSERT INTO [dbo].[Users]
@@ -50,7 +50,7 @@ namespace DatabaseDVLD
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    _AddUserParameters(cmd, user);
+                    AddUserParameters(cmd, user);
 
 
                     try
@@ -79,7 +79,7 @@ namespace DatabaseDVLD
 
 
             bool IsUpdate = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"UPDATE [dbo].[Users]
@@ -94,7 +94,7 @@ namespace DatabaseDVLD
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@UserID", user.UserID);
-                    _AddUserParameters(cmd, user);
+                    AddUserParameters(cmd, user);
                     try
                     {
                         conn.Open();
@@ -118,7 +118,7 @@ namespace DatabaseDVLD
         public bool Delete(int userID)
         {
             bool isDelete = false;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"DELETE FROM  Users  WHERE  UserID = @UserID ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -144,7 +144,7 @@ namespace DatabaseDVLD
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"  SELECT Users.UserID, Users.PersonID, (People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) AS FullName , UserName , Users.IsActive
@@ -180,7 +180,7 @@ namespace DatabaseDVLD
         {
             User user = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = "Select * from Users  Where UserID = @UserID ";
@@ -197,7 +197,7 @@ namespace DatabaseDVLD
                         {
                             if (reader.Read())
                             {
-                                user = _MapUser(reader);
+                                user = MapUser(reader);
                             }
                             else
                             {
@@ -221,7 +221,7 @@ namespace DatabaseDVLD
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"Select 1 FROM  Users  WHERE  UserID = @UserID ";
@@ -244,7 +244,7 @@ namespace DatabaseDVLD
         {
             User user = null;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"Select * FROM  Users  WHERE  UserName = @UserName ";
@@ -303,7 +303,7 @@ namespace DatabaseDVLD
         {
 
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"Select 1 FROM  Users  WHERE  PersonID = @PersonID ";
@@ -324,7 +324,7 @@ namespace DatabaseDVLD
         }
         public bool IsExistsByUserNameExceptUserID(string userName, int userID)
         {
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @"Select 1 FROM  Users  WHERE  UserName = @UserName  and UserId <> @UserID ";

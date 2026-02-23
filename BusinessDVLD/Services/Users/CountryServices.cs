@@ -5,7 +5,7 @@ namespace BusinessDVLD
 {
     public class CountryServices : ICountryServices
     {
-        ICountryRepository _countryRepository;
+        readonly ICountryRepository _countryRepository;
         public CountryServices(ICountryRepository repository)
         {
 

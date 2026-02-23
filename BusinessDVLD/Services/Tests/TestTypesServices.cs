@@ -7,7 +7,7 @@ namespace BusinessDVLD
 
     public class TestTypesServices : ITestTypesServices
     {
-        ITestTypesRepository _manageTestTypes;
+        readonly ITestTypesRepository _manageTestTypes;
         public TestTypesServices(ITestTypesRepository testTypes)
         {
             _manageTestTypes = testTypes;

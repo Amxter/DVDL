@@ -96,7 +96,7 @@
     <Compile Include="Services\Users\PersonServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTransferObject\Users\UserDTO.cs" />
-    <Compile Include="Services\Ather Files\ServiceFactory.cs" />
+    <Compile Include="Services\Other Files\ServiceFactory.cs" />
     <Compile Include="Services\Tests\TestAppointmentServices.cs" />
     <Compile Include="DataTransferObject\Tests\TestTypeDTO.cs" />
     <Compile Include="Services\Users\UserServices.cs" />

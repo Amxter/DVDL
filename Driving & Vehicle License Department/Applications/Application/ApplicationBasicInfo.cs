@@ -40,11 +40,11 @@ namespace Driving___Vehicle_License_Department.Applications
                 lblApplicant.Text = personServices.GetByID (applicationDTO.ApplicantPersonID ).FullName.ToString()  ;
                 _personID = applicationDTO.ApplicantPersonID;
 
-                if (applicationDTO.ApplicationTypeID == ApplicationStatus.NewStatus )
+                if (applicationDTO.ApplicationTypeID == ApplicationStatusIDs.NewStatus )
                     lblStatus.Text = "New";
-                else if (applicationDTO.ApplicationTypeID == ApplicationStatus.CanceledStatus)
+                else if (applicationDTO.ApplicationTypeID == ApplicationStatusIDs.CanceledStatus)
                     lblStatus.Text = "Canceled";
-                else if (applicationDTO.ApplicationTypeID == ApplicationStatus.CompletedStatus)
+                else if (applicationDTO.ApplicationTypeID == ApplicationStatusIDs.CompletedStatus)
                     lblStatus.Text = "Completed";
                 else
                     lblStatus.Text = "Other";

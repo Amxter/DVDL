@@ -20,7 +20,7 @@ namespace DatabaseDVLD
 
             internationalLicense.InternationalLicenseID = -1;
 
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                    INSERT INTO [dbo].[InternationalLicenses]
@@ -66,7 +66,7 @@ namespace DatabaseDVLD
         public int DoesHaveActiveInternationalLicense(int licenseID)
         {
             int hasActiveLicense = -1 ;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                     SELECT InternationalLicenseID
@@ -94,7 +94,7 @@ namespace DatabaseDVLD
         public InternationalLicense GetByID(int internationalLicenseID)
         {
             InternationalLicense internationalLicense = null;
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
                 string query = @"
                     SELECT InternationalLicenseID, ApplicationID, DriverID, IssuedUsingLocalLicenseID, IssueDate, ExpirationDate, IsActive, CreatedByUserID
@@ -138,7 +138,7 @@ namespace DatabaseDVLD
         public DataTable GetAll ()
         {
             DataTable dataTable = new DataTable();
-            using (SqlConnection conn = new SqlConnection(DatabaseSittings.connectionString))
+            using (SqlConnection conn = new SqlConnection(DatabaseSittings.ConnectionString))
             {
 
                 string query = @" SELECT InternationalLicenseID, ApplicationID, DriverID, IssuedUsingLocalLicenseID, IssueDate, ExpirationDate, IsActive
