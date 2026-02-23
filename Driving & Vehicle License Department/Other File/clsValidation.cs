@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
    
 
-    public static class clsValidatoin
+    public static class clsValidations
     {
         // =======================
         // Validate Email

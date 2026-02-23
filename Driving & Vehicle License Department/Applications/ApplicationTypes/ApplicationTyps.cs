@@ -1,5 +1,5 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
+using DrivingVehicleLicenseDepartment.Applications.ApplicationTypes;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
@@ -13,12 +13,12 @@ using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
     public partial class ApplicationTypes : GeneralForm
     {
 
-        IApplicationTypesServices _services;
+       readonly IApplicationTypesServices _services;
         public ApplicationTypes(IApplicationTypesServices services )
         {
             InitializeComponent();

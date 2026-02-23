@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿namespace DrivingVehicleLicenseDepartment
 {
     partial class GeneralForm
     {

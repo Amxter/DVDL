@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿namespace DrivingVehicleLicenseDepartment
 {
     partial class ListUsers
     {
@@ -166,7 +166,7 @@
             // 
             // showInfoToolStripMenuItem
             // 
-            this.showInfoToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonDetails_32;
+            this.showInfoToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonDetails_32;
             this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
             this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.showInfoToolStripMenuItem.Text = "Show Details";
@@ -179,7 +179,7 @@
             // 
             // addUserToolStripMenuItem
             // 
-            this.addUserToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Add_New_User_32;
+            this.addUserToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Add_New_User_32;
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
             this.addUserToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.addUserToolStripMenuItem.Text = "Add User";
@@ -187,7 +187,7 @@
             // 
             // editUserToolStripMenuItem
             // 
-            this.editUserToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.edit_32;
+            this.editUserToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.edit_32;
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
             this.editUserToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.editUserToolStripMenuItem.Text = "Edit User";
@@ -195,7 +195,7 @@
             // 
             // deleteUserToolStripMenuItem
             // 
-            this.deleteUserToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Delete_32;
+            this.deleteUserToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Delete_32;
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.deleteUserToolStripMenuItem.Text = "Delete User";
@@ -203,7 +203,7 @@
             // 
             // changePasswordToolStripMenuItem
             // 
-            this.changePasswordToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Password_32;
+            this.changePasswordToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Password_32;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
@@ -216,7 +216,7 @@
             // 
             // callPhoneToolStripMenuItem
             // 
-            this.callPhoneToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.call_32;
+            this.callPhoneToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.call_32;
             this.callPhoneToolStripMenuItem.Name = "callPhoneToolStripMenuItem";
             this.callPhoneToolStripMenuItem.Size = new System.Drawing.Size(223, 32);
             this.callPhoneToolStripMenuItem.Text = "Call Phone";
@@ -224,7 +224,7 @@
             // 
             // sendeEmailToolStripMenuItem1
             // 
-            this.sendeEmailToolStripMenuItem1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.send_email_32;
+            this.sendeEmailToolStripMenuItem1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.send_email_32;
             this.sendeEmailToolStripMenuItem1.Name = "sendeEmailToolStripMenuItem1";
             this.sendeEmailToolStripMenuItem1.Size = new System.Drawing.Size(223, 32);
             this.sendeEmailToolStripMenuItem1.Text = "Sende Email";
@@ -239,7 +239,7 @@
             // btnAddUser
             // 
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Add_New_User_72;
+            this.btnAddUser.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Add_New_User_72;
             this.btnAddUser.Location = new System.Drawing.Point(815, 218);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(88, 69);
@@ -250,7 +250,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Users_2_400;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Users_2_400;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(346, 3);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

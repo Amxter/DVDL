@@ -1,38 +1,32 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_License
+namespace DrivingVehicleLicenseDepartment.Applications.Release_Detained_License
 {
     public partial class DetainLicenseApplication : GeneralForm
     {
 
         int _licenseId;
 
-        IDetainedLicenseServices _detainedLicenseServices;
-        ILicenseService _licenseService;
-        public DetainLicenseApplication(IDetainedLicenseServices detainedLicenseServices,
-            ILicenseService licenseService)
+       readonly IDetainedLicenseServices _detainedLicenseServices;
+    
+        public DetainLicenseApplication(IDetainedLicenseServices detainedLicenseServices )
         {
             InitializeComponent();
-            _Initialize();
+            Initialize();
             _detainedLicenseServices = detainedLicenseServices;
-            _licenseService = licenseService;
+           
         }
 
-        private void _Initialize()
+        private void Initialize()
         {
 
             lblLicenseID.Text = "[???]";
@@ -65,7 +59,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
                 if (!driverLicenseInfoWithFilter1.LicenseDTO.IsActive)
                 {
                     MessageBox.Show("This license is not active.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _Initialize();
+                    Initialize();
                     llShowLicenseHistory.Enabled = true;
                     return;
 
@@ -74,7 +68,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
                 if (_detainedLicenseServices.IsLicenseDetained(_licenseId))
                 {
                     MessageBox.Show("This license is already detained.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _Initialize();
+                    Initialize();
                     llShowLicenseHistory.Enabled = true;
                     return;
                 }
@@ -83,7 +77,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             }
             else
             {
-                _Initialize();
+                Initialize();
             }
         }
 
@@ -158,7 +152,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             ;
 
 
-            if (!clsValidatoin.IsNumber(txtFineFees.Text))
+            if (!clsValidations.IsNumber(txtFineFees.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFineFees, "Invalid Number.");

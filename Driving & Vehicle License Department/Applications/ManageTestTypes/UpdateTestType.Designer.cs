@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
+﻿namespace DrivingVehicleLicenseDepartment.Applications.ManageTestTypes
 {
     partial class UpdateTestType
     {
@@ -77,7 +77,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(218, 344);
             this.btnClose.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -93,7 +93,7 @@
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(374, 344);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -182,7 +182,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.ApplicationTitle;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.ApplicationTitle;
             this.pictureBox1.Location = new System.Drawing.Point(148, 172);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -193,7 +193,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.ApplicationTitle;
+            this.pictureBox8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.ApplicationTitle;
             this.pictureBox8.Location = new System.Drawing.Point(148, 135);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
@@ -204,7 +204,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(148, 306);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";

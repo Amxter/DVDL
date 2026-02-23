@@ -1,5 +1,7 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Ather_File;
+using DrivingVehicleLicenseDepartment.Ather_File;
+using DrivingVehicleLicenseDepartment.Other_File;
+using Microsoft.Win32;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
@@ -11,15 +13,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32;
+using System.Configuration;
+ 
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
-namespace Driving___Vehicle_License_Department.Login
+namespace DrivingVehicleLicenseDepartment.Login
 {
-    public partial class LoginScreen : GeneralForm
+    public partial class LoginScreen : DrivingVehicleLicenseDepartment.GeneralForm
     {
 
-        IUserServices _userServices;
+      readonly  IUserServices _userServices;
         public LoginScreen(IUserServices userServices)
         {
             InitializeComponent();
@@ -28,53 +32,33 @@ namespace Driving___Vehicle_License_Department.Login
         }
         private void LoadTheme()
         {
-            var theme = Driving___Vehicle_License_Department.Properties.Settings.Default.Theme;
-            if (theme == "Dark")
+
+            try
+            {
+                var theme = Properties.Settings.Default.Theme; 
+            }
+            catch (ConfigurationErrorsException ex)
+            {
+
+                try
+                {
+                    if (!string.IsNullOrWhiteSpace(ex.Filename) && File.Exists(ex.Filename))
+                        File.Delete(ex.Filename);
+                }
+                catch {  }
+
+              
+                Properties.Settings.Default.Reload();
+            }
+
+            var themeValue = Properties.Settings.Default.Theme;
+
+            if (themeValue == "Dark")
                 ThemeManager.SetTheme(AppTheme.Dark);
             else
                 ThemeManager.SetTheme(AppTheme.Light);
         }
-        private void SavePasswordAndUserNameInWindowsRegistry(bool isSave)
-        {
-            // Specify the Registry key and path
-            string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVDLApplication";
 
-
-            if (isSave)
-            {
-                try
-                {
-                    // Write the value to the Registry
-                    Registry.SetValue(keyPath, "UserName", txtUserName.Text, RegistryValueKind.String);
-                    Registry.SetValue(keyPath, "Password", txtPassword.Text, RegistryValueKind.String);
-
-                }
-                catch
-                {
-
-                }
-                
-            }
-            else
-            {
-                try
-                {
-                    // Write the value to the Registry
-                    Registry.SetValue(keyPath, "UserName",  "", RegistryValueKind.String);
-                    Registry.SetValue(keyPath, "Password",  "", RegistryValueKind.String);
-
-                }
-                catch
-                {
-
-                }
-
-            }
-
-
-
-            
-        }
         private void ValidateInputs(object sender, CancelEventArgs e)
         {
             TextBox txtBox = sender as TextBox;
@@ -107,7 +91,7 @@ namespace Driving___Vehicle_License_Department.Login
                     CurrentUser.LoggedInUser = userDTO;
 
                     MainForm mainForm = new MainForm(this);
-                    SavePasswordAndUserNameInWindowsRegistry(chkRememberMe.Checked);
+                    WindowsRegistry.SavePasswordAndUserNameInWindowsRegistry(chkRememberMe.Checked , txtUserName.Text.Trim(),  txtPassword.Text.Trim()  );
                     this.Hide();
                     mainForm.ShowDialog();
 
@@ -127,37 +111,21 @@ namespace Driving___Vehicle_License_Department.Login
                 MessageBox.Show("Please correct the input errors before proceeding.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadUserNameAndPasswordFromWindowsRegistry()
-        {
-            string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVDLApplication";
-            
-
-
-            try
-            {
-
-                string UserName = Registry.GetValue(keyPath, "UserName", null) as string;
-                string Password = Registry.GetValue(keyPath, "Password" , null) as string;
-
-                if ( !string.IsNullOrEmpty(UserName))
-                {
-                     txtUserName.Text = UserName;
-                }
-
-                if (!string.IsNullOrEmpty(Password))
-                {
-                    txtPassword.Text = Password;
-                }
-
-            }
-            catch (Exception ex)
-            {
-               
-            }
-        }
+       
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-            LoadUserNameAndPasswordFromWindowsRegistry();
+
+            string UserName = string.Empty;
+            string Password = string.Empty;
+            WindowsRegistry.LoadUserNameAndPasswordFromWindowsRegistry(ref UserName ,ref Password );
+            if (!string.IsNullOrEmpty(UserName))
+            {
+                txtUserName.Text = UserName;
+            }
+            if (!string.IsNullOrEmpty(Password))
+            {
+                txtPassword.Text = Password;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

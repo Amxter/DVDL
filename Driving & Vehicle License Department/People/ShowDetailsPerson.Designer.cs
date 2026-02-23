@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿namespace DrivingVehicleLicenseDepartment
 {
     partial class ShowDetailsPerson
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDetailsPerson1 = new Driving___Vehicle_License_Department.UCDetailsPerson();
+            this.ucDetailsPerson1 = new DrivingVehicleLicenseDepartment.UCDetailsPerson();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.button1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(725, 430);
             this.button1.Name = "button1";

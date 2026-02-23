@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace Driving___Vehicle_License_Department.Users
+namespace DrivingVehicleLicenseDepartment.Users
 {
     public partial class UCUserCard : UserControl
     {
 
-        IUserServices _userServices;
+       readonly IUserServices _userServices;
        public UserDTO User { get; set; }
         public UCUserCard()
         {

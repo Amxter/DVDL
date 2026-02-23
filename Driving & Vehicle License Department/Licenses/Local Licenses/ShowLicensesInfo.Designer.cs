@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.Local_Licenses
 {
     partial class ShowLicensesInfo
     {
@@ -31,7 +31,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbTestTypeImage = new System.Windows.Forms.PictureBox();
-            this.localLicensesInfo1 = new Driving___Vehicle_License_Department.Licenses.Local_Licenses.LocalLicensesInfo();
+            this.localLicensesInfo1 = new DrivingVehicleLicenseDepartment.Licenses.Local_Licenses.LocalLicensesInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestTypeImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(377, 487);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -64,7 +64,7 @@
             // pbTestTypeImage
             // 
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbTestTypeImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.LicenseView_400;
+            this.pbTestTypeImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.LicenseView_400;
             this.pbTestTypeImage.InitialImage = null;
             this.pbTestTypeImage.Location = new System.Drawing.Point(377, -1);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

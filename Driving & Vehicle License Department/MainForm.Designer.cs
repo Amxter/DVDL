@@ -95,7 +95,7 @@
             this.applicationTypesToolStripMenuItem,
             this.maToolStripMenuItem});
             this.applicationsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.applicationsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Applications_64;
+            this.applicationsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Applications_64;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             resources.ApplyResources(this.applicationsToolStripMenuItem, "applicationsToolStripMenuItem");
             this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
@@ -112,7 +112,7 @@
             this.releaseDetainedDrivingLicenToolStripMenuItem,
             this.retakeTestToolStripMenuItem});
             this.drivingLicensesServicesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.drivingLicensesServicesToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.LocalDriving_License;
+            this.drivingLicensesServicesToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.LocalDriving_License;
             this.drivingLicensesServicesToolStripMenuItem.Name = "drivingLicensesServicesToolStripMenuItem";
             resources.ApplyResources(this.drivingLicensesServicesToolStripMenuItem, "drivingLicensesServicesToolStripMenuItem");
             // 
@@ -123,7 +123,7 @@
             this.intrnationalLicenseToolStripMenuItem,
             this.localLicenseToolStripMenuItem});
             this.newDrivengLicensesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.newDrivengLicensesToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.New_Driving_License_32;
+            this.newDrivengLicensesToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.New_Driving_License_32;
             this.newDrivengLicensesToolStripMenuItem.Name = "newDrivengLicensesToolStripMenuItem";
             resources.ApplyResources(this.newDrivengLicensesToolStripMenuItem, "newDrivengLicensesToolStripMenuItem");
             // 
@@ -131,7 +131,7 @@
             // 
             this.intrnationalLicenseToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.intrnationalLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.intrnationalLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.intrnationalLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.intrnationalLicenseToolStripMenuItem.Name = "intrnationalLicenseToolStripMenuItem";
             resources.ApplyResources(this.intrnationalLicenseToolStripMenuItem, "intrnationalLicenseToolStripMenuItem");
             this.intrnationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.intrnationalLicenseToolStripMenuItem_Click);
@@ -140,7 +140,7 @@
             // 
             this.localLicenseToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.localLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.localLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Local_32;
+            this.localLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Local_32;
             this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
             resources.ApplyResources(this.localLicenseToolStripMenuItem, "localLicenseToolStripMenuItem");
             this.localLicenseToolStripMenuItem.Click += new System.EventHandler(this.localLicenseToolStripMenuItem_Click);
@@ -149,7 +149,7 @@
             // 
             this.renewDrivingLicensToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.renewDrivingLicensToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.renewDrivingLicensToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Renew_Driving_License_321;
+            this.renewDrivingLicensToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Renew_Driving_License_321;
             this.renewDrivingLicensToolStripMenuItem.Name = "renewDrivingLicensToolStripMenuItem";
             resources.ApplyResources(this.renewDrivingLicensToolStripMenuItem, "renewDrivingLicensToolStripMenuItem");
             this.renewDrivingLicensToolStripMenuItem.Click += new System.EventHandler(this.renewDrivingLicensToolStripMenuItem_Click);
@@ -165,7 +165,7 @@
             // 
             this.replacementForLostOrDamagedLicenseToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.replacementForLostOrDamagedLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.replacementForLostOrDamagedLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.New_Driving_License_32;
+            this.replacementForLostOrDamagedLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.New_Driving_License_32;
             this.replacementForLostOrDamagedLicenseToolStripMenuItem.Name = "replacementForLostOrDamagedLicenseToolStripMenuItem";
             resources.ApplyResources(this.replacementForLostOrDamagedLicenseToolStripMenuItem, "replacementForLostOrDamagedLicenseToolStripMenuItem");
             this.replacementForLostOrDamagedLicenseToolStripMenuItem.Click += new System.EventHandler(this.replacementForLostOrDamagedLicenseToolStripMenuItem_Click);
@@ -181,7 +181,7 @@
             // 
             this.releaseDetainedDrivingLicenToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.releaseDetainedDrivingLicenToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.releaseDetainedDrivingLicenToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Damaged_Driving_License_32;
+            this.releaseDetainedDrivingLicenToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Damaged_Driving_License_32;
             this.releaseDetainedDrivingLicenToolStripMenuItem.Name = "releaseDetainedDrivingLicenToolStripMenuItem";
             resources.ApplyResources(this.releaseDetainedDrivingLicenToolStripMenuItem, "releaseDetainedDrivingLicenToolStripMenuItem");
             this.releaseDetainedDrivingLicenToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedDrivingLicenToolStripMenuItem_Click);
@@ -190,7 +190,7 @@
             // 
             this.retakeTestToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.retakeTestToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.retakeTestToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Retake_Test_32;
+            this.retakeTestToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Retake_Test_32;
             this.retakeTestToolStripMenuItem.Name = "retakeTestToolStripMenuItem";
             resources.ApplyResources(this.retakeTestToolStripMenuItem, "retakeTestToolStripMenuItem");
             this.retakeTestToolStripMenuItem.Click += new System.EventHandler(this.retakeTestToolStripMenuItem_Click);
@@ -209,7 +209,7 @@
             this.localDrivingLicenseApplicationsToolStripMenuItem,
             this.internationaLicenseApplicationsToolStripMenuItem});
             this.manageApplicationsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.manageApplicationsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Manage_Applications_64;
+            this.manageApplicationsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Manage_Applications_64;
             this.manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
             resources.ApplyResources(this.manageApplicationsToolStripMenuItem, "manageApplicationsToolStripMenuItem");
             // 
@@ -217,7 +217,7 @@
             // 
             this.localDrivingLicenseApplicationsToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.localDrivingLicenseApplicationsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.localDrivingLicenseApplicationsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_View_32;
+            this.localDrivingLicenseApplicationsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_View_32;
             this.localDrivingLicenseApplicationsToolStripMenuItem.Name = "localDrivingLicenseApplicationsToolStripMenuItem";
             resources.ApplyResources(this.localDrivingLicenseApplicationsToolStripMenuItem, "localDrivingLicenseApplicationsToolStripMenuItem");
             this.localDrivingLicenseApplicationsToolStripMenuItem.Click += new System.EventHandler(this.localDrivingLicenseApllicationsToolStripMenuItem_Click);
@@ -226,7 +226,7 @@
             // 
             this.internationaLicenseApplicationsToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.internationaLicenseApplicationsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.internationaLicenseApplicationsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.internationaLicenseApplicationsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.internationaLicenseApplicationsToolStripMenuItem.Name = "internationaLicenseApplicationsToolStripMenuItem";
             resources.ApplyResources(this.internationaLicenseApplicationsToolStripMenuItem, "internationaLicenseApplicationsToolStripMenuItem");
             this.internationaLicenseApplicationsToolStripMenuItem.Click += new System.EventHandler(this.internationaLicenseApplicationsToolStripMenuItem_Click);
@@ -246,7 +246,7 @@
             this.detainLicenseToolStripMenuItem,
             this.releaseDetainedLicenseToolStripMenuItem});
             this.detainLicensesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.detainLicensesToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_512;
+            this.detainLicensesToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_512;
             this.detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
             resources.ApplyResources(this.detainLicensesToolStripMenuItem, "detainLicensesToolStripMenuItem");
             // 
@@ -254,7 +254,7 @@
             // 
             this.manToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.manToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.manToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_64;
+            this.manToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_64;
             this.manToolStripMenuItem.Name = "manToolStripMenuItem";
             resources.ApplyResources(this.manToolStripMenuItem, "manToolStripMenuItem");
             this.manToolStripMenuItem.Click += new System.EventHandler(this.manToolStripMenuItem_Click);
@@ -263,7 +263,7 @@
             // 
             this.detainLicenseToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.detainLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.detainLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_32;
+            this.detainLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_32;
             this.detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
             resources.ApplyResources(this.detainLicenseToolStripMenuItem, "detainLicenseToolStripMenuItem");
             this.detainLicenseToolStripMenuItem.Click += new System.EventHandler(this.detainLicenseToolStripMenuItem_Click);
@@ -272,7 +272,7 @@
             // 
             this.releaseDetainedLicenseToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.releaseDetainedLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.releaseDetainedLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Release_Detained_License_64;
+            this.releaseDetainedLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Release_Detained_License_64;
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
             resources.ApplyResources(this.releaseDetainedLicenseToolStripMenuItem, "releaseDetainedLicenseToolStripMenuItem");
             this.releaseDetainedLicenseToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedLicenseToolStripMenuItem_Click);
@@ -288,7 +288,7 @@
             // 
             this.applicationTypesToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.applicationTypesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.applicationTypesToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Application_Types_64;
+            this.applicationTypesToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Application_Types_64;
             this.applicationTypesToolStripMenuItem.Name = "applicationTypesToolStripMenuItem";
             resources.ApplyResources(this.applicationTypesToolStripMenuItem, "applicationTypesToolStripMenuItem");
             this.applicationTypesToolStripMenuItem.Click += new System.EventHandler(this.applicationTypesToolStripMenuItem_Click);
@@ -297,7 +297,7 @@
             // 
             this.maToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.maToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.maToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Test_Type_64;
+            this.maToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Test_Type_64;
             this.maToolStripMenuItem.Name = "maToolStripMenuItem";
             resources.ApplyResources(this.maToolStripMenuItem, "maToolStripMenuItem");
             this.maToolStripMenuItem.Click += new System.EventHandler(this.maToolStripMenuItem_Click);
@@ -306,7 +306,7 @@
             // 
             this.peToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.peToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.peToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.People_64;
+            this.peToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.People_64;
             this.peToolStripMenuItem.Name = "peToolStripMenuItem";
             resources.ApplyResources(this.peToolStripMenuItem, "peToolStripMenuItem");
             this.peToolStripMenuItem.Click += new System.EventHandler(this.peToolStripMenuItem_Click);
@@ -315,7 +315,7 @@
             // 
             this.driversToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.driversToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.driversToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Drivers_64;
+            this.driversToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Drivers_64;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
             resources.ApplyResources(this.driversToolStripMenuItem, "driversToolStripMenuItem");
             this.driversToolStripMenuItem.Click += new System.EventHandler(this.driversToolStripMenuItem_Click);
@@ -324,7 +324,7 @@
             // 
             this.usersToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.usersToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Users_2_400;
+            this.usersToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Users_2_400;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             resources.ApplyResources(this.usersToolStripMenuItem, "usersToolStripMenuItem");
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
@@ -339,14 +339,14 @@
             this.signOutToolStripMenuItem});
             resources.ApplyResources(this.accoutSettingsToolStripMenuItem, "accoutSettingsToolStripMenuItem");
             this.accoutSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.accoutSettingsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.account_settings_64;
+            this.accoutSettingsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.account_settings_64;
             this.accoutSettingsToolStripMenuItem.Name = "accoutSettingsToolStripMenuItem";
             // 
             // currentUserInfoToolStripMenuItem
             // 
             this.currentUserInfoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.currentUserInfoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.currentUserInfoToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonDetails_32;
+            this.currentUserInfoToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonDetails_32;
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
             resources.ApplyResources(this.currentUserInfoToolStripMenuItem, "currentUserInfoToolStripMenuItem");
             this.currentUserInfoToolStripMenuItem.Click += new System.EventHandler(this.currentUserInfoToolStripMenuItem_Click);
@@ -355,7 +355,7 @@
             // 
             this.changePasswordToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.changePasswordToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Password_32;
+            this.changePasswordToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Password_32;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             resources.ApplyResources(this.changePasswordToolStripMenuItem, "changePasswordToolStripMenuItem");
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
@@ -371,7 +371,7 @@
             // 
             this.signOutToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.signOutToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.signOutToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.sign_out_32__2;
+            this.signOutToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.sign_out_32__2;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
             resources.ApplyResources(this.signOutToolStripMenuItem, "signOutToolStripMenuItem");
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);

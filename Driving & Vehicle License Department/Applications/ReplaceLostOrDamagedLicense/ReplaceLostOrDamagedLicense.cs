@@ -1,14 +1,14 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense
+namespace DrivingVehicleLicenseDepartment.Applications.ReplaceLostOrDamagedLicense
 {
     public partial class ReplaceLostOrDamagedLicense : GeneralForm
     {
@@ -22,9 +22,9 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
         int _licenseID;
         int _newLicenseID;
         int _applicationTypeID;
-        ILicenseService _licenseService;
-        IApplicationServices _applicationServices;
-        ILicenseClassServices _licenseClassServices;
+        readonly ILicenseService _licenseService;
+        readonly IApplicationServices _applicationServices;
+        readonly ILicenseClassServices _licenseClassServices;
         public ReplaceLostOrDamagedLicense(IApplicationTypesServices applicationTypesServices,
            ILicenseService licenseService,
            IApplicationServices applicationServices,
@@ -37,7 +37,7 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
             _applicationServices = applicationServices;
             _licenseClassServices = licenseClassServices;
         }
-        private void _Initialize()
+        private void Initialize()
         {
             lblApplicationID.Text = "[???]";
             lblApplicationDate.Text = DateTime.Now.ToShortDateString();
@@ -81,12 +81,12 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
                 else
                 {
                     MessageBox.Show("The selected license is not active. Please select an active license.", "Invalid License", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    _Initialize();
+                    Initialize();
                     llShowLicenseHistory.Enabled = true;
                     return;
                 }
             }
-            _Initialize();
+            Initialize();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -110,7 +110,7 @@ namespace Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamaged
         private void ReplaceLostOrDamagedLicense_Load(object sender, EventArgs e)
         {
             rbDamagedLicense.Checked = true;
-            _Initialize(); ;
+            Initialize(); ;
         }
         private void rbDamagedLicense_CheckedChanged(object sender, EventArgs e)
         {

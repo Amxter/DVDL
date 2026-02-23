@@ -1,21 +1,13 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Properties;
+using DrivingVehicleLicenseDepartment.Properties;
 using PresentationDVLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
 
     public partial class UCDetailsPerson : UserControl
@@ -23,8 +15,8 @@ namespace Driving___Vehicle_License_Department
 
        public event EventHandler<PersonDTO> OnSelectedPerson ; 
 
-        IPersonServices _personServices;
-        ICountryServices _countryServices;
+        readonly IPersonServices _personServices;
+        readonly ICountryServices _countryServices;
         int _personID;
 
         public int PersonID
@@ -55,7 +47,7 @@ namespace Driving___Vehicle_License_Department
 
             pbPersonImage.ImageLocation = Path; 
         }
-        private void _loadInfo (PersonDTO person)
+        private void loadInfo (PersonDTO person)
         {
 
             lblPersonID.Text = person.PersonID.ToString();
@@ -94,7 +86,7 @@ namespace Driving___Vehicle_License_Department
             PersonDTO person = _personServices.GetByID(personID);
             if (person != null)
             {
-                _loadInfo(person);
+                loadInfo(person);
             }
             else
             {
@@ -111,7 +103,7 @@ namespace Driving___Vehicle_License_Department
             if (person != null)
             {
                 _personID = person.PersonID;
-                _loadInfo(person);
+                loadInfo(person);
             }
             else
             {

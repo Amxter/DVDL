@@ -1,21 +1,14 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_License
+namespace DrivingVehicleLicenseDepartment.Applications.Release_Detained_License
 {
     public partial class ReleaseDetainedLicenseApplication : GeneralForm
     {
@@ -23,23 +16,21 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
         double ApplicationFees;
         int _licenseId;
         DetainedLicenseDTO _detainedLicenseDTO;
-        IApplicationTypesServices _applicationTypesServices;
-        IApplicationServices _applicationServices;
-        IDetainedLicenseServices _detainedLicenseServices;
-        ILicenseService _licenseService;
+      readonly IApplicationTypesServices _applicationTypesServices;
+      readonly IApplicationServices _applicationServices;
+      readonly IDetainedLicenseServices _detainedLicenseServices;
+        
         public ReleaseDetainedLicenseApplication(IApplicationTypesServices applicationTypesServices,
             IDetainedLicenseServices detainedLicenseServices,
-            ILicenseService licenseService,
             IApplicationServices applicationServices,
             int LicenseID = -1)
         {
             InitializeComponent();
             _applicationTypesServices = applicationTypesServices;
             _detainedLicenseServices = detainedLicenseServices;
-            _licenseService = licenseService;
             ApplicationFees = _applicationTypesServices.GetApplication(5).Fees;
             _applicationServices = applicationServices;
-            _Initialize();
+            Initialize();
 
             if (LicenseID != -1)
             {
@@ -47,7 +38,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             }
 
         }
-        private void _Initialize()
+        private void Initialize()
         {
             lblDetainID.Text = "[???]";
             lblLicenseID.Text = "[???]";
@@ -62,7 +53,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             btnRelease.Enabled = false;
 
         }
-        private void _loadData()
+        private void LoadData()
         {
             _detainedLicenseDTO = _detainedLicenseServices.GetByLicenseID(driverLicenseInfoWithFilter1.LicenseDTO.LicenseID);
             lblLicenseID.Text   = driverLicenseInfoWithFilter1.LicenseDTO.LicenseID.ToString();
@@ -81,18 +72,18 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             {
                 if (!driverLicenseInfoWithFilter1.LicenseDTO.IsActive)
                 {
-                    _Initialize();
+                    Initialize();
                     llShowLicenseHistory.Enabled = true;
                     MessageBox.Show("The selected license is not active.");
                     return;
                 }
                 if (_detainedLicenseServices.IsLicenseDetained(_licenseId))
                 {
-                    _loadData();
+                    LoadData();
                 }
                 else
                 {
-                    _Initialize();
+                    Initialize();
                     llShowLicenseHistory.Enabled = true;
                     MessageBox.Show("The selected license is not detained.");
                     return;
@@ -101,7 +92,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             }
             else
             {
-                _Initialize();
+                Initialize();
             }
         }
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

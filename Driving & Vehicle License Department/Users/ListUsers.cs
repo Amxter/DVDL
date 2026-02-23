@@ -1,27 +1,19 @@
 ﻿using BusinessDVLD;
-using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Users;
+using DrivingVehicleLicenseDepartment.Users;
 using PresentationDVLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
     public partial class ListUsers : GeneralForm
     {
-        IUserServices _userServices;
+       readonly IUserServices _userServices;
         DataTable dt; 
-        private void _loadUsers()
+        private void LoadUsers()
         {
             dt = _userServices.GetAll(); 
             dgvUsers.DataSource = dt.DefaultView ;
@@ -36,7 +28,7 @@ namespace Driving___Vehicle_License_Department
             InitializeComponent();
 
             _userServices = userServices;
-            _loadUsers();
+            LoadUsers();
          
         }
         private void FilterUsersBy(string filterBy , string value )
@@ -78,7 +70,7 @@ namespace Driving___Vehicle_License_Department
                 cbIsActive.Visible = false;
                 txtFilterValue.Visible = false;
              
-                _loadUsers();
+                LoadUsers();
 
             }
             else if (cbFilterBy.Text == "IsActive")
@@ -109,12 +101,12 @@ namespace Driving___Vehicle_License_Department
 
             frm.ShowDialog();
  
-            _loadUsers();
+            LoadUsers();
         }
 
         private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int selectedUserID = _getSelectedUserID();
+            int selectedUserID = getSelectedUserID();
 
 
             if (selectedUserID == CurrentUser.LoggedInUser.UserID)
@@ -130,7 +122,7 @@ namespace Driving___Vehicle_License_Department
                 if (isDeleted)
                 {
                     MessageBox.Show("User deleted successfully.");
-                    _loadUsers();
+                    LoadUsers();
                 }
                 else
                 {
@@ -140,7 +132,7 @@ namespace Driving___Vehicle_License_Department
 
 
         }
-        private int _getSelectedUserID()
+        private int getSelectedUserID()
         {
             return (int)dgvUsers.SelectedRows[0].Cells["UserID"].Value;
         }
@@ -150,23 +142,23 @@ namespace Driving___Vehicle_License_Department
     new ParameterOverride("userId", -1));
 
             frm.ShowDialog();
-            _loadUsers(); 
+            LoadUsers(); 
         }
 
         private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             var frm = Program.Container.Resolve<AddUpdateUser>(
-new ParameterOverride("userId", _getSelectedUserID()));
+new ParameterOverride("userId", getSelectedUserID()));
 
             frm.ShowDialog();
 
-            _loadUsers();
+            LoadUsers();
         }
 
         private void showInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserInfo userInfo = new UserInfo(_getSelectedUserID());
+            UserInfo userInfo = new UserInfo(getSelectedUserID());
             //userInfo.MdiParent = this.MdiParent;
             userInfo.ShowDialog();
 
@@ -176,7 +168,7 @@ new ParameterOverride("userId", _getSelectedUserID()));
         {
 
             var frm = Program.Container.Resolve<ChangePassword>(
-            new ParameterOverride("user", _getSelectedUserID() ));
+            new ParameterOverride("user", getSelectedUserID() ));
 
             frm.ShowDialog();
  

@@ -1,24 +1,24 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license
+namespace DrivingVehicleLicenseDepartment.Applications.Renew_Local_Driving_license
 {
     public partial class RenewLocalDrivingLicenseApplication : GeneralForm
     {
 
         int _licenseID = -1;
         int _newLicenseID = -1;
-        ILicenseService _licenseService;
-        ILicenseClassServices _licenseClassServices;
-        IApplicationTypesServices _applicationTypesServices;
-        IApplicationServices _ApplicationServices;
+        readonly  ILicenseService _licenseService;
+        readonly  ILicenseClassServices _licenseClassServices;
+        readonly  IApplicationTypesServices _applicationTypesServices;
+        readonly IApplicationServices _ApplicationServices;
         public RenewLocalDrivingLicenseApplication(ILicenseService licenseService,
             ILicenseClassServices licenseClassServices,
             IApplicationTypesServices applicationTypesServices,

@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.International
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.International
 {
     partial class ListInternationalLicenses
     {
@@ -160,7 +160,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(648, 69);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -173,7 +173,7 @@
             // btnNewApplication
             // 
             this.btnNewApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewApplication.Image = global::Driving___Vehicle_License_Department.Properties.Resources.New_Application_641;
+            this.btnNewApplication.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.New_Application_641;
             this.btnNewApplication.Location = new System.Drawing.Point(1017, 231);
             this.btnNewApplication.Name = "btnNewApplication";
             this.btnNewApplication.Size = new System.Drawing.Size(88, 75);
@@ -186,7 +186,7 @@
             this.btnClose.AutoEllipsis = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(970, 662);
             this.btnClose.Name = "btnClose";
@@ -199,7 +199,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Manage_Applications_641;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Manage_Applications_641;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(472, 2);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

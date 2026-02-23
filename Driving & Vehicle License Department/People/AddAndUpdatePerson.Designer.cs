@@ -1,4 +1,6 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿
+
+namespace DrivingVehicleLicenseDepartment
 {
     partial class AddAndUpdatePerson
     {
@@ -135,7 +137,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_321;
+            this.button2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_321;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(523, 350);
             this.button2.Name = "button2";
@@ -147,7 +149,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(642, 350);
             this.btnSave.Name = "btnSave";
@@ -171,7 +173,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Male_512;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Male_512;
             this.pictureBox1.Location = new System.Drawing.Point(824, 99);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 169);
@@ -192,7 +194,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Country_32;
+            this.label8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Country_32;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label8.Location = new System.Drawing.Point(445, 196);
             this.label8.Name = "label8";
@@ -212,7 +214,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Phone_32;
+            this.label7.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Phone_32;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(450, 149);
             this.label7.Name = "label7";
@@ -231,7 +233,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.label6.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label6.Location = new System.Drawing.Point(396, 103);
             this.label6.Name = "label6";
@@ -252,7 +254,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Address_32;
+            this.label5.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Address_32;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(6, 244);
             this.label5.Name = "label5";
@@ -272,7 +274,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Email_32;
+            this.label4.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Email_32;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(6, 197);
             this.label4.Name = "label4";
@@ -284,7 +286,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Woman_32;
+            this.label3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Woman_32;
             this.label3.Location = new System.Drawing.Point(259, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 24);
@@ -295,7 +297,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Man_32;
+            this.label2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Man_32;
             this.label2.Location = new System.Drawing.Point(146, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 24);
@@ -356,7 +358,7 @@
             // 
             this.labNationalNo.AutoSize = true;
             this.labNationalNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNationalNo.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.labNationalNo.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.labNationalNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labNationalNo.Location = new System.Drawing.Point(6, 104);
             this.labNationalNo.Name = "labNationalNo";
@@ -439,7 +441,7 @@
             // 
             this.labName.AutoSize = true;
             this.labName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labName.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Person_32;
+            this.labName.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Person_32;
             this.labName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labName.Location = new System.Drawing.Point(6, 55);
             this.labName.Name = "labName";

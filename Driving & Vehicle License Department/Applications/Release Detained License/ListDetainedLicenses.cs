@@ -1,7 +1,7 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
@@ -15,14 +15,14 @@ using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_License
+namespace DrivingVehicleLicenseDepartment.Applications.Release_Detained_License
 {
     public partial class ListDetainedLicenses : GeneralForm
     {
 
-        IDetainedLicenseServices _detainedLicenseServices;
-        ILicenseService _licenseService;
-        IApplicationServices _applicationServices;
+       readonly IDetainedLicenseServices _detainedLicenseServices;
+       readonly ILicenseService _licenseService;
+        readonly IApplicationServices _applicationServices;
         private DataTable _dtDetainedLicenses;
         public ListDetainedLicenses(IDetainedLicenseServices detainedLicenseServices,
             ILicenseService licenseService,
@@ -32,9 +32,9 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             _detainedLicenseServices = detainedLicenseServices;
             _licenseService = licenseService;
             _applicationServices = applicationServices;
-            _LoadData();
+            LoadData();
         }
-        private void _LoadData()
+        private void LoadData()
         {
             cbFilterBy.SelectedIndex = 0;
 
@@ -79,14 +79,14 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             var frm = Program.Container.Resolve<DetainLicenseApplication>();
 
             frm.ShowDialog();
-            _LoadData();
+            LoadData();
         }
         private void btnReleaseDetainedLicense_Click(object sender, EventArgs e)
         {
             var frm = Program.Container.Resolve<ReleaseDetainedLicenseApplication>();
 
             frm.ShowDialog();
-            _LoadData();
+            LoadData();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -257,7 +257,7 @@ namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_Lice
             new ParameterOverride("LicenseID", LicenseID));
 
             frm.ShowDialog();
-            _LoadData(); 
+            LoadData(); 
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Users
+﻿namespace DrivingVehicleLicenseDepartment.Users
 {
     partial class ChangePassword
     {
@@ -40,7 +40,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ucUserCard1 = new Driving___Vehicle_License_Department.Users.UCUserCard();
+            this.ucUserCard1 = new DrivingVehicleLicenseDepartment.Users.UCUserCard();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +75,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(554, 600);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -90,7 +90,7 @@
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(688, 600);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -147,7 +147,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(205, 428);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 26);
@@ -157,7 +157,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(205, 501);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
@@ -167,7 +167,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox3.Location = new System.Drawing.Point(205, 464);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 26);

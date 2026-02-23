@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_License
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Release_Detained_License
 {
     partial class DetainLicenseApplication
     {
@@ -50,7 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblDetainID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.driverLicenseInfoWithFilter1 = new Driving___Vehicle_License_Department.Licenses.Local_Licenses.DriverLicenseInfoWithFilter();
+            this.driverLicenseInfoWithFilter1 = new DrivingVehicleLicenseDepartment.Licenses.Local_Licenses.DriverLicenseInfoWithFilter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpDetain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -76,7 +76,7 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(596, 711);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -103,7 +103,7 @@
             // 
             this.btnDetain.Enabled = false;
             this.btnDetain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetain.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_32;
+            this.btnDetain.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_32;
             this.btnDetain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetain.Location = new System.Drawing.Point(730, 711);
             this.btnDetain.Name = "btnDetain";
@@ -160,7 +160,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox8.Location = new System.Drawing.Point(581, 40);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(31, 26);
@@ -192,7 +192,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(187, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 26);
@@ -202,7 +202,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(581, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
@@ -245,7 +245,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(187, 104);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 26);
@@ -266,7 +266,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox4.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox4.Location = new System.Drawing.Point(187, 72);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 26);

@@ -1,15 +1,15 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department;
-using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
-using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
-using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
-using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
-using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
-using Driving___Vehicle_License_Department.Applications.Rlease_Detained_License;
-using Driving___Vehicle_License_Department.Ather_File;
-using Driving___Vehicle_License_Department.Drivers;
-using Driving___Vehicle_License_Department.Licenses.International;
-using Driving___Vehicle_License_Department.Users;
+using DrivingVehicleLicenseDepartment;
+using DrivingVehicleLicenseDepartment.Applications.ApplicationTypes;
+using DrivingVehicleLicenseDepartment.Applications.Local_Driving_License;
+using DrivingVehicleLicenseDepartment.Applications.ManageTestTypes;
+using DrivingVehicleLicenseDepartment.Applications.Renew_Local_Driving_license;
+using DrivingVehicleLicenseDepartment.Applications.ReplaceLostOrDamagedLicense;
+using DrivingVehicleLicenseDepartment.Applications.Release_Detained_License;
+using DrivingVehicleLicenseDepartment.Ather_File;
+using DrivingVehicleLicenseDepartment.Drivers;
+using DrivingVehicleLicenseDepartment.Licenses.International;
+using DrivingVehicleLicenseDepartment.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -210,16 +210,16 @@ new ParameterOverride("user", CurrentUser.LoggedInUser.UserID));
         private void darkThemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemeManager.SetTheme(AppTheme.Dark);
-            Driving___Vehicle_License_Department.Properties.Settings.Default.Theme = "Dark";
-            Driving___Vehicle_License_Department.Properties.Settings.Default.Save();
+            DrivingVehicleLicenseDepartment.Properties.Settings.Default.Theme = "Dark";
+            DrivingVehicleLicenseDepartment.Properties.Settings.Default.Save();
 
         }
 
         private void lightThemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemeManager.SetTheme(AppTheme.Light);
-            Driving___Vehicle_License_Department.Properties.Settings.Default.Theme = "Light";
-            Driving___Vehicle_License_Department.Properties.Settings.Default.Save();
+            DrivingVehicleLicenseDepartment.Properties.Settings.Default.Theme = "Light";
+            DrivingVehicleLicenseDepartment.Properties.Settings.Default.Save();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.Local_Licenses
 {
     partial class DriverLicenseInfoWithFilter
     {
@@ -32,7 +32,7 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.txtLicenseID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.localLicensesInfo1 = new Driving___Vehicle_License_Department.Licenses.Local_Licenses.LocalLicensesInfo();
+            this.localLicensesInfo1 = new DrivingVehicleLicenseDepartment.Licenses.Local_Licenses.LocalLicensesInfo();
             this.gbFilters.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // btnFind
             // 
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_View_32;
+            this.btnFind.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_View_32;
             this.btnFind.Location = new System.Drawing.Point(404, 20);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";

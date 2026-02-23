@@ -10,22 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
+namespace DrivingVehicleLicenseDepartment.Licenses.Local_Licenses
 {
     public partial class IssueDriverLicenseFirstTime : GeneralForm
     {
 
-        ILicenseService _licenseService;
-        IDriverServices _driverServices;
-        ILicenseClassServices _licenseClassServices;
-        ILDLApplicationServices _LDlApplicationServices;
-        IApplicationServices _applicationServices;
-        int _lDLApplicationID;
+       readonly ILicenseService _licenseService;
+       readonly IDriverServices _driverServices;
+       readonly ILicenseClassServices _licenseClassServices;
+       readonly IApplicationServices _applicationServices;
         public IssueDriverLicenseFirstTime(int lDLApplicationID , 
             ILicenseService  licenseService ,
             ILicenseClassServices licenseClassServices ,
             IDriverServices driverServices ,
-            ILDLApplicationServices lDlApplicationServices ,
             IApplicationServices applicationServices )
         {
             InitializeComponent();
@@ -33,8 +30,6 @@ namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
              _licenseService = licenseService;
             _licenseClassServices = licenseClassServices;
             _driverServices = driverServices;
-            _LDlApplicationServices = lDlApplicationServices;
-                _lDLApplicationID = lDLApplicationID;
             _applicationServices = applicationServices;
 
         }

@@ -1,19 +1,19 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
+using DrivingVehicleLicenseDepartment.Applications.ApplicationTypes;
 using PresentationDVLD;
 using System;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+namespace DrivingVehicleLicenseDepartment.Applications.Local_Driving_License
 {
     public partial class AddUpdateLocalDrivingLicenseApplication : GeneralForm
     {
 
-        ILicenseClassServices _licenseClassServices;
-        ILDLApplicationServices _ldlApplicationServices;
-        IUserServices               _userServices;
+       readonly ILicenseClassServices _licenseClassServices;
+       readonly ILDLApplicationServices _ldlApplicationServices;
+        readonly IUserServices _userServices;
 
         enum Mode {Add,Update}
         Mode _mode;
@@ -32,24 +32,24 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             _ldlApplicationServices = ldlApplicationServices;
             _userServices = userServices;
             _LDLApplicationID = LDLApplicationID;
-            _LoadLicenseClasses();
+            LoadLicenseClasses();
             cbLicenseClass.SelectedIndex = 2;
 
             if (_LDLApplicationID == -1)
             {
                
-                _AddMode();
+                AddMode();
             }
             else
             {
                 _LDLApplicationID = LDLApplicationID;
-                _UpdateMode();
+                UpdateMode();
             }
 
                  
 
         }
-        private void _UpdateMode()
+        private void UpdateMode()
         {
             this.Text = "Update Local Driving License Application";
             btnSave.Enabled = true ;
@@ -68,7 +68,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
 
 
         }
-        private void _AddMode()
+        private void AddMode()
         {
             this.Text = "Add Local Driving License Application";
             btnSave.Enabled = false;
@@ -79,14 +79,14 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             _mode = Mode.Add; 
 
         }
-        private void _LoadLicenseClasses()
+        private void LoadLicenseClasses()
         {
 
             cbLicenseClass.DataSource = _licenseClassServices.GetAll();
             cbLicenseClass.DisplayMember = "ClassName";
             cbLicenseClass.ValueMember = "LicenseClassID";
         }
-        private void _Update()
+        private void Update()
         {
             bool isUpdate = _ldlApplicationServices.Update(new LDLApplicationDTO
             {
@@ -98,7 +98,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             if (isUpdate)
             {
                 MessageBox.Show("Local driving license application has been updated successfully . ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _UpdateMode();
+                UpdateMode();
             }
             else
             {
@@ -114,7 +114,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             {
                 lblLocalDrivingLicebseApplicationID.Text = LDLID.ToString();
                 _LDLApplicationID = LDLID;
-                _UpdateMode();
+                UpdateMode();
                 MessageBox.Show("Local driving license application has been added successfully . ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -153,7 +153,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                 }
                 else if (_mode == Mode.Update)
                 {
-                     _Update();
+                     Update();
                 }
 
             }

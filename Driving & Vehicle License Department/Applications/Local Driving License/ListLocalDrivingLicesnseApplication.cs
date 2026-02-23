@@ -1,9 +1,9 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Applications.Tests;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
-using Driving___Vehicle_License_Department.Login;
+using DrivingVehicleLicenseDepartment.Applications.Tests;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Login;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
@@ -17,14 +17,14 @@ using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+namespace DrivingVehicleLicenseDepartment.Applications.Local_Driving_License
 {
     public partial class ListLocalDrivingLicenseApplication : GeneralForm
     {
 
-        ILDLApplicationServices _ldlApplicationServices;
-        ITestAppointmentServices _testAppointmentServices;
-        ILicenseService _licenseService;
+       readonly ILDLApplicationServices _ldlApplicationServices;
+       readonly ITestAppointmentServices _testAppointmentServices;
+        readonly ILicenseService _licenseService;
         DataTable _dataTable;
         public ListLocalDrivingLicenseApplication(ILDLApplicationServices ldlApplicationServices,
             ITestAppointmentServices testAppointmentServices ,
@@ -33,7 +33,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             InitializeComponent();
             _ldlApplicationServices = ldlApplicationServices;
             _testAppointmentServices = testAppointmentServices;
-            _loadData();
+            LoadData();
             _licenseService = licenseService;
         }
         private int GetSelectedLocalDrivingLicenseApplicationID()
@@ -57,7 +57,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
                             .Value.ToString();
  
         }
-        private void _loadData()
+        private void LoadData()
         {
             _dataTable = _ldlApplicationServices.GetAll();
             dgvLocalDrivingLicenseApplications.DataSource = _dataTable.DefaultView;
@@ -79,7 +79,7 @@ new ParameterOverride("LDLApplicationID", -1)
 );
             frm.ShowDialog();
 
-            _loadData();
+            LoadData();
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,7 +95,7 @@ new ParameterOverride("LDLApplicationID", -1)
 new ParameterOverride("LDLApplicationID", SelectedColumn)
 );
             frm.ShowDialog();
-            _loadData();
+            LoadData();
         }
         private void DeleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,7 +115,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
                 if (isDeleted)
                 {
                     MessageBox.Show("The selected record has been deleted successfully.");
-                    _loadData();
+                    LoadData();
                 }
                 else
                 {
@@ -140,7 +140,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
 
             frm.ShowDialog();
 
-            _loadData();
+            LoadData();
         }
         private void scheduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -151,7 +151,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
        );
 
             frm.ShowDialog();
-            _loadData(); 
+            LoadData(); 
         }
         private void scheduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -162,9 +162,9 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
        );
 
             frm.ShowDialog();
-            _loadData();
+            LoadData();
         }
-        private void _LoadStatusCompleted()
+        private void LoadStatusCompleted()
         {
 
             showDetailsToolStripMenuItem.Enabled = true;
@@ -177,7 +177,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
 
         }
-        private void _LoadStatusNew()
+        private void LoadStatusNew()
         {
             int appId = GetSelectedLocalDrivingLicenseApplicationID();
 
@@ -205,7 +205,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             ScheduleTestsMenue.Enabled = !allPassed;
             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = allPassed;
         }
-        private void _LoadStatusCancelled()
+        private void LoadStatusCancelled()
         {
 
             showDetailsToolStripMenuItem.Enabled = true;
@@ -224,15 +224,15 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
             string status = GetSelectedStatus();
             if (status == "New")
             {
-                _LoadStatusNew();
+                LoadStatusNew();
             }
             else if (status == "Completed")
             {
-                _LoadStatusCompleted();
+                LoadStatusCompleted();
             }
             else if (status == "Cancelled")
             {
-                _LoadStatusCancelled();
+                LoadStatusCancelled();
             }
 
         }
@@ -245,7 +245,7 @@ new ParameterOverride("LDLApplicationID", SelectedColumn)
 
 
             frm.ShowDialog();
-            _loadData(); 
+            LoadData(); 
         }
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {

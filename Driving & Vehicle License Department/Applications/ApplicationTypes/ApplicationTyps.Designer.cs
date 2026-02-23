@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿namespace DrivingVehicleLicenseDepartment
 {
     partial class ApplicationTypes
     {
@@ -108,7 +108,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(552, 641);
             this.btnClose.Name = "btnClose";
@@ -121,7 +121,7 @@
             // pbApplicationTypesmage
             // 
             this.pbApplicationTypesmage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbApplicationTypesmage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Application_Types_512;
+            this.pbApplicationTypesmage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Application_Types_512;
             this.pbApplicationTypesmage.InitialImage = null;
             this.pbApplicationTypesmage.Location = new System.Drawing.Point(239, 14);
             this.pbApplicationTypesmage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
+namespace DrivingVehicleLicenseDepartment.Applications.ManageTestTypes
 {
     public partial class ManageTestTypes : GeneralForm
     {
-        ITestTypesServices _manageTestTypes;
-        private void loadData()
+      readonly  ITestTypesServices _manageTestTypes;
+        private void LoadData()
         {
 
             dgvTestTypes.DataSource = _manageTestTypes.GetAll();
@@ -31,7 +31,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
         {
             InitializeComponent();
             _manageTestTypes = manageTestTypes ;
-            loadData();
+            LoadData();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
             DataRow dataRow = ((DataRowView)dgvRow.DataBoundItem).Row;
             UpdateTestType updateTestType = new UpdateTestType(dataRow);
             updateTestType.ShowDialog();
-            loadData();
+            LoadData();
         }
     }
 }

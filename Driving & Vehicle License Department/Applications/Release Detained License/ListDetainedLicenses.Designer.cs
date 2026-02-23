@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Rlease_Detained_License
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Release_Detained_License
 {
     partial class ListDetainedLicenses
     {
@@ -168,7 +168,7 @@
             // btnReleaseDetainedLicense
             // 
             this.btnReleaseDetainedLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReleaseDetainedLicense.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Release_Detained_License_641;
+            this.btnReleaseDetainedLicense.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Release_Detained_License_641;
             this.btnReleaseDetainedLicense.Location = new System.Drawing.Point(1184, 242);
             this.btnReleaseDetainedLicense.Name = "btnReleaseDetainedLicense";
             this.btnReleaseDetainedLicense.Size = new System.Drawing.Size(88, 75);
@@ -179,7 +179,7 @@
             // btnDetainLicense
             // 
             this.btnDetainLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetainLicense.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_64;
+            this.btnDetainLicense.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_64;
             this.btnDetainLicense.Location = new System.Drawing.Point(1278, 242);
             this.btnDetainLicense.Name = "btnDetainLicense";
             this.btnDetainLicense.Size = new System.Drawing.Size(88, 75);
@@ -192,7 +192,7 @@
             this.btnClose.AutoEllipsis = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(1231, 673);
             this.btnClose.Name = "btnClose";
@@ -205,7 +205,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Detain_5121;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Detain_5121;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(628, 3);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -230,7 +230,7 @@
             // 
             // PesonDetailsToolStripMenuItem
             // 
-            this.PesonDetailsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Person_32;
+            this.PesonDetailsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Person_32;
             this.PesonDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.PesonDetailsToolStripMenuItem.Name = "PesonDetailsToolStripMenuItem";
             this.PesonDetailsToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
@@ -239,7 +239,7 @@
             // 
             // showDetailsToolStripMenuItem
             // 
-            this.showDetailsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_View_32;
+            this.showDetailsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_View_32;
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
@@ -248,7 +248,7 @@
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
-            this.showPersonLicenseHistoryToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonLicenseHistory_32;
+            this.showPersonLicenseHistoryToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonLicenseHistory_32;
             this.showPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
             this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
@@ -262,7 +262,7 @@
             // 
             // releaseDetainedLicenseToolStripMenuItem
             // 
-            this.releaseDetainedLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Release_Detained_License_32;
+            this.releaseDetainedLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Release_Detained_License_32;
             this.releaseDetainedLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
             this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(280, 38);

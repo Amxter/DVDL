@@ -1,20 +1,20 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Applications.Tests.User_Controls;
-using Driving___Vehicle_License_Department.Properties;
-using Driving___Vehicle_License_Department.Users;
+using DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls;
+using DrivingVehicleLicenseDepartment.Properties;
+
 using PresentationDVLD;
 using System;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
-using static Driving___Vehicle_License_Department.Applications.Tests.ListTestsAppointments;
+using static DrivingVehicleLicenseDepartment.Applications.Tests.ListTestsAppointments;
 
-namespace Driving___Vehicle_License_Department.Applications.Tests
+namespace DrivingVehicleLicenseDepartment.Applications.Tests
 {
     public partial class ListTestsAppointments : GeneralForm
-    {   
-        ITestAppointmentServices _testAppointmentServices;
+    {
+        readonly ITestAppointmentServices _testAppointmentServices;
         public enum TestType
         {
             Vision = 1 , Written, Practical 
@@ -41,7 +41,7 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
 
             lblRecordsCount.Text = dgvLicenseTestAppointments.Rows.Count.ToString() + " Records Found";
         }
-        private void _LoadVision ()
+        private void LoadVision ()
         {
             this.Text = "List Vision Test Appointments";
             lblTitle.Text = "Vision Test Appointments";
@@ -53,14 +53,14 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
         {
            return dgvLicenseTestAppointments.CurrentRow != null ? Convert.ToInt32(dgvLicenseTestAppointments.CurrentRow.Cells["TestAppointmentID"].Value) : -1;
         }
-        private void _LoadWritten()
+        private void LoadWritten()
         {
             this.Text = "List Written Test Appointments";
             lblTitle.Text = "Written Test Appointments";
             pbTestTypeImage.Image = Resources.Written_Test_512 ;
             localDrivingLicenseApplicationInfo1.LoadData(_lDLApplicationID);
         }
-        private void _LoadPractical()
+        private void LoadPractical()
         {
             this.Text = "List Practical Test Appointments";
             lblTitle.Text = "Practical Test Appointments";
@@ -73,13 +73,13 @@ namespace Driving___Vehicle_License_Department.Applications.Tests
             switch (testType)
             {
                 case TestType.Vision:
-                    _LoadVision();
+                    LoadVision();
                     break;
                 case TestType.Written:
-                    _LoadWritten();
+                    LoadWritten();
                     break;
                 case TestType.Practical:
-                    _LoadPractical();
+                    LoadPractical();
                     break;
                 default:
                     break;

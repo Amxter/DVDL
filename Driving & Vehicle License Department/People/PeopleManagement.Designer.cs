@@ -100,7 +100,7 @@
             // 
             // showToolStripMenuItem
             // 
-            this.showToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonDetails_32;
+            this.showToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonDetails_32;
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
             this.showToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.showToolStripMenuItem.Text = "Show Details ";
@@ -113,7 +113,7 @@
             // 
             // addNewPersonToolStripMenuItem
             // 
-            this.addNewPersonToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Add_Person_401;
+            this.addNewPersonToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Add_Person_401;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
             this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.addNewPersonToolStripMenuItem.Text = "Add new Person ";
@@ -121,7 +121,7 @@
             // 
             // editPersonToolStripMenuItem
             // 
-            this.editPersonToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.edit_32;
+            this.editPersonToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.edit_32;
             this.editPersonToolStripMenuItem.Name = "editPersonToolStripMenuItem";
             this.editPersonToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.editPersonToolStripMenuItem.Text = "Edit Person";
@@ -129,7 +129,7 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Delete_32;
+            this.deleteToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Delete_32;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.deleteToolStripMenuItem.Text = "Delete ";
@@ -142,7 +142,7 @@
             // 
             // sendEmailToolStripMenuItem
             // 
-            this.sendEmailToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.send_email_32;
+            this.sendEmailToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.send_email_32;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
@@ -150,7 +150,7 @@
             // 
             // phoneCallToolStripMenuItem
             // 
-            this.phoneCallToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.call_32;
+            this.phoneCallToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.call_32;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.phoneCallToolStripMenuItem.Text = "Phone call";
@@ -226,7 +226,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.button2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(1232, 710);
             this.button2.Name = "button2";
@@ -238,7 +238,7 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Driving___Vehicle_License_Department.Properties.Resources.Add_Person_40;
+            this.button1.BackgroundImage = global::DrivingVehicleLicenseDepartment.Properties.Resources.Add_Person_40;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.Location = new System.Drawing.Point(1254, 256);
@@ -250,7 +250,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.People_400;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.People_400;
             this.pictureBox1.Location = new System.Drawing.Point(533, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(307, 256);

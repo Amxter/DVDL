@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 
-namespace Driving___Vehicle_License_Department.Licenses.International
+namespace DrivingVehicleLicenseDepartment.Licenses.International
 {
     public partial class ListInternationalLicenses : GeneralForm
     {
         
         
-        IInternationalLicenseService _internationalLicenseService;
+       readonly IInternationalLicenseService _internationalLicenseService;
         DataTable _dtInternationalLicenseApplications;
         private void _LoadData ()
         {
@@ -87,8 +87,6 @@ namespace Driving___Vehicle_License_Department.Licenses.International
                 if (cbFilterBy.Text == "None")
                 {
                     txtFilterValue.Enabled = false;
-                    //_dtDetainedLicenses.DefaultView.RowFilter = "";
-                    //lblTotalRecords.Text = dgvDetainedLicenses.Rows.Count.ToString();
 
                 }
                 else

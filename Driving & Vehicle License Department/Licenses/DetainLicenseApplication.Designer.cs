@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses
 {
     partial class DetainLicenseApplication
     {
@@ -49,7 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.driverLicenseInfoWithFilter1 = new Driving___Vehicle_License_Department.Licenses.Local_Licenses.DriverLicenseInfoWithFilter();
+            this.driverLicenseInfoWithFilter1 = new DrivingVehicleLicenseDepartment.Licenses.Local_Licenses.DriverLicenseInfoWithFilter();
             this.gpDetain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(598, 699);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -98,7 +98,7 @@
             // 
             this.btnDetain.Enabled = false;
             this.btnDetain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetain.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_321;
+            this.btnDetain.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_321;
             this.btnDetain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetain.Location = new System.Drawing.Point(732, 699);
             this.btnDetain.Name = "btnDetain";

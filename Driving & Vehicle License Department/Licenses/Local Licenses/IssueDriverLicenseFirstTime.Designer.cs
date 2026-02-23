@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.Local_Licenses
 {
     partial class IssueDriverLicenseFirstTime
     {
@@ -33,7 +33,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnIssueLicense = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.localDrivingLicenseApplicationInfo1 = new Driving___Vehicle_License_Department.Applications.Application.LocalDrivingLicenseApplicationInfo();
+            this.localDrivingLicenseApplicationInfo1 = new DrivingVehicleLicenseDepartment.Applications.Application.LocalDrivingLicenseApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(645, 506);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -75,7 +75,7 @@
             // btnIssueLicense
             // 
             this.btnIssueLicense.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIssueLicense.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_Type_32;
+            this.btnIssueLicense.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_Type_32;
             this.btnIssueLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIssueLicense.Location = new System.Drawing.Point(779, 506);
             this.btnIssueLicense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -88,7 +88,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Notes_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Notes_32;
             this.pictureBox1.Location = new System.Drawing.Point(89, 370);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);

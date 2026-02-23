@@ -1,6 +1,6 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Properties;
+using DrivingVehicleLicenseDepartment.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.IO;
 
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Licenses.Local_Licenses
+namespace DrivingVehicleLicenseDepartment.Licenses.Local_Licenses
 {
     public partial class LocalLicensesInfo : UserControl
     {

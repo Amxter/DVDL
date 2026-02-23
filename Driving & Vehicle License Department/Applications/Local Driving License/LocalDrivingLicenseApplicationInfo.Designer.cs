@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Application
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Application
 {
     partial class LocalDrivingLicenseApplicationInfo
     {
@@ -40,7 +40,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblLocalDrivingLicenseApplicationID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.applicationBasicInfo1 = new Driving___Vehicle_License_Department.Applications.ApplicationBasicInfo();
+            this.applicationBasicInfo1 = new DrivingVehicleLicenseDepartment.Applications.ApplicationBasicInfo();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,7 +82,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_View_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_View_32;
             this.pictureBox3.Location = new System.Drawing.Point(112, 73);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 26);
@@ -92,7 +92,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PassedTests_321;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PassedTests_321;
             this.pictureBox1.Location = new System.Drawing.Point(467, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
@@ -124,7 +124,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_Type_32;
+            this.pictureBox7.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_Type_32;
             this.pictureBox7.Location = new System.Drawing.Point(467, 36);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 26);
@@ -156,7 +156,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(111, 36);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 26);

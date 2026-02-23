@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessDVLD;
 
-namespace Driving___Vehicle_License_Department.Users
+namespace DrivingVehicleLicenseDepartment.Users
 {
     public partial class ChangePassword : GeneralForm
     {
@@ -17,7 +17,7 @@ namespace Driving___Vehicle_License_Department.Users
         bool _IsCurrentUserCorrect;
         bool _IsNewPasswordMatch;
 
-        IUserServices _userServices;
+       readonly IUserServices _userServices;
         public ChangePassword(IUserServices userServices , int user)
         {
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace Driving___Vehicle_License_Department.Users
 
 
         }
-        private void _IsMatchPasswords()
+        private void IsMatchPasswords()
         {
             if (txtNewPassword.Text.Trim() != txtConfirmPassword.Text.Trim())
             {
@@ -82,7 +82,7 @@ namespace Driving___Vehicle_License_Department.Users
             else
             {
                 errorProvider1.SetError(txtConfirmPassword, null);
-                _IsMatchPasswords();
+                IsMatchPasswords();
             }
         }
 
@@ -96,7 +96,7 @@ namespace Driving___Vehicle_License_Department.Users
             else
             {
                 errorProvider1.SetError(txtNewPassword, null);
-                _IsMatchPasswords();
+                IsMatchPasswords();
             }
 
 

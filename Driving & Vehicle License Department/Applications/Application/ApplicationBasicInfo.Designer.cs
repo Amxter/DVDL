@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications
+﻿namespace DrivingVehicleLicenseDepartment.Applications
 {
     partial class ApplicationBasicInfo
     {
@@ -123,7 +123,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox8.Location = new System.Drawing.Point(724, 69);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(31, 26);
@@ -144,7 +144,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Driving___Vehicle_License_Department.Properties.Resources.ApplicationType;
+            this.pictureBox7.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.ApplicationType;
             this.pictureBox7.Location = new System.Drawing.Point(109, 132);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 26);
@@ -176,7 +176,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Person_321;
+            this.pictureBox6.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Person_321;
             this.pictureBox6.Location = new System.Drawing.Point(109, 165);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(31, 26);
@@ -208,7 +208,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox5.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox5.Location = new System.Drawing.Point(109, 69);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
@@ -240,7 +240,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(109, 37);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 26);
@@ -250,7 +250,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.User_32__21;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.User_32__21;
             this.pictureBox1.Location = new System.Drawing.Point(724, 101);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
@@ -304,7 +304,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(109, 101);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 26);
@@ -325,7 +325,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox4.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox4.Location = new System.Drawing.Point(724, 37);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 26);

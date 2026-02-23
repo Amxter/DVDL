@@ -9,17 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
+namespace DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls
 {
     public partial class ScheduleTest : UserControl
     {
-        IApplicationServices _applicationServices;
-        IApplicationTypesServices _applicationTypesServices;
-        ILDLApplicationServices _lDLApplicationServices;
-        ILicenseClassServices _licenseClassServices;
-        IPersonServices _personServices;
-        ITestTypesServices _testTypeServices;
-        ITestAppointmentServices _testAppointmentServices;
+       readonly IApplicationServices _applicationServices;
+       readonly IApplicationTypesServices _applicationTypesServices;
+       readonly ILDLApplicationServices _lDLApplicationServices;
+       readonly ILicenseClassServices _licenseClassServices;
+       readonly IPersonServices _personServices;
+       readonly ITestTypesServices _testTypeServices;
+        readonly ITestAppointmentServices _testAppointmentServices;
         public enum Mode
         {
             Add, Update
@@ -64,44 +64,44 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
              _applicationServices = ServiceFactory.CreateApplicationServices();
             _applicationTypesServices = ServiceFactory.CreateApplicationTypesServices();
         }
-        private void _LoadVision()
+        private void LoadVision()
         {
             this.Text = "Schedule Vision Test";
             gbTestType.Text = "Vision Test";
             pbTestTypeImage.Image = Properties.Resources.Vision_512;
 
         }
-        private void _LoadWritten()
+        private void LoadWritten()
         {
             this.Text = "Schedule Written Test";
             gbTestType.Text = "Written Test";
             pbTestTypeImage.Image = Properties.Resources.Written_Test_321;
         }
-        private void _LoadPractical()
+        private void LoadPractical()
         {
             this.Text = "Schedule Practical Test";
             gbTestType.Text = "Practical Test";
             pbTestTypeImage.Image = Properties.Resources.driving_test_512;
         }
-        private void _LoadForm(TestType testType)
+        private void LoadForm(TestType testType)
         {
             switch (testType)
             {
                 case TestType.Vision:
-                    _LoadVision();
+                    LoadVision();
                     break;
                 case TestType.Written:
-                    _LoadWritten();
+                    LoadWritten();
                     break;
                 case TestType.Practical:
-                    _LoadPractical();
+                    LoadPractical();
                     break;
                 default:
                     break;
             }
 
         }
-        private void _LoadDataFromAdd(int LDLApplication)
+        private void LoadDataFromAdd(int LDLApplication)
         {
             _lDLApplicationDTO = _lDLApplicationServices.GetByID(LDLApplication);
             lblLocalDrivingLicenseAppID.Text = _lDLApplicationDTO.LocalDrivingLicenseApplicationID.ToString();
@@ -131,7 +131,7 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
             IsSaveEnabled = false;
             lblUserMessage.Enabled = true;
         }
-        private void _LoadDataFromUpdate(int LDLApplication)
+        private void LoadDataFromUpdate(int LDLApplication)
         {
             _lDLApplicationDTO = _lDLApplicationServices.GetByID(LDLApplication);
             _testAppointmentDTO = _testAppointmentServices.GetByID(_testAppointmentID );
@@ -169,34 +169,34 @@ namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
         public void LoadScheduleTest(Mode mode, TestType testType, int LDLApplication )
         {
 
-            _LoadForm(testType);
+            LoadForm(testType);
             _TestType = testType;
             _mode = mode;
              
             if (mode == Mode.Add)
             {
-                _LoadDataFromAdd(LDLApplication);
+                LoadDataFromAdd(LDLApplication);
             }
             else if (mode == Mode.Update)
             {
-                _LoadDataFromUpdate(LDLApplication);
+                LoadDataFromUpdate(LDLApplication);
             }
 
         }
         public void LoadScheduleTest(Mode mode, TestType testType, int LDLApplication , int testAppointment )
         {
 
-            _LoadForm(testType);
+            LoadForm(testType);
             _TestType = testType;
             _mode = mode;
             _testAppointmentID = testAppointment;
             if (mode == Mode.Add)
             {
-                _LoadDataFromAdd(LDLApplication);
+                LoadDataFromAdd(LDLApplication);
             }
             else if (mode == Mode.Update)
             {
-                _LoadDataFromUpdate(LDLApplication);
+                LoadDataFromUpdate(LDLApplication);
             }
 
         }

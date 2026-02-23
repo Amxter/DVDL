@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Tests
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Tests
 {
     partial class ScheduleTestForm
     {
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.scheduleTest1 = new Driving___Vehicle_License_Department.Applications.Tests.User_Controls.ScheduleTest();
+            this.scheduleTest1 = new DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls.ScheduleTest();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(198, 708);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

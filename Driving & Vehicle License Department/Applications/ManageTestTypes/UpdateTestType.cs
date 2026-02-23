@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.ManageTestTypes
+namespace DrivingVehicleLicenseDepartment.Applications.ManageTestTypes
 {
     public partial class UpdateTestType : GeneralForm
     {
         int _ID;
-        ITestTypesServices _manageTestTypesServices;
+        readonly ITestTypesServices _manageTestTypesServices;
         private void Initial(DataRow dataRow)
         {
             _ID = Convert.ToInt32(dataRow["TestTypeID"]);

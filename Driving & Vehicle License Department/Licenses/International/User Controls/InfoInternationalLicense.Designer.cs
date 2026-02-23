@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.International.User_Controls
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.International.User_Controls
 {
     partial class InfoInternationalLicense
     {
@@ -126,7 +126,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.pictureBox7.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.pictureBox7.Location = new System.Drawing.Point(502, 73);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox7.Name = "pictureBox7";
@@ -170,7 +170,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Person_32;
+            this.pictureBox8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Person_32;
             this.pictureBox8.Location = new System.Drawing.Point(146, 32);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";
@@ -181,7 +181,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Question_32;
+            this.pictureBox10.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Question_32;
             this.pictureBox10.Location = new System.Drawing.Point(502, 109);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox10.Name = "pictureBox10";
@@ -203,7 +203,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.pictureBox9.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.pictureBox9.Location = new System.Drawing.Point(146, 68);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox9.Name = "pictureBox9";
@@ -237,7 +237,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(502, 180);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
@@ -259,7 +259,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(146, 106);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -347,7 +347,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox4.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox4.Location = new System.Drawing.Point(502, 144);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox4.Name = "pictureBox4";
@@ -391,7 +391,7 @@
             // 
             // pbGendor
             // 
-            this.pbGendor.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Man_32;
+            this.pbGendor.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Man_32;
             this.pbGendor.Location = new System.Drawing.Point(146, 180);
             this.pbGendor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbGendor.Name = "pbGendor";
@@ -402,7 +402,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox6.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox6.Location = new System.Drawing.Point(502, 216);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
@@ -413,7 +413,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox5.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox5.Location = new System.Drawing.Point(146, 216);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox5.Name = "pictureBox5";
@@ -424,7 +424,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox3.Location = new System.Drawing.Point(146, 144);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
@@ -492,7 +492,7 @@
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Male_512;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Male_512;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(669, 56);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);

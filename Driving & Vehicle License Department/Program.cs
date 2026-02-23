@@ -1,26 +1,26 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department;
-using Driving___Vehicle_License_Department.Applications.ApplicationTypes;
-using Driving___Vehicle_License_Department.Applications.Local_Driving_License;
-using Driving___Vehicle_License_Department.Applications.ManageTestTypes;
-using Driving___Vehicle_License_Department.Applications.Renew_Local_Driving_license;
-using Driving___Vehicle_License_Department.Applications.ReplaceLostOrDamagedLicense;
-using Driving___Vehicle_License_Department.Applications.Rlease_Detained_License;
-using Driving___Vehicle_License_Department.Applications.Tests;
-using Driving___Vehicle_License_Department.Drivers;
-using Driving___Vehicle_License_Department.Licenses;
-using Driving___Vehicle_License_Department.Licenses.International;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
-using Driving___Vehicle_License_Department.Login;
-using Driving___Vehicle_License_Department.Users;
+using DrivingVehicleLicenseDepartment;
+using DrivingVehicleLicenseDepartment.Applications.ApplicationTypes;
+using DrivingVehicleLicenseDepartment.Applications.Local_Driving_License;
+using DrivingVehicleLicenseDepartment.Applications.ManageTestTypes;
+using DrivingVehicleLicenseDepartment.Applications.Renew_Local_Driving_license;
+using DrivingVehicleLicenseDepartment.Applications.ReplaceLostOrDamagedLicense;
+using DrivingVehicleLicenseDepartment.Applications.Release_Detained_License;
+using DrivingVehicleLicenseDepartment.Applications.Tests;
+using DrivingVehicleLicenseDepartment.Drivers;
+using DrivingVehicleLicenseDepartment.Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.International;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Login;
+using DrivingVehicleLicenseDepartment.Users;
 using System;
 using Unity;
 
 
 
 
-using DVLD = Driving___Vehicle_License_Department ;
+using DVLD = DrivingVehicleLicenseDepartment ;
 
 
 namespace PresentationDVLD
@@ -101,7 +101,7 @@ namespace PresentationDVLD
             Container.RegisterType<ListInternationalLicenses>(); 
             Container.RegisterType<RenewLocalDrivingLicenseApplication>(); 
             Container.RegisterType<ReplaceLostOrDamagedLicense>(); 
-            Container.RegisterType<DVLD.Applications.Rlease_Detained_License.DetainLicenseApplication>();
+            Container.RegisterType<DVLD.Applications.Release_Detained_License.DetainLicenseApplication>();
             Container.RegisterType<ReleaseDetainedLicenseApplication>(); 
             Container.RegisterType<ListDetainedLicenses>();
             Container.RegisterType<ShowDetailsPerson>();

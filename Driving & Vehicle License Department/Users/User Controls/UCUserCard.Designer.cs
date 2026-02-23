@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Users
+﻿namespace DrivingVehicleLicenseDepartment.Users
 {
     partial class UCUserCard
     {
@@ -35,7 +35,7 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucDetailsPerson1 = new Driving___Vehicle_License_Department.UCDetailsPerson();
+            this.ucDetailsPerson1 = new DrivingVehicleLicenseDepartment.UCDetailsPerson();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 

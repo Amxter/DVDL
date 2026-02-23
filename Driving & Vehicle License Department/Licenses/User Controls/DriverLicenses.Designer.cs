@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses
 {
     partial class DriverLicenses
     {

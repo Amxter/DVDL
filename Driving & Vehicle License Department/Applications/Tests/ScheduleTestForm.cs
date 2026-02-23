@@ -1,4 +1,4 @@
-﻿using Driving___Vehicle_License_Department.Applications.Tests.User_Controls;
+﻿using DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.Tests
+namespace DrivingVehicleLicenseDepartment.Applications.Tests
 {
     public partial class ScheduleTestForm : GeneralForm
     {

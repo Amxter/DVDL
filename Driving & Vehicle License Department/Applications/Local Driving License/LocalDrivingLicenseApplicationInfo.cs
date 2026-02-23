@@ -1,5 +1,5 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Applications.Application
+namespace DrivingVehicleLicenseDepartment.Applications.Application
 {
     public partial class LocalDrivingLicenseApplicationInfo : UserControl
     {
@@ -53,7 +53,7 @@ namespace Driving___Vehicle_License_Department.Applications.Application
                 lblLocalDrivingLicenseApplicationID.Text = _lDLApplicationDTO.LocalDrivingLicenseApplicationID.ToString();
                 lblAppliedFor.Text = _licenseClassServices.GetByID(_lDLApplicationDTO.LicenseClassID ).ClassName.ToString() ;
                 lblPassedTests.Text = _dlApplicationServices.GetPassedTestCount(localApplicationID).ToString() + "/3";
-                applicationBasicInfo1.loadData(_lDLApplicationDTO.Application.ApplicationID);
+                applicationBasicInfo1.LoadData(_lDLApplicationDTO.Application.ApplicationID);
 
             }
             else

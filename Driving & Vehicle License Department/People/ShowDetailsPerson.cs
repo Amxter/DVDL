@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
     public partial class ShowDetailsPerson : GeneralForm
     {

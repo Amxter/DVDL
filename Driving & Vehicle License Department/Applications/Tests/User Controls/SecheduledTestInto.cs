@@ -10,15 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
+namespace DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls
 {
     public partial class ScheduledTestInto : UserControl
     {
  
-        ILDLApplicationServices _lDLApplicationServices;
-        ILicenseClassServices _licenseClassServices;
-        IPersonServices _personServices;
-        ITestAppointmentServices _testAppointmentServices;
+       readonly ILDLApplicationServices _lDLApplicationServices;
+       readonly ILicenseClassServices _licenseClassServices;
+       readonly IPersonServices _personServices;
+        readonly ITestAppointmentServices _testAppointmentServices;
         public ScheduledTestInto()
         {
 

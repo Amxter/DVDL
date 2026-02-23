@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses
+﻿namespace DrivingVehicleLicenseDepartment.Licenses
 {
     partial class ShowPersonLicenseHistory
     {
@@ -30,16 +30,16 @@
         {
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.driverLicenses1 = new Driving___Vehicle_License_Department.Licenses.DriverLicenses();
+            this.driverLicenses1 = new DrivingVehicleLicenseDepartment.Licenses.DriverLicenses();
             this.btnClose = new System.Windows.Forms.Button();
-            this.filterPerson1 = new Driving___Vehicle_License_Department.People.User_Controls.FilterPerson();
+            this.filterPerson1 = new DrivingVehicleLicenseDepartment.People.User_Controls.FilterPerson();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pbPersonImage
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonLicenseHistory_512;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonLicenseHistory_512;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(8, 185);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -72,7 +72,7 @@
             this.btnClose.AutoEllipsis = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(943, 790);
             this.btnClose.Name = "btnClose";

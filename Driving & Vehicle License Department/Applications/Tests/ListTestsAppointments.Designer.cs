@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Tests
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Tests
 {
     partial class ListTestsAppointments
     {
@@ -38,7 +38,7 @@
             this.cmsApplications = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localDrivingLicenseApplicationInfo1 = new Driving___Vehicle_License_Department.Applications.Application.LocalDrivingLicenseApplicationInfo();
+            this.localDrivingLicenseApplicationInfo1 = new DrivingVehicleLicenseDepartment.Applications.Application.LocalDrivingLicenseApplicationInfo();
             this.btnAddNewAppointment = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pbTestTypeImage = new System.Windows.Forms.PictureBox();
@@ -127,7 +127,7 @@
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.edit_32;
             this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
@@ -136,7 +136,7 @@
             // 
             // takeTestToolStripMenuItem
             // 
-            this.takeTestToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Test_32;
+            this.takeTestToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Test_32;
             this.takeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
             this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
@@ -154,7 +154,7 @@
             // btnAddNewAppointment
             // 
             this.btnAddNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewAppointment.Image = global::Driving___Vehicle_License_Department.Properties.Resources.AddAppointment_32;
+            this.btnAddNewAppointment.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.AddAppointment_32;
             this.btnAddNewAppointment.Location = new System.Drawing.Point(851, 534);
             this.btnAddNewAppointment.Name = "btnAddNewAppointment";
             this.btnAddNewAppointment.Size = new System.Drawing.Size(49, 36);
@@ -167,7 +167,7 @@
             this.btnClose.AutoEllipsis = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(765, 742);
             this.btnClose.Name = "btnClose";
@@ -180,7 +180,7 @@
             // pbTestTypeImage
             // 
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbTestTypeImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Written_Test_512;
+            this.pbTestTypeImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Written_Test_512;
             this.pbTestTypeImage.InitialImage = null;
             this.pbTestTypeImage.Location = new System.Drawing.Point(436, 0);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

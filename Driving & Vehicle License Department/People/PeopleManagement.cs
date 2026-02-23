@@ -1,6 +1,6 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department;
+using DrivingVehicleLicenseDepartment;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -12,8 +12,8 @@ namespace PresentationDVLD
 {
     public partial class PeopleManagement : GeneralForm
     {
-        private IPersonServices _personServices;
-        private ICountryServices _countryServices;
+        readonly private IPersonServices _personServices;
+        readonly private ICountryServices _countryServices;
         DataTable dt;
         enum FilterOptions
         {
@@ -28,7 +28,7 @@ namespace PresentationDVLD
         }
         FilterOptions _FilterOptions;
 
-        private void _LoadPeopleData()
+        private void LoadPeopleData()
         {
             dt = _personServices.GetAll();
             dgvPeople.DataSource = dt.DefaultView;
@@ -40,18 +40,18 @@ namespace PresentationDVLD
             InitializeComponent();
             _personServices = personServices;
             _countryServices = countryServices ;
-            _LoadPeopleData();
+            LoadPeopleData();
             dgvPeople.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        private void _ToggleFilterInput(bool isShow, FilterOptions filterOptions)
+        private void ToggleFilterInput(bool isShow, FilterOptions filterOptions)
         {
 
             txbFilterBy.Visible = isShow;
             cbSearch.Visible = !isShow;
             _FilterOptions = filterOptions;
         }
-        private void _loadFilterOptions(string option)
+        private void loadFilterOptions(string option)
         {
             if (option == "None")
             {
@@ -66,27 +66,27 @@ namespace PresentationDVLD
             }
             else if (option == "PersonID")
             {
-                _ToggleFilterInput(true, FilterOptions.PersonID);
+                ToggleFilterInput(true, FilterOptions.PersonID);
             }
             else if (option == "FullName")
             {
-                _ToggleFilterInput(true, FilterOptions.FullName);
+                ToggleFilterInput(true, FilterOptions.FullName);
             }
             else if (option == "NationalNo")
             {
-                _ToggleFilterInput(true, FilterOptions.NationalNo);
+                ToggleFilterInput(true, FilterOptions.NationalNo);
             }
             else if (option == "Email")
             {
-                _ToggleFilterInput(true, FilterOptions.Email);
+                ToggleFilterInput(true, FilterOptions.Email);
             }
             else if (option == "Phone")
             {
-                _ToggleFilterInput(true, FilterOptions.Phone);
+                ToggleFilterInput(true, FilterOptions.Phone);
             }
             else if (option == "Gendor")
             {
-                _ToggleFilterInput(false, FilterOptions.Gendor);
+                ToggleFilterInput(false, FilterOptions.Gendor);
                 cbSearch.DataSource = null;
                 cbSearch.Items.Clear();
                 cbSearch.Items.Add("Male");
@@ -94,7 +94,7 @@ namespace PresentationDVLD
             }
             else if (option == "Nationality")
             {
-                _ToggleFilterInput(false, FilterOptions.Nationality);
+                ToggleFilterInput(false, FilterOptions.Nationality);
                 cbSearch.Items.Clear();
                 cbSearch.DataSource = _countryServices.GetAll();
                 cbSearch.DisplayMember = "CountryName";
@@ -108,10 +108,10 @@ namespace PresentationDVLD
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            _loadFilterOptions(cbFilter.Text);
+            loadFilterOptions(cbFilter.Text);
 
         }
-        private void _LoadDataBeforeSearch()
+        private void LoadDataBeforeSearch()
         {
 
         
@@ -186,7 +186,7 @@ namespace PresentationDVLD
         }
         private void txbFilterBy_TextChanged(object sender, EventArgs e)
         {
-            _LoadDataBeforeSearch();
+            LoadDataBeforeSearch();
         }
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -213,7 +213,7 @@ namespace PresentationDVLD
         }
         private void LoadPeopleData(int id )
         {
-            _LoadPeopleData();
+            LoadPeopleData();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -221,7 +221,7 @@ namespace PresentationDVLD
             frm.OnDataSent += LoadPeopleData;
             frm.ShowDialog();
  
-           _LoadPeopleData();
+           LoadPeopleData();
         }
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -229,7 +229,7 @@ namespace PresentationDVLD
            
             frm.ShowDialog();
  
-            _LoadPeopleData();
+            LoadPeopleData();
         }
         private int GetSelectedPersonID()
         {
@@ -248,7 +248,7 @@ namespace PresentationDVLD
                 frm.ShowDialog();
                
                 
-                _LoadPeopleData();
+                LoadPeopleData();
             }
 
             
@@ -259,7 +259,7 @@ namespace PresentationDVLD
             if (_personServices.Delete(GetSelectedPersonID()))
             {
                 MessageBox.Show("Person deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _LoadPeopleData();
+                LoadPeopleData();
             }
             else
             {
@@ -275,7 +275,7 @@ namespace PresentationDVLD
                    new ParameterOverride("id", personID));
 
                 frm.ShowDialog();
-                _LoadPeopleData(); 
+                LoadPeopleData(); 
             }
             else
             {

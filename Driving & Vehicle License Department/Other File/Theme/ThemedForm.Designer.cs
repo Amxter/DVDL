@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Ather_File
+﻿namespace DrivingVehicleLicenseDepartment.Ather_File
 {
     partial class ThemedForm
     {

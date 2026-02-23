@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Licenses.International
+﻿namespace DrivingVehicleLicenseDepartment.Licenses.International
 {
     partial class ShowInternationalLicense
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.infoInternationalLicense1 = new Driving___Vehicle_License_Department.Licenses.International.User_Controls.InfoInternationalLicense();
+            this.infoInternationalLicense1 = new DrivingVehicleLicenseDepartment.Licenses.International.User_Controls.InfoInternationalLicense();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(741, 440);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -84,7 +84,7 @@
             // pbTestTypeImage
             // 
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbTestTypeImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.LicenseView_400;
+            this.pbTestTypeImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.LicenseView_400;
             this.pbTestTypeImage.InitialImage = null;
             this.pbTestTypeImage.Location = new System.Drawing.Point(393, 7);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -96,7 +96,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.International_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.International_32;
             this.pictureBox1.Location = new System.Drawing.Point(393, 7);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";

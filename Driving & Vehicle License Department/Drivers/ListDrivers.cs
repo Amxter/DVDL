@@ -5,12 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Drivers
+namespace DrivingVehicleLicenseDepartment.Drivers
 {
     public partial class ListDrivers : GeneralForm
     {
 
-        IDriverServices _driverServices;
+       readonly IDriverServices _driverServices;
         enum FilterBy
         {
             None,

@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.People.User_Controls
+﻿namespace DrivingVehicleLicenseDepartment.People.User_Controls
 {
     partial class FilterPerson
     {
@@ -30,7 +30,7 @@
         /*
         private void InitializeComponent()
         {
-            this.ucDetailsPerson1 = new Driving___Vehicle_License_Department.UCDetailsPerson();
+            this.ucDetailsPerson1 = new DrivingVehicleLicenseDepartment.UCDetailsPerson();
             this.gbFilter = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.AddPerson_32;
+            this.button2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.AddPerson_32;
             this.button2.Location = new System.Drawing.Point(619, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 46);
@@ -74,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.SearchPerson;
+            this.button1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.SearchPerson;
             this.button1.Location = new System.Drawing.Point(563, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 46);
@@ -136,7 +136,7 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucDetailsPerson1 = new Driving___Vehicle_License_Department.UCDetailsPerson();
+            this.ucDetailsPerson1 = new DrivingVehicleLicenseDepartment.UCDetailsPerson();
             this.gbFilter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,7 +157,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.AddPerson_32;
+            this.button2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.AddPerson_32;
             this.button2.Location = new System.Drawing.Point(619, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 46);
@@ -167,7 +167,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.SearchPerson;
+            this.button1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.SearchPerson;
             this.button1.Location = new System.Drawing.Point(563, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 46);

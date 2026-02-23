@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using Driving___Vehicle_License_Department.Properties;
+using DrivingVehicleLicenseDepartment.Properties;
 
-namespace Driving___Vehicle_License_Department
+namespace DrivingVehicleLicenseDepartment
 {
 
 
@@ -22,7 +22,7 @@ namespace Driving___Vehicle_License_Department
             Update = 1, Add = -1
         }
 
-        string _imagesFolder;
+        readonly string _imagesFolder;
         string _ImagePath;
         string _oldImagePath;
 
@@ -32,8 +32,8 @@ namespace Driving___Vehicle_License_Department
 
         Mode _mode;
         int _personID;
-        private IPersonServices _personServices;
-        private ICountryServices _countryServices;
+       readonly private IPersonServices _personServices;
+        readonly private ICountryServices _countryServices;
         public AddAndUpdatePerson(IPersonServices personServices, ICountryServices countryServices, int ID = -1)
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Driving___Vehicle_License_Department
 
             _personServices = personServices;
             _countryServices = countryServices;
-            _loadNationality();
+            loadNationality();
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
             dtpDateOfBirth.MaxDate = DateTime.Now.AddHours(1);
             _personID = ID;
@@ -146,7 +146,7 @@ namespace Driving___Vehicle_License_Department
                 MessageBox.Show("Failed to update person.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void _loadNationality()
+        private void loadNationality()
         {
             DataTable dtCountries = _countryServices.GetAll();
             cbNationality.DataSource = dtCountries;
@@ -320,7 +320,7 @@ namespace Driving___Vehicle_License_Department
             if (txtEmail.Text.Trim() == "")
                 return;
 
-            if (!clsValidatoin.ValidateEmail(txtEmail.Text))
+            if (!clsValidations.ValidateEmail(txtEmail.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtEmail, "Invalid Email Address Format!");

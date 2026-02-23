@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+namespace DrivingVehicleLicenseDepartment.Applications.Local_Driving_License
 {
     public partial class FilterLocalDrivingLicenseApplications : UserControl
     {
@@ -38,7 +38,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             if (cbFilterBy.Items.Count > 0)
                 cbFilterBy.SelectedIndex = 0;
         }
-        private void _loadData()
+        private void LoadData()
         {
             if (_dataGridView == null || _dataTable == null) return;
             _dataGridView.DataSource = _dataTable.DefaultView;
@@ -47,7 +47,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
         {
             if (string.IsNullOrEmpty(filterValue))
             {
-                _loadData();
+                LoadData();
             }
             else
             {
@@ -79,7 +79,7 @@ namespace Driving___Vehicle_License_Department.Applications.Local_Driving_Licens
             txtFilterValue.Clear();
             if (cbFilterBy.Text == "None")
             {
-                _loadData();
+                LoadData();
                 _selectedColumnName = "";
                 txtFilterValue.Visible = false;
                 return; 

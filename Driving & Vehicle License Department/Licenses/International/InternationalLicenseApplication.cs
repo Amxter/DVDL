@@ -1,27 +1,20 @@
 ﻿using BusinessDVLD;
 using DatabaseDVLD;
-using Driving___Vehicle_License_Department.Licenses.Local_Licenses;
+using DrivingVehicleLicenseDepartment.Licenses.Local_Licenses;
 using PresentationDVLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Resolution;
 
-namespace Driving___Vehicle_License_Department.Licenses.International
+namespace DrivingVehicleLicenseDepartment.Licenses.International
 {
     public partial class InternationalLicenseApplication : GeneralForm
     {
 
-        IApplicationTypesServices _applicationTypesServices;
-        IInternationalLicenseService _internationalLicenseService;
-        IApplicationServices _applicationServices; 
+       readonly IApplicationTypesServices _applicationTypesServices;
+       readonly IInternationalLicenseService _internationalLicenseService;
+       readonly IApplicationServices _applicationServices;
         int _internationalLicenseID  ;
         public InternationalLicenseApplication(IApplicationTypesServices applicationTypesServices,
             IInternationalLicenseService internationalLicenseService ,
@@ -98,7 +91,7 @@ namespace Driving___Vehicle_License_Department.Licenses.International
             {
                 try
                 {
-                    ApplicationTypesDTO applicationTypesDTO = _applicationTypesServices.GetApplication(6);
+                    ApplicationTypesDTO applicationTypesDTO = _applicationTypesServices.GetApplication(ApplicationTypesIDs.ReplacementInternationalDrivingLicenseService);
 
                     ApplicationDTO applicationDTO = new ApplicationDTO
                     {

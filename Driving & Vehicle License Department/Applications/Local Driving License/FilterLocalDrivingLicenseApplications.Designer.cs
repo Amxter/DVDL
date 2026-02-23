@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Local_Driving_License
 {
     partial class FilterLocalDrivingLicenseApplications
     {

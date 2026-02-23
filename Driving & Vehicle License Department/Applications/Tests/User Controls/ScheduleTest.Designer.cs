@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Tests.User_Controls
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Tests.User_Controls
 {
     partial class ScheduleTest
     {
@@ -112,7 +112,7 @@
             // pbTestTypeImage
             // 
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbTestTypeImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.driving_test_512;
+            this.pbTestTypeImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.driving_test_512;
             this.pbTestTypeImage.InitialImage = null;
             this.pbTestTypeImage.Location = new System.Drawing.Point(163, 30);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -164,7 +164,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox9.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox9.Location = new System.Drawing.Point(406, 40);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox9.Name = "pictureBox9";
@@ -197,7 +197,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox6.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox6.Location = new System.Drawing.Point(140, 40);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
@@ -208,7 +208,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox5.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox5.Location = new System.Drawing.Point(140, 76);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
@@ -252,7 +252,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Calendar_32;
+            this.pictureBox8.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Calendar_32;
             this.pictureBox8.Location = new System.Drawing.Point(132, 436);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";
@@ -288,7 +288,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_Type_32;
+            this.pictureBox7.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_Type_32;
             this.pictureBox7.Location = new System.Drawing.Point(132, 328);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 26);
@@ -321,7 +321,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Driving___Vehicle_License_Department.Properties.Resources.money_32;
+            this.pictureBox3.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(132, 472);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
@@ -354,7 +354,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Number_32;
+            this.pictureBox4.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Number_32;
             this.pictureBox4.Location = new System.Drawing.Point(132, 292);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 26);
@@ -386,7 +386,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Count_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Count_32;
             this.pictureBox1.Location = new System.Drawing.Point(132, 400);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -421,7 +421,7 @@
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(372, 642);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -467,7 +467,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Person_32;
+            this.pictureBox2.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Person_32;
             this.pictureBox2.Location = new System.Drawing.Point(132, 364);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";

@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Drivers
+﻿namespace DrivingVehicleLicenseDepartment.Drivers
 {
     partial class ListDrivers
     {
@@ -141,7 +141,7 @@
             // pbDriverImage
             // 
             this.pbDriverImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbDriverImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Driver_Main1;
+            this.pbDriverImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Driver_Main1;
             this.pbDriverImage.InitialImage = null;
             this.pbDriverImage.Location = new System.Drawing.Point(433, 14);
             this.pbDriverImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -157,7 +157,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(966, 723);
             this.btnClose.Name = "btnClose";

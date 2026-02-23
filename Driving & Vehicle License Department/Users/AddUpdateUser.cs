@@ -1,13 +1,10 @@
 ﻿using BusinessDVLD;
-using Driving___Vehicle_License_Department.Applications;
-using Driving___Vehicle_License_Department.People.User_Controls;
-using PresentationDVLD;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Unity;
 
-namespace Driving___Vehicle_License_Department.Users
+namespace DrivingVehicleLicenseDepartment.Users
 {
     public partial class AddUpdateUser : GeneralForm
     {
@@ -22,16 +19,16 @@ namespace Driving___Vehicle_License_Department.Users
         UserDTO _user;
         UserMode _userMode;
 
-        IUserServices _userServices;
+       readonly IUserServices _userServices;
 
 
-        private void _InitialAddMode()
+        private void InitialAddMode()
         {
             tpLoginInfo.Enabled = false;
             btnSave.Enabled = false;
 
         }
-        private void _InitialUpdateMode()
+        private void InitialUpdateMode()
         {
             lblTitle.Text = "Update User";
 
@@ -54,7 +51,7 @@ namespace Driving___Vehicle_License_Department.Users
                 this.Close();
             }
         }
-        public AddUpdateUser(IUserServices userServices , IPersonServices personServices,int userId)
+        public AddUpdateUser(IUserServices userServices  ,int userId)
         {
             InitializeComponent();
             _userServices = userServices ;
@@ -70,7 +67,7 @@ namespace Driving___Vehicle_License_Department.Users
                 _user.PersonID = -1;
                 _user.UserID = -1;
                 this.Text = "Add User";
-                _InitialAddMode();
+                InitialAddMode();
             }
             else
             {
@@ -80,7 +77,7 @@ namespace Driving___Vehicle_License_Department.Users
                 _user = _userServices.GetByID(userId);
                 _user.UserID = userId;
                 this.Text = "Update User";
-                _InitialUpdateMode();
+                InitialUpdateMode();
             }
             
         }
@@ -122,13 +119,13 @@ namespace Driving___Vehicle_License_Department.Users
                     else
                     {
                         MessageBox.Show("This person already has a user account.");
-                        _InitialAddMode();
+                        InitialAddMode();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Please select a person first.");
-                    _InitialAddMode();
+                    InitialAddMode();
                 }
             }
             else if (_userMode == UserMode.Update)
@@ -149,13 +146,13 @@ namespace Driving___Vehicle_License_Department.Users
                 }
                 else
                 {
-                    _InitialAddMode();
+                    InitialAddMode();
                 }
             }
             else
             {
 
-                _InitialAddMode();
+                InitialAddMode();
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -191,7 +188,7 @@ namespace Driving___Vehicle_License_Department.Users
 
             if (_user.UserID > 0)
             {
-                _InitialUpdateMode();
+                InitialUpdateMode();
                 MessageBox.Show("User added successfully.");
 
             }

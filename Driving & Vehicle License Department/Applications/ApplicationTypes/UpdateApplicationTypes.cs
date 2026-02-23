@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.ApplicationTypes
+namespace DrivingVehicleLicenseDepartment.Applications.ApplicationTypes
 {
     public partial class UpdateApplicationTypes : GeneralForm
     {
-        IApplicationTypesServices _services;
-        int _applicationTypeID;
+        readonly IApplicationTypesServices _services;
+        readonly int _applicationTypeID;
         private void LoadApplicationType(int applicationTypeID)
         {
 

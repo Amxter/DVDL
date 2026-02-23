@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department.Applications.Local_Driving_License
+﻿namespace DrivingVehicleLicenseDepartment.Applications.Local_Driving_License
 {
     partial class ListLocalDrivingLicenseApplication
     {
@@ -56,7 +56,7 @@
             this.btnAddNewApplication = new System.Windows.Forms.Button();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.filterLocalDrivingLicenseApplications1 = new Driving___Vehicle_License_Department.Applications.Local_Driving_License.FilterLocalDrivingLicenseApplications();
+            this.filterLocalDrivingLicenseApplications1 = new DrivingVehicleLicenseDepartment.Applications.Local_Driving_License.FilterLocalDrivingLicenseApplications();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingLicenseApplications)).BeginInit();
             this.cmsApplications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,7 +146,7 @@
             // 
             // showDetailsToolStripMenuItem
             // 
-            this.showDetailsToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonDetails_321;
+            this.showDetailsToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonDetails_321;
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -160,7 +160,7 @@
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.edit_321;
+            this.editToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.edit_321;
             this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -169,7 +169,7 @@
             // 
             // DeleteApplicationToolStripMenuItem
             // 
-            this.DeleteApplicationToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Delete_32_2;
+            this.DeleteApplicationToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Delete_32_2;
             this.DeleteApplicationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.DeleteApplicationToolStripMenuItem.Name = "DeleteApplicationToolStripMenuItem";
             this.DeleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -183,7 +183,7 @@
             // 
             // CancelApplicaitonToolStripMenuItem
             // 
-            this.CancelApplicaitonToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Delete_321;
+            this.CancelApplicaitonToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Delete_321;
             this.CancelApplicaitonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.CancelApplicaitonToolStripMenuItem.Name = "CancelApplicaitonToolStripMenuItem";
             this.CancelApplicaitonToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -201,7 +201,7 @@
             this.scheduleVisionTestToolStripMenuItem,
             this.scheduleWrittenTestToolStripMenuItem,
             this.scheduleStreetTestToolStripMenuItem});
-            this.ScheduleTestsMenue.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Schedule_Test_32;
+            this.ScheduleTestsMenue.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Schedule_Test_32;
             this.ScheduleTestsMenue.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ScheduleTestsMenue.Name = "ScheduleTestsMenue";
             this.ScheduleTestsMenue.Size = new System.Drawing.Size(308, 38);
@@ -210,7 +210,7 @@
             // 
             // scheduleVisionTestToolStripMenuItem
             // 
-            this.scheduleVisionTestToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Vision_Test_32;
+            this.scheduleVisionTestToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Vision_Test_32;
             this.scheduleVisionTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.scheduleVisionTestToolStripMenuItem.Name = "scheduleVisionTestToolStripMenuItem";
             this.scheduleVisionTestToolStripMenuItem.Size = new System.Drawing.Size(247, 38);
@@ -219,7 +219,7 @@
             // 
             // scheduleWrittenTestToolStripMenuItem
             // 
-            this.scheduleWrittenTestToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Written_Test_321;
+            this.scheduleWrittenTestToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Written_Test_321;
             this.scheduleWrittenTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.scheduleWrittenTestToolStripMenuItem.Name = "scheduleWrittenTestToolStripMenuItem";
             this.scheduleWrittenTestToolStripMenuItem.Size = new System.Drawing.Size(247, 38);
@@ -228,7 +228,7 @@
             // 
             // scheduleStreetTestToolStripMenuItem
             // 
-            this.scheduleStreetTestToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Street_Test_32;
+            this.scheduleStreetTestToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Street_Test_32;
             this.scheduleStreetTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.scheduleStreetTestToolStripMenuItem.Name = "scheduleStreetTestToolStripMenuItem";
             this.scheduleStreetTestToolStripMenuItem.Size = new System.Drawing.Size(247, 38);
@@ -242,7 +242,7 @@
             // 
             // issueDrivingLicenseFirstTimeToolStripMenuItem
             // 
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.IssueDrivingLicense_32;
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.IssueDrivingLicense_32;
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Name = "issueDrivingLicenseFirstTimeToolStripMenuItem";
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -256,7 +256,7 @@
             // 
             // showLicenseToolStripMenuItem
             // 
-            this.showLicenseToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.License_View_321;
+            this.showLicenseToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.License_View_321;
             this.showLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -270,7 +270,7 @@
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
-            this.showPersonLicenseHistoryToolStripMenuItem.Image = global::Driving___Vehicle_License_Department.Properties.Resources.PersonLicenseHistory_32;
+            this.showPersonLicenseHistoryToolStripMenuItem.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.PersonLicenseHistory_32;
             this.showPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
             this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
@@ -280,7 +280,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Local_32;
+            this.pictureBox1.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Local_32;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(751, 81);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -293,7 +293,7 @@
             // btnAddNewApplication
             // 
             this.btnAddNewApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewApplication.Image = global::Driving___Vehicle_License_Department.Properties.Resources.New_Application_64;
+            this.btnAddNewApplication.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.New_Application_64;
             this.btnAddNewApplication.Location = new System.Drawing.Point(1324, 254);
             this.btnAddNewApplication.Name = "btnAddNewApplication";
             this.btnAddNewApplication.Size = new System.Drawing.Size(88, 75);
@@ -304,7 +304,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPersonImage.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Applications;
+            this.pbPersonImage.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Applications;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(575, 14);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -319,7 +319,7 @@
             this.btnClose.AutoEllipsis = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(1277, 698);
             this.btnClose.Name = "btnClose";

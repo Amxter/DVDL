@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Ather_File
+namespace DrivingVehicleLicenseDepartment.Ather_File
 {
 
     public enum AppTheme { Light, Dark }

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Driving___Vehicle_License_Department.Applications.Tests
+namespace DrivingVehicleLicenseDepartment.Applications.Tests
 {
     public partial class TakeTest : GeneralForm
     {

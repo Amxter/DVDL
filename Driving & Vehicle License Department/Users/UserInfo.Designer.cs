@@ -1,4 +1,4 @@
-﻿namespace Driving___Vehicle_License_Department
+﻿namespace DrivingVehicleLicenseDepartment
 {
     partial class UserInfo
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.ucUserCard1 = new Driving___Vehicle_License_Department.Users.UCUserCard();
+            this.ucUserCard1 = new DrivingVehicleLicenseDepartment.Users.UCUserCard();
             this.SuspendLayout();
             // 
             // btnClose
@@ -37,7 +37,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::Driving___Vehicle_License_Department.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DrivingVehicleLicenseDepartment.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(700, 408);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
